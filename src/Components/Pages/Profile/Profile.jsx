@@ -11,6 +11,10 @@ const Profile = (props) => {
 
 
 
+
+
+
+
   let contacts = Array.from(Object.entries(props.profile.contacts));
 
   return (
