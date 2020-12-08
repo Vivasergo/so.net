@@ -42,6 +42,7 @@ export const setUserStatus = (status) => {
 
 //thunk
 export const getProfile = (userId) =>{
+
   return (dispatch) => {
     profileAPI.getProfile(userId).then((profileData) => {
       dispatch(setUserProfile(profileData));

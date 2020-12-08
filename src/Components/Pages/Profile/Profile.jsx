@@ -5,14 +5,9 @@ import ProfileStatus from "./ProfileStatus.jsx";
 
 const Profile = (props) => {
 
-      if (!props.profile || props.match.params.userId != props.profile.userId) {
+      if (!props.profile) {
     return <Preloader />;
   }
-
-
-
-
-
 
 
   let contacts = Array.from(Object.entries(props.profile.contacts));

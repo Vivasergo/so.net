@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const AuthBlock = (props) => {
 
@@ -36,7 +37,7 @@ const AuthBlock = (props) => {
                 : "auth-block__buttons d-none d-md-flex align-items-center"
             }
           >
-            <button type="button" className="btn btn-outline-warning btn-sm">
+            <NavLink to="/login" type="button" activeClassName="" className="btn btn-outline-warning btn-sm">
               <svg
                 width="1em"
                 height="1em"
@@ -52,8 +53,8 @@ const AuthBlock = (props) => {
                 />
               </svg>
               Sign In
-            </button>
-            <button type="button" className="btn btn-warning btn-sm">
+            </NavLink>
+            <NavLink to="/" activeClassName="" type="button" className="btn btn-warning btn-sm">
               <svg
                 width="1em"
                 height="1em"
@@ -68,7 +69,7 @@ const AuthBlock = (props) => {
                 />
               </svg>
               Register
-            </button>
+            </NavLink>
           </div>
         </>
       )}

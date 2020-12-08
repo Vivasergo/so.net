@@ -15,14 +15,19 @@ export default class ProfileStatus extends Component {
     this.setState({
       editMode: false,
     });
-    this.props.updateStatus(this.state.statusToChange)
+    this.props.updateStatus(this.state.statusToChange);
   };
 
-  handleInputStatusChange=(e)=>{
-      this.setState({
-          statusToChange: e.target.value
-      })
+  handleInputStatusChange = (e) => {
+    this.setState({
+      statusToChange: e.target.value,
+    });
+  };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.status !== this.props.status) {
+      this.setState({ statusToChange: this.props.status });
+    }
   }
 
   render() {

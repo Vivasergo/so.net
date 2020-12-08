@@ -4,6 +4,7 @@ import { compose } from "redux";
 // import withAuthredirect from "../../../hoc/withAuthRedirect";
 import { follow, getUsers, setCurrentPage, unfollow } from "../../../Redux/usersReducer";
 import Users from "./Users";
+import withAuthRedirect from "../../../hoc/withAuthRedirect";
 
 class UsersContainer extends Component {
   componentDidMount() {
@@ -42,5 +43,6 @@ export default compose(
     unfollow,
     setCurrentPage,
     getUsers,
-  })
+  }),
+  withAuthRedirect
 )(UsersContainer);
