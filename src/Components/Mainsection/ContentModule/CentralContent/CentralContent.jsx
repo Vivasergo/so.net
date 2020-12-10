@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Login from "../../../Pages/Login/Login";
+import LoginContainer from "../../../Pages/Login/LoginContainer";
 import MessagesContainer from "../../../Pages/Messages/MessagesContainer";
 import ProfileContainer from "../../../Pages/Profile/ProfileContainer";
 import UsersContainer from "../../../Pages/Users/UsersContainer";
@@ -24,7 +24,7 @@ const CentralContent = () => {
           <Route path="/news"></Route>
           <Route path="/settings"></Route>
           <Route path="/login">
-            <Login />
+            <LoginContainer />
           </Route>
         </Switch>
       </div>

@@ -21,7 +21,7 @@ const LoginForm = (props) => {
         />
       </div>
       <div>
-        <Field type={"checkbox"} component="input" name={"rememberMe"} />
+        Keep me logged in <Field type={"checkbox"} component="input" name={"rememberMe"} />
       </div>
       <div>
         <button>Login</button>
@@ -34,10 +34,10 @@ const LoginReduxForm = reduxForm({
   form: "loginForm",
 })(LoginForm);
 
-const Login = () => {
+const Login = (props) => {
 
     const onSubmit= (formData) => {
-        console.log(formData)
+        props.loginUser(formData);
     }
 
   return (

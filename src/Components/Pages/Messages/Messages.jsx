@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
+import DialogFormContainer from './Dialogs/DialogFormContainer';
 
-const Messages = () => {
-    return (
+const Messages = (props) => {
+  return (
+    <>
+    
+      <div>
+        <h3>Messages page</h3>
         <div>
-            <h3>Messages page</h3>
+          {props.dialogs.map((dialog) => {
+            return <div key={dialog.id}>{dialog.message}</div>;
+          })}
         </div>
-    )
-}
+      </div>
+      <DialogFormContainer />
+    </>
+  );
+};
 
 export default Messages;

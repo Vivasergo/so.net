@@ -1,0 +1,6 @@
+.errorBlockActive{
+    color: red;
+}
+.errorBorder{
+    border: 2px solid red;
+}
