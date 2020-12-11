@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getAuthUserData } from '../../../Redux/authReducer';
+import { getAuthUserData, logoutUser } from "../../../Redux/authReducer";
 import AuthBlock from './AuthBlock';
 
 class AuthBlockContainer extends Component {
@@ -22,4 +22,6 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, {getAuthUserData})(AuthBlockContainer);
+export default connect(mapStateToProps, { getAuthUserData, logoutUser })(
+  AuthBlockContainer
+);

@@ -14,7 +14,7 @@ const AuthBlock = (props) => {
   return (
     <div className="auth-block">
       {props.auth.isLogged ? (
-        <div>Hi {props.auth.login}</div>
+        <div>Hi {props.auth.login} <button onClick={props.logoutUser} className="btn btn-sm btn-warning ml-2">Logout</button></div>
       ) : (
         <>
           <div

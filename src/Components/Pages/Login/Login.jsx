@@ -1,27 +1,32 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import { Input, require } from "../../common/utils/formValidation/formValidation";
+import { Redirect } from 'react-router-dom';
 
 const LoginForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <div>
         <Field
-          placeholder={"Login"}
+          placeholder={"email"}
           type="text"
-          component="input"
-          name={"login"}
+          component={Input}
+          validate={[require]}
+          name={"email"}
         />
       </div>
       <div>
         <Field
           placeholder={"Password"}
-          type="text"
-          component="input"
+          type="password"
+          component={Input}
+          validate={[require]}
           name={"password"}
         />
       </div>
       <div>
-        Keep me logged in <Field type={"checkbox"} component="input" name={"rememberMe"} />
+        Keep me logged in{" "}
+        <Field type={"checkbox"} component="input" name={"rememberMe"} />
       </div>
       <div>
         <button>Login</button>
@@ -38,6 +43,10 @@ const Login = (props) => {
 
     const onSubmit= (formData) => {
         props.loginUser(formData);
+    }
+
+    if (props.isLogged) {
+      return <Redirect to="/profile" />;
     }
 
   return (
