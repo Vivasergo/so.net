@@ -28,9 +28,12 @@ export default class ProfileStatus extends Component {
     if (prevProps.status !== this.props.status) {
       this.setState({ statusToChange: this.props.status });
     }
-  }
+  };
+
+
 
   render() {
+
     return (
       <div>
         <div className="profile-container__status">
@@ -44,7 +47,8 @@ export default class ProfileStatus extends Component {
             />
           ) : (
             <span onDoubleClick={this.activateEditMode}>
-              {this.props.status || "Double mouse click to enter new status"}
+          
+              {this.props.status || (this.props.currentUserProfileId == this.props.authorizedUserId ? "Double mouse click to enter new status" : "")}
             </span>
           )}
         </div>

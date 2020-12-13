@@ -3,18 +3,24 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const AuthBlock = (props) => {
-
   const [isAuthBlockCliced, setIsAuthBlockClicked] = useState(false);
 
   const handleClickArrow = () => {
-    setIsAuthBlockClicked((prevValue) => prevValue = !prevValue);
-
+    setIsAuthBlockClicked((prevValue) => (prevValue = !prevValue));
   };
 
   return (
     <div className="auth-block">
       {props.auth.isLogged ? (
-        <div>Hi {props.auth.login} <button onClick={props.logoutUser} className="btn btn-sm btn-warning ml-2">Logout</button></div>
+        <div>
+          Hi {props.auth.login}{" "}
+          <button
+            onClick={props.logoutUser}
+            className="btn btn-sm btn-warning ml-2"
+          >
+            Logout
+          </button>
+        </div>
       ) : (
         <>
           <div
@@ -37,7 +43,12 @@ const AuthBlock = (props) => {
                 : "auth-block__buttons d-none d-md-flex align-items-center"
             }
           >
-            <NavLink to="/login" type="button" activeClassName="" className="btn btn-outline-warning btn-sm">
+            <NavLink
+              to="/login"
+              type="button"
+              activeClassName=""
+              className="btn btn-outline-warning btn-sm"
+            >
               <svg
                 width="1em"
                 height="1em"
@@ -54,7 +65,12 @@ const AuthBlock = (props) => {
               </svg>
               Sign In
             </NavLink>
-            <NavLink to="/" activeClassName="" type="button" className="btn btn-warning btn-sm">
+            <NavLink
+              to="/"
+              activeClassName=""
+              type="button"
+              className="btn btn-warning btn-sm"
+            >
               <svg
                 width="1em"
                 height="1em"

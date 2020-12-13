@@ -2,8 +2,10 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { Input, require } from "../../common/utils/formValidation/formValidation";
 import { Redirect } from 'react-router-dom';
+import style from '../../common/utils/formValidation/formValidation.module.css'
 
 const LoginForm = (props) => {
+
   return (
     <form onSubmit={props.handleSubmit}>
       <div>
@@ -28,6 +30,9 @@ const LoginForm = (props) => {
         Keep me logged in{" "}
         <Field type={"checkbox"} component="input" name={"rememberMe"} />
       </div>
+     {props.error && <div className={style.errorMessageBlock}>
+        {props.error}
+      </div>}
       <div>
         <button>Login</button>
       </div>

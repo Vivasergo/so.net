@@ -9,7 +9,7 @@ const withAuthRedirect = (Component) => {
 
   const RedirectComponent = (props) => {
     if (!props.isLogged) {
-      return <Redirect to="/Login" />;
+      return <Redirect to="/login" />;
     }
     return <Component {...props} />;
   };
