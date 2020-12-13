@@ -4,3 +4,10 @@
 .errorBorder{
     border: 2px solid red;
 }
+.errorMessageBlock{
+    color: red;
+    border: 2px solid red;
+    width: fit-content;
+    padding: 5px 20px;
+    margin: 10px;
+}

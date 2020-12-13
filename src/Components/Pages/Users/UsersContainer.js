@@ -44,5 +44,4 @@ export default compose(
     setCurrentPage,
     getUsers,
   }),
-  withAuthRedirect
 )(UsersContainer);

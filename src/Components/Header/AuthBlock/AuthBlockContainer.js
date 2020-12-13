@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getAuthUserData, logoutUser } from "../../../Redux/authReducer";
+import { logoutUser } from "../../../Redux/authReducer";
 import AuthBlock from './AuthBlock';
 
 class AuthBlockContainer extends Component {
 
-  componentDidMount() {
-
-    this.props.getAuthUserData()
-  }
   
   render() {
     return (
@@ -22,6 +18,6 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { getAuthUserData, logoutUser })(
+export default connect(mapStateToProps, { logoutUser })(
   AuthBlockContainer
 );

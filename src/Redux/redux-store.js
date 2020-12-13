@@ -5,6 +5,7 @@ import profileReducer from "./profileReducer";
 import usersReducer from "./usersReducer";
 import dialogsReducer from "./dialogsReducer";
 import { reducer as formReducer } from "redux-form";
+import appReducer from './appReducer';
 
 
 let reducers = combineReducers({
@@ -12,6 +13,7 @@ let reducers = combineReducers({
   usersPage: usersReducer,
   userProfile: profileReducer,
   userDialogs: dialogsReducer,
+  app: appReducer,
   form: formReducer,
 });
 

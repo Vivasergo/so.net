@@ -8,7 +8,7 @@ const Profile = (props) => {
       if (!props.profile) {
     return <Preloader />;
   }
-
+const currentUserProfileId = props.match.params.userId;
 
   let contacts = Array.from(Object.entries(props.profile.contacts));
 
@@ -25,6 +25,8 @@ const Profile = (props) => {
           />
         </div>
         <ProfileStatus
+          currentUserProfileId={currentUserProfileId}
+          authorizedUserId={props.authorizedUserId}
           status={props.status}
           updateStatus={props.updateStatus}
         />
