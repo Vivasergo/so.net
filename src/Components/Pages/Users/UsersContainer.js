@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { getUsersItems } from "../../../Redux/Selectors/usersPage-selectors";
-// import withAuthredirect from "../../../hoc/withAuthRedirect";
+import { getUsersItems, isAuth } from "../../../Redux/Selectors/usersPage-selectors";
+
 import { follow, getUsers, setCurrentPage, unfollow } from "../../../Redux/usersReducer";
 import Users from "./Users";
 
@@ -19,8 +19,8 @@ class UsersContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isAuth: state.auth.isLogged,
-    users: getUsersItems(state),
+    isAuth: isAuth(state), //using selectors
+    users: getUsersItems(state), //using selectors
     currentPage: state.usersPage.currentPage,
     countItems: state.usersPage.countItems,
     totalPages: state.usersPage.totalPages,

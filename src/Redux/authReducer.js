@@ -33,15 +33,13 @@ export const setAuthUserData = (id, email, login, isLogged) => {
 
 
 //thunk creator & thunk, accepting dispatch
-export const getAuthUserData = () => (dispatch) => {
+export const getAuthUserData = () => async (dispatch) => {
 
-  return authAPI.me().then((responseData) => {
-    
-    if (responseData.resultCode === 0) {
-      let { id, email, login } = responseData.data;
-        dispatch(setAuthUserData(id, email, login, true));
-    }
-  });
+  const responseData = await authAPI.me();
+  if (responseData.resultCode === 0) {
+    let { id, email, login } = responseData.data;
+    dispatch(setAuthUserData(id, email, login, true));
+  }
 };
 export const loginUser = (userData) => (dispatch) => {
 

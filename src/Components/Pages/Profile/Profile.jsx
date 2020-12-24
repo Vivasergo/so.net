@@ -13,6 +13,7 @@ const currentUserProfileId = props.match.params.userId;
   let contacts = Array.from(Object.entries(props.profile.contacts));
 
   return (
+ 
     <section className="items-container">
       <h3>{props.profile.fullName}</h3>
       <div className="items-container__item profile-container">

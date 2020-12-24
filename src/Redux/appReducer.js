@@ -26,10 +26,13 @@ export const initializeSuccess = () => {
 };
 
 //thunk creator & thunk, accepting dispatch
-export const initializeApp = () => (dispatch) => {
-  const despResponse = dispatch(getAuthUserData());
+export const initializeApp = () => async (dispatch) => {
 
-  despResponse.then(() => dispatch(initializeSuccess()));
+  //?dispatching auth check and returning promis
+ await dispatch(getAuthUserData());
+
+  //?waiting for auth check and dispatching initialization:true despite the auth check results
+  dispatch(initializeSuccess());
 };
 
 export default appReducer;

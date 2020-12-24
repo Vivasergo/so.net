@@ -7,7 +7,6 @@ const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const TOGGLE_IS_LOADING = "TOGGLE_IS_LOADING";
 const TOGGLE_FOLLOWING_PROGRESS = "TOGGLE_FOLLOWING_PROGRESS";
 
-
 const initialState = {
   items: [],
   currentPage: 1,
@@ -18,7 +17,6 @@ const initialState = {
 };
 
 const usersReducer = (state = initialState, action) => {
-
   switch (action.type) {
     case FOLLOW_TRIGGER:
       return {
@@ -117,41 +115,39 @@ export const toggleFollowingProgress = (isLoading, userId) => {
 
 //thunk creator & thunk, accepting dispatch
 export const getUsers = (countItems, page = 1) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(toggleIsLoading(true));
 
-    usersAPI.getUsers(countItems, page).then((data) => {
-      dispatch(toggleIsLoading(false));
-      dispatch(setUsers(data.items));
-      dispatch(setCurrentPage(page));
-      dispatch(setTotalPages(data.totalCount));
-    });
+    const data = await usersAPI.getUsers(countItems, page);
+    dispatch(toggleIsLoading(false));
+    dispatch(setUsers(data.items));
+    dispatch(setCurrentPage(page));
+    dispatch(setTotalPages(data.totalCount));
   };
 };
 
 //thunk creator & thunk, accepting dispatch
 export const unfollow = (userId) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
-    followAPI.unfollow(userId).then((data) => {
-      if (data.resultCode === 0) {
-        dispatch(followTrigger(userId));
-        dispatch(toggleFollowingProgress(false, userId));
-      }
-    });
+
+    const data = await followAPI.unfollow(userId);
+    if (data.resultCode === 0) {
+      dispatch(followTrigger(userId));
+      dispatch(toggleFollowingProgress(false, userId));
+    }
   };
 };
 
 //thunk creator & thunk, accepting dispatch
 export const follow = (userId) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
-    followAPI.follow(userId).then((data) => {
+    const data = await followAPI.follow(userId);
       if (data.resultCode === 0) {
         dispatch(followTrigger(userId));
         dispatch(toggleFollowingProgress(false, userId));
       }
-    });
   };
 };
 

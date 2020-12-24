@@ -11,6 +11,12 @@ import { withRouter } from "react-router-dom";
 class ProfileContainer extends Component {
 
   componentDidMount() {
+    console.log(
+      "componentDidMount-> this.props.isLogged " +
+        this.props.isLogged +
+        "   this.props.authorizedUserId " +
+        this.props.authorizedUserId
+    );
     let userId = this.props.match.params.userId;
     if (!userId) {
       if (this.props.isLogged) {
@@ -22,8 +28,24 @@ class ProfileContainer extends Component {
 
     this.props.getStatus(userId);
   }
+  componentDidUpdate(){
+  console.log(
+    "componentDidUpdate-> this.props.isLogged " +
+      this.props.isLogged +
+      "   this.props.authorizedUserId " +
+      this.props.authorizedUserId
+  );
+
+}
 
   render() {
+    console.log(
+      "this.props.isLogged " +
+        this.props.isLogged +
+        "   this.props.authorizedUserId " +
+        this.props.authorizedUserId
+    );
+
     return <Profile {...this.props} />;
   }
 }
