@@ -1,14 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import s from "./users.module.css";
 import { Pagination } from "@material-ui/lab";
 import User from "./User";
 
 const Users = (props) => {
+  const [page, setPage] = useState(1);
+
   let totalSheets = Math.ceil(props.totalPages / props.countItems);
 
-  let handlePageLinkClick = (e, page) => {
+  let handlePageLinkClick = (_, page) => {
     props.getUsers(props.countItems, page);
+    setPage(page)
   };
 
   return (
@@ -21,6 +24,7 @@ const Users = (props) => {
         <div className={s.paginationBlock}>
           <Pagination
             onChange={handlePageLinkClick}
+            page={page}
             count={totalSheets}
             siblingCount={2}
             color={"primary"}
@@ -44,6 +48,7 @@ const Users = (props) => {
         <div className={s.paginationBlock}>
           <Pagination
             onChange={handlePageLinkClick}
+            page={page}
             count={totalSheets}
             siblingCount={2}
             color={"primary"}
