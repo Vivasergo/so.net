@@ -9,7 +9,7 @@ const DialogFormBlock = (props) => {
         <div>
           <Field validate={[require]} component={Input} name="message" placeholder="Enter new message" />
         </div>
-        <div>
+        <div className={"mt-2"}>
           <button>Send</button>
         </div>
       </form>

@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 const User = ({ user, followingProgress, unfollow, follow, isAuth }) => {
   return (
     <>
+
       <div className="items-container__item user-item">
         <div className="user-item__header">
           <div className="user-item__logo">

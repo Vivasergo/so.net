@@ -33,15 +33,19 @@ const Users = (props) => {
           />
         </div>
         {props.users.map((user) => {
-          return (
-            <User
-              key={user.id}
-              user={user}
-              followingProgress={props.followingProgress}
-              unfollow={props.unfollow}
-              follow={props.follow}
-              isAuth={props.isAuth}
-            />
+
+          //Don't show authorised user block among the other users
+          return props.authUserId==user.id ? "" :
+           (
+               <User
+                    key={user.id}
+                    user={user}
+                    followingProgress={props.followingProgress}
+                    unfollow={props.unfollow}
+                    follow={props.follow}
+                    isAuth={props.isAuth}
+                />
+
           );
         })}
 

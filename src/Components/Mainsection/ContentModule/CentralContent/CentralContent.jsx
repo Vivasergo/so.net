@@ -1,35 +1,44 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React, {Suspense} from "react";
+import {Route, Switch} from "react-router-dom";
 import LoginContainer from "../../../Pages/Login/LoginContainer";
-import MessagesContainer from "../../../Pages/Messages/MessagesContainer";
 import ProfileContainer from "../../../Pages/Profile/ProfileContainer";
 import UsersContainer from "../../../Pages/Users/UsersContainer";
+import Search from "../../../Pages/Search/Search";
+import UnderConstruction from "../../../common/Errors/UnderConstruction";
+
+//Lazy loading
+const MessagesContainer = React.lazy(() => import("../../../Pages/Messages/MessagesContainer"));
 
 const CentralContent = () => {
-  return (
-    <>
-      <div className="col-12 col-md-8 pr-md-0 main-cont-col">
-        <Switch>
-          <Route path="/users">
-            <UsersContainer />
-          </Route>
-          <Route path="/profile/:userId?">
-            {" "}
-            <ProfileContainer />
-          </Route>
-          <Route path="/messages">
-            {" "}
-            <MessagesContainer />{" "}
-          </Route>
-          <Route path="/news"></Route>
-          <Route path="/settings"></Route>
-          <Route path="/login">
-            <LoginContainer />
-          </Route>
-        </Switch>
-      </div>
-    </>
-  );
+    return (
+        <>
+            <div className="col-12 col-md-8 pr-md-0 main-cont-col">
+                <Switch>
+                    <Route path="/users">
+                        <UsersContainer/>
+                    </Route>
+                    <Route path="/profile/:userId?">
+                        {" "}
+                        <ProfileContainer/>
+                    </Route>
+                    <Route path="/messages">
+                        {" "}
+                        <Suspense fallback={<div>Загрузка...</div>}>
+                            <MessagesContainer/>{" "}
+                        </Suspense>
+                    </Route>
+                    {/*<Route path="/news"/>*/}
+                    {/*<Route path="/settings"/>*/}
+                    <Route path="/login">
+                        <LoginContainer/>
+                    </Route>
+                    <Route path="/under-construction">
+                        <UnderConstruction/>
+                    </Route>
+                </Switch>
+            </div>
+        </>
+    );
 };
 
 export default CentralContent;

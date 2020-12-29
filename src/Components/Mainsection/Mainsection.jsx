@@ -1,7 +1,7 @@
 import React from "react";
 import CentralContent from "./ContentModule/CentralContent/CentralContent";
 import RightContent from "./ContentModule/RightContent/RightContent";
-import NavMenu from "./NavMenu/NavMenu";
+import NavMenuContainer from "./NavMenu/NavMenuContainer";
 
 const Mainsection = () => {
   return (
@@ -9,7 +9,7 @@ const Mainsection = () => {
       <div className="central-block">
         <div className="content-fluid content-block">
           <div className="row">
-            <NavMenu />
+            <NavMenuContainer />
             <div className="col-10 col-md-9 row content-module">
               <CentralContent />
               <RightContent />

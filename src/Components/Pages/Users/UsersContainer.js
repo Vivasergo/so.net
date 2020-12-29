@@ -19,6 +19,7 @@ class UsersContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+      authUserId: state.auth.id,
     isAuth: isAuth(state), //using selectors
     users: getUsersItems(state), //using selectors
     currentPage: state.usersPage.currentPage,
