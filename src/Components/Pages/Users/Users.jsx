@@ -3,9 +3,13 @@ import Preloader from "../../common/Preloader/Preloader";
 import s from "./users.module.css";
 import { Pagination } from "@material-ui/lab";
 import User from "./User";
+import useWindowSize from "../../common/utils/ShowWindowDimensions/useWindowSize";
 
 const Users = (props) => {
   const [page, setPage] = useState(1);
+
+  //custom Hook to control window width change
+  const [windowWidth] = useWindowSize();
 
   let totalSheets = Math.ceil(props.totalPages / props.countItems);
 
@@ -26,7 +30,7 @@ const Users = (props) => {
             onChange={handlePageLinkClick}
             page={page}
             count={totalSheets}
-            siblingCount={2}
+            siblingCount={windowWidth <= 930 ? 0 : 2}
             color={"primary"}
             variant="outlined"
             shape={"rounded"}
@@ -54,7 +58,7 @@ const Users = (props) => {
             onChange={handlePageLinkClick}
             page={page}
             count={totalSheets}
-            siblingCount={2}
+            siblingCount={windowWidth <= 930 ? 0 : 2}
             color={"primary"}
             variant="outlined"
             shape={"rounded"}

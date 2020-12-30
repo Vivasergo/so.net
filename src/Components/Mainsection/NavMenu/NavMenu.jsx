@@ -5,9 +5,10 @@ import {NavLink} from "react-router-dom";
 const NavMenu = (props) => {
     const [isClickedBurger, setIsClickedBurger] = useState(false);
 
-    const handleClickBurger = () => {
+    const handleClickBurgerMenu = () => {
         setIsClickedBurger((prevValue) => (prevValue = !prevValue));
     };
+
 
     let navMenu = [
         {
@@ -68,7 +69,7 @@ const NavMenu = (props) => {
                             return (
 
                                 <li key={list.title} className="nav-block__list">
-                                    <NavLink to={list.path}>
+                                    <NavLink onClick={handleClickBurgerMenu} to={list.path}>
                                         <i className={list.icon}></i>
                                         {list.title}
                                     </NavLink>
@@ -78,7 +79,7 @@ const NavMenu = (props) => {
                     </ul>
                 </nav>
                 <div
-                    onClick={handleClickBurger}
+                    onClick={handleClickBurgerMenu}
                     className={
                         isClickedBurger
                             ? "nav-burger ml-3 mt-3 d-block d-md-none active"

@@ -6,8 +6,8 @@ import SearchBlock from "./SearchBlock/SearchBlock";
 const Header = () => {
   return (
     <header className="header pr-2">
-      <div className="d-flex justify-content-around">
-        <div className="d-none d-lg-block"></div>
+      <div className="header-wrap d-flex justify-content-around">
+        {/*<div className="d-none d-lg-block"></div>*/}
         <Logo />
         <SearchBlock />
         <AuthBlockContainer />

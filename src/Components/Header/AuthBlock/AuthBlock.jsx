@@ -5,26 +5,34 @@ import {NavLink} from "react-router-dom";
 const AuthBlock = (props) => {
     const [isAuthBlockClicked, setIsAuthBlockClicked] = useState(false);
 
-    const handleClickArrow = () => {
+    const handleClickArrowBlock = () => {
         setIsAuthBlockClicked((prevValue) => (prevValue = !prevValue));
     };
 
     return (
         <div className="auth-block">
             {props.auth.isLogged ? (
-                <div>
-                    Hi, {props.auth.login}{" "}
+                <div className="overflow-hidden">
+                    <span>
+                          Hi, {props.auth.login}{" "}
+                    </span>
                     <button
                         onClick={props.logoutUser}
-                        className="btn btn-sm btn-warning ml-2"
+                        className="btn btn-sm btn-warning ms-2"
                     >
-                        Logout
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             className="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                            <path fill-rule="evenodd"
+                                  d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                        </svg>
                     </button>
                 </div>
             ) : (
                 <>
                     <div
-                        onClick={handleClickArrow}
+                        onClick={handleClickArrowBlock}
                         className="auth-block__arrow-block d-flex d-md-none align-items-center"
                     >
                         Auth{" "}
@@ -44,6 +52,7 @@ const AuthBlock = (props) => {
                         }
                     >
                         <NavLink
+                            onClick={handleClickArrowBlock}
                             to="/login"
                             type="button"
                             activeClassName=""
@@ -66,6 +75,7 @@ const AuthBlock = (props) => {
                             Sign In
                         </NavLink>
                         <NavLink
+                            onClick={handleClickArrowBlock}
                             to="/register"
                             activeClassName=""
                             type="button"

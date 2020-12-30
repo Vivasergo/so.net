@@ -21,6 +21,7 @@ const Logo = () => {
         </svg>
         <span className="d-none d-md-inline-block">So.Net</span>
       </a>
+
     </div>
   );
 };
