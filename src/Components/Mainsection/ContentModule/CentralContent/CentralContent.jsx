@@ -5,6 +5,7 @@ import ProfileContainer from "../../../Pages/Profile/ProfileContainer";
 import UsersContainer from "../../../Pages/Users/UsersContainer";
 import Search from "../../../Pages/Search/Search";
 import UnderConstruction from "../../../common/Errors/UnderConstruction";
+import Register from "../../../Pages/Registration/Register";
 
 //Lazy loading
 const MessagesContainer = React.lazy(() => import("../../../Pages/Messages/MessagesContainer"));
@@ -31,6 +32,9 @@ const CentralContent = () => {
                     {/*<Route path="/settings"/>*/}
                     <Route path="/login">
                         <LoginContainer/>
+                    </Route>
+                    <Route path="/register">
+                        <Register/>
                     </Route>
                     <Route path="/under-construction">
                         <UnderConstruction/>

@@ -71,7 +71,7 @@ const NavMenu = (props) => {
                                 <li key={list.title} className="nav-block__list">
                                     <NavLink onClick={handleClickBurgerMenu} to={list.path}>
                                         <i className={list.icon}></i>
-                                        {list.title}
+                                        <span className="nav-block__item">{list.title}</span>
                                     </NavLink>
                                 </li>
                             );

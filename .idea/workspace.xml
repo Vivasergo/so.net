@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Code refactoring">
-      <change afterPath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/ShowWindowDimensions.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/useWindowSize.js" afterDir="false" />
+    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Burger menu correction, useWindowSize custom hook applying">
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/Registration/RegisterWarn.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSS/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSS/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/AuthBlock/AuthBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/AuthBlock/AuthBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Logo/Logo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Logo/Logo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Copyrights.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Copyrights.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/CentralContent/CentralContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/CentralContent/CentralContent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Registration/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Registration/Register.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +137,10 @@
       <workItem from="1609078034046" duration="3422000" />
       <workItem from="1609163867264" duration="13800000" />
       <workItem from="1609256962185" duration="33000" />
-      <workItem from="1609257044812" duration="33135000" />
+      <workItem from="1609257044812" duration="34549000" />
+      <workItem from="1609429486436" duration="1798000" />
+      <workItem from="1609593707237" duration="16000" />
+      <workItem from="1609593739431" duration="3980000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>
@@ -154,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609278583244</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Burger menu correction, useWindowSize custom hook applying">
+      <created>1609355727193</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609355727193</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +185,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Pagination correction" />
     <MESSAGE value="Code refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code refactoring" />
+    <MESSAGE value="Burger menu correction, useWindowSize custom hook applying" />
+    <option name="LAST_COMMIT_MESSAGE" value="Burger menu correction, useWindowSize custom hook applying" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
