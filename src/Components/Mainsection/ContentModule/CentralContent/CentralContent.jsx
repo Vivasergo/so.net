@@ -3,9 +3,9 @@ import {Route, Switch} from "react-router-dom";
 import LoginContainer from "../../../Pages/Login/LoginContainer";
 import ProfileContainer from "../../../Pages/Profile/ProfileContainer";
 import UsersContainer from "../../../Pages/Users/UsersContainer";
-import Search from "../../../Pages/Search/Search";
 import UnderConstruction from "../../../common/Errors/UnderConstruction";
 import Register from "../../../Pages/Registration/Register";
+import InitialPage from "../../../Pages/InitialPage/InitialPage";
 
 //Lazy loading
 const MessagesContainer = React.lazy(() => import("../../../Pages/Messages/MessagesContainer"));
@@ -17,6 +17,9 @@ const CentralContent = () => {
                 <Switch>
                     <Route path="/users">
                         <UsersContainer/>
+                    </Route>
+                    <Route exact path="/">
+                        <InitialPage/>
                     </Route>
                     <Route path="/profile/:userId?">
                         {" "}

@@ -7,9 +7,16 @@ body {
   min-height: 100%;
 }
 
+.preloader {
+  position: fixed;
+  opacity: 0.6;
+  width: 150px;
+  left: calc(100vw/2 - 75px);
+  top: calc(100vh/2 - 75px);
+}
+
 .appWrap {
   position: relative;
-  padding-bottom: 50px;
 }
 
 /* ?Header */
@@ -109,7 +116,7 @@ body {
 /*? Central block */
 .central-block {
   width: 100%;
-  min-height: calc(100vh - 116px);
+  min-height: calc(100vh - 120px);
   background-color: #f4f4f4;
   margin-top: 50px;
   padding-top: 10px;
@@ -375,13 +382,6 @@ body {
 .main-cont-col .profile-container__looking-job span {
   margin-bottom: 10px;
 }
-.main-cont-col .profile-container__contacts {
-  position: absolute;
-  right: 150px;
-  top: 15px;
-  display: inline-block;
-}
-
 .right-cont-col .info-module {
   width: 100%;
 }
@@ -440,8 +440,6 @@ body {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background-color: #5b0619;
   line-height: 50px;

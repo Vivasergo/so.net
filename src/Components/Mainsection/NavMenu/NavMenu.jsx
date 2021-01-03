@@ -60,16 +60,16 @@ const NavMenu = (props) => {
                 <nav
                     className={
                         isClickedBurger
-                            ? "nav-block d-md-block active"
-                            : "nav-block d-md-block not-active"
+                            ? "nav-block d-md-block w-100 active"
+                            : "nav-block d-md-block w-100 not-active"
                     }
                 >
-                    <ul className="nav-block__menu">
+                    <ul className="nav-block__menu w-100">
                         {navMenu.map((list) => {
                             return (
 
-                                <li key={list.title} className="nav-block__list">
-                                    <NavLink onClick={handleClickBurgerMenu} to={list.path}>
+                                <li key={list.title} className="nav-block__list w-100">
+                                    <NavLink className={"w-100 d-inline-block"} onClick={handleClickBurgerMenu} to={list.path}>
                                         <i className={list.icon}></i>
                                         <span className="nav-block__item">{list.title}</span>
                                     </NavLink>

@@ -10,8 +10,7 @@ import {withRouter} from "react-router-dom";
 
 class ProfileContainer extends Component {
 
-    componentDidMount() {
-
+    getUserData(){
         let userId = this.props.match.params.userId;
         if (!userId) {
             if (this.props.isLogged) {
@@ -20,14 +19,23 @@ class ProfileContainer extends Component {
                 return this.props.history.push("/users")
             } //!Redirect
         }
-
         this.props.getProfile(userId);
         this.props.getStatus(userId);
     }
 
-    render() {
+    componentDidMount() {
+       this.getUserData()
+    }
 
-        return <Profile {...this.props} />;
+    componentDidUpdate(prevProps) {
+        if(prevProps.match.params.userId != this.props.match.params.userId)
+        {
+            this.getUserData()
+        }
+    }
+
+    render() {
+        return <Profile {...this.props} />
     }
 }
 

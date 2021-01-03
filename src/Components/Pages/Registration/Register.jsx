@@ -1,12 +1,12 @@
 import React from "react";
-import Login from "../Login/Login";
 import RegisterWarn from "./RegisterWarn";
+import LoginContainer from "../Login/LoginContainer";
 
 const Register = (props) => {
 
     return (
         <>
-            <Login/>
+            <LoginContainer/>
             <RegisterWarn/>
         </>
     )

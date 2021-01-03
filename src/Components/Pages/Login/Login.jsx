@@ -51,7 +51,7 @@ const Login = (props) => {
     }
 
     if (props.isLogged) {
-        return <Redirect to="/profile"/>;
+        return <Redirect to={"/profile/"+props.authorizedUserId} />;
     }
 
     return (

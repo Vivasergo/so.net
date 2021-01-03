@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Burger menu correction, useWindowSize custom hook applying">
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/Registration/RegisterWarn.jsx" afterDir="false" />
+    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Add register warning, css footer bugs fix">
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/UnauthorizedUserProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSS/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSS/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Copyrights.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Copyrights.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/AuthBlock/AuthBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/AuthBlock/AuthBlock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/CentralContent/CentralContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/CentralContent/CentralContent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/LoginContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/LoginContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileStatus.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Registration/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Registration/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/Preloader/Preloader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Preloader/Preloader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Pages/Registration" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Pages/Profile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -68,6 +75,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Programming\Test projects\Social-network\src\Components\Pages\Profile" />
       <recent name="F:\Programming\Test projects\Social-network\src\Components\Pages\Registration" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -140,7 +148,7 @@
       <workItem from="1609257044812" duration="34549000" />
       <workItem from="1609429486436" duration="1798000" />
       <workItem from="1609593707237" duration="16000" />
-      <workItem from="1609593739431" duration="3980000" />
+      <workItem from="1609593739431" duration="37764000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>
@@ -163,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609355727193</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add register warning, css footer bugs fix">
+      <created>1609605954542</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609605954542</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +201,8 @@
     <MESSAGE value="Pagination correction" />
     <MESSAGE value="Code refactoring" />
     <MESSAGE value="Burger menu correction, useWindowSize custom hook applying" />
-    <option name="LAST_COMMIT_MESSAGE" value="Burger menu correction, useWindowSize custom hook applying" />
+    <MESSAGE value="Add register warning, css footer bugs fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add register warning, css footer bugs fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
