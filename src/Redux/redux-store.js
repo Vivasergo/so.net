@@ -19,6 +19,7 @@ let reducers = combineReducers({
 
 // let store = createStore(reducers, applyMiddleware(thunk));
 
+//special functionality to apply browser extension Redux DevTools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   reducers,

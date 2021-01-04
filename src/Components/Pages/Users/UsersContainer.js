@@ -7,8 +7,9 @@ import { follow, getUsers, setCurrentPage, unfollow } from "../../../Redux/users
 import Users from "./Users";
 
 class UsersContainer extends Component {
-  componentDidMount() {
 
+    //query users from server after first component render
+    componentDidMount() {
     this.props.getUsers(this.props.countItems);
   }
 
@@ -17,11 +18,14 @@ class UsersContainer extends Component {
   }
 }
 
+//mapping state data stored in Redux Store to send it via Redux connect HOC and use it
+//inside the wrapped component through the props
+//some kind of Context functionality
 const mapStateToProps = (state) => {
   return {
       authUserId: state.auth.id,
-    isAuth: isAuth(state), //using selectors
-    users: getUsersItems(state), //using selectors
+    isAuth: isAuth(state), //using selectors/reselect
+    users: getUsersItems(state), //using selectors/reselect
     currentPage: state.usersPage.currentPage,
     countItems: state.usersPage.countItems,
     totalPages: state.usersPage.totalPages,
@@ -30,16 +34,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-//connect - wrapper function for connecting component container to context, using react-redux,
-//first and second arguments are objects which become the props in component
-
-// вместо mapDispatchToProps, передаем вторым аргументом в connect объект,
-// где свойства будут переданы в props, а их значения это action creators.
-//Поскольку имя свойства и имя экшен креэйтора совпадает, то можно приминить
-//сокращенную запись, т.е. не setUsers: setUsers, а просто setUsers
-
+//composing the wrappers
 export default compose(
   connect(mapStateToProps, {
+      //refactoring entry of mapDispatchToProps = (dispatch) => {return {follow: () => dispatch(followThunkCreator)}}
     follow,
     unfollow,
     setCurrentPage,

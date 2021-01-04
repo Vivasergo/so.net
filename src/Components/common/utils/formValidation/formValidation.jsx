@@ -1,6 +1,10 @@
 import React from "react";
+
+//using css module
 import style from "./formValidation.module.css";
 
+//form validation rule
+//if returns undefined the validation is passed
 export const require = (value) => {
   if (value && value !== "") {
     return undefined;
@@ -8,13 +12,7 @@ export const require = (value) => {
   return "The field is required!";
 };
 
-// const maxLength = (value) => {
-//   if (value && value !== "") {
-//     return undefined;
-//   }
-//   return "The field is required!";
-// };
-
+//visualisation of error block
 const ErrorBlock = (props) => {
 
   return (
@@ -24,6 +22,8 @@ const ErrorBlock = (props) => {
   );
 };
 
+//preparing Input block with validation and error visualisation functionality
+//to pass it into the attribute "component" inside the form field
 export const Input = ({ input, meta, ...restProps }) => {
   return (
     <div>

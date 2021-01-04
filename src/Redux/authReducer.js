@@ -48,6 +48,8 @@ export const loginUser = (userData) => async (dispatch) => {
     if (responseData.resultCode === 0) {
         dispatch(getAuthUserData());
     } else {
+        //error processing: returning either message from server response if it is or
+        //"common error" and any case interrupting form submitting via stopSubmit Redux Form method dispatching
         let message =
             responseData.messages.length > 0
                 ? responseData.messages[0]

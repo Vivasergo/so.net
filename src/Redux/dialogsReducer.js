@@ -39,6 +39,8 @@ const setNewMessage = (newMessage) => {
 // thunk
 export const setNewMessageThunk = (newMessage) => (dispatch) => {
     dispatch(setNewMessage(newMessage));
+
+    //resetting form fields after dispatching new message (Redux Form method)
     dispatch(reset('dialogForm'));
 
 };

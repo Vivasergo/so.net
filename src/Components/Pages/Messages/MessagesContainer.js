@@ -11,10 +11,15 @@ class MessagesContainer extends Component {
   }
 }
 
+//mapping state data stored in Redux Store to send it via Redux connect HOC and use it
+//inside the wrapped component through the props
+//some kind of Context functionality
 const mapStateToProps = (state) => ({
   dialogs: state.userDialogs.dialogs,
 });
 
+//connection to the Redux Store
+//applying
 export default compose(
   connect(mapStateToProps, { setNewMessageThunk }),
   withAuthRedirect

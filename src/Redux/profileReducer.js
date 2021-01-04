@@ -2,6 +2,7 @@ import { profileAPI } from "../api/api";
 
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_USER_STATUS = "SET_USER_STATUS";
+const UPLOAD_AVATAR_SUCCESS = "UPLOAD_AVATAR_SUCCESS";
 
 let initialState = {
   profile: null,
@@ -20,6 +21,11 @@ let profileReducer = (state = initialState, action) => {
         ...state,
         status: action.status,
       };
+      case UPLOAD_AVATAR_SUCCESS:
+      return {
+        ...state,
+        profile: {...state.profile}, photos: {...action.photos},
+      };
 
     default:
       return state;
@@ -36,6 +42,12 @@ export const setUserStatus = (status) => {
     return {
       type: SET_USER_STATUS,
       status,
+    };
+}
+export const updateAvatar = (photos) => {
+    return {
+      type: UPLOAD_AVATAR_SUCCESS,
+        photos,
     };
 }
 
@@ -60,6 +72,14 @@ export const updateStatus = (status) => {
    const response = await profileAPI.updateStatus(status)
       if (response.data.resultCode === 0) {
         dispatch(setUserStatus(status));
+      }
+  };
+}
+export const uploadNewAvatar = (file) => {
+  return async (dispatch) => {
+   const response = await profileAPI.uploadNewAvatar(file)
+      if (response.resultCode === 0) {
+        dispatch(updateAvatar(response.data.photos));
       }
   };
 }

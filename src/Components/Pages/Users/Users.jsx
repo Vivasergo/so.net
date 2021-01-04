@@ -30,6 +30,7 @@ const Users = (props) => {
             onChange={handlePageLinkClick}
             page={page}
             count={totalSheets}
+            //changing the number of sibling pages depending on the window's width
             siblingCount={windowWidth <= 930 ? 0 : 2}
             color={"primary"}
             variant="outlined"
@@ -38,7 +39,7 @@ const Users = (props) => {
         </div>
         {props.users.map((user) => {
 
-          //Don't show authorised user block among the other users
+          //Don't show authorized user's profile block among the other users profiles
           return props.authUserId==user.id ? "" :
            (
                <User

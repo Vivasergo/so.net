@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 
+//custom HOC for unauthorized users redirection
 const withAuthRedirect = (Component) => {
 
   let mapStateToProps = (state) => ({

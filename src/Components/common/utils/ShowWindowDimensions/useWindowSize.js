@@ -1,5 +1,7 @@
 import React, {useLayoutEffect, useState} from 'react';
 
+
+//custom hook which returns window's size
 export default function useWindowSize() {
     const [size, setSize] = useState([0, 0]);
 

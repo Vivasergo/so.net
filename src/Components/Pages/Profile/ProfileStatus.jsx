@@ -1,5 +1,10 @@
 import React, {Component} from "react";
 
+//functionality for status edition
+//dobleClick on status (span) -> activateEditMode - input field with current status ->
+//onBlur or Enter key press -> disactivateEditMode -> calling updateStatus thunk to send data to server
+//and dispatch new data to the Redux Store
+
 export default class ProfileStatus extends Component {
     state = {
         editMode: false,
@@ -24,6 +29,7 @@ export default class ProfileStatus extends Component {
         });
     };
 
+    //to sync local state status to props status after component rerender
     componentDidUpdate(prevProps) {
         if (prevProps.status !== this.props.status) {
             this.setState({statusToChange: this.props.status});

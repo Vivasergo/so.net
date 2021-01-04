@@ -21,6 +21,8 @@ const User = ({ user, followingProgress, unfollow, follow, isAuth }) => {
           </div>
         </div>
         <div className="user-item__body">
+
+         {/*follow/unfollow functionality including button disabling while waiting the server answer*/}
           {!isAuth ? (
             <div>"Sign in or register to follow the users"</div>
           ) : user.followed ? (

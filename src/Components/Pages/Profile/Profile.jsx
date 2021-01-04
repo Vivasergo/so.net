@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import UnauthorizedUserProfile from "./UnauthorizedUserProfile";
 import AuthorizedUserProfile from "./AuthorizedUserProfile";
@@ -7,10 +7,12 @@ import {NavLink} from "react-router-dom";
 const Profile = (props) => {
     const currentUserProfileId = props.match.params.userId;
 
+    //rendering preloader component while waiting the server answer and promise resolving
     if (!props.profile) {
         return <Preloader/>;
     }
 
+    //preparing data received from the server for an appropriate condition to use
     let contacts = Array.from(Object.entries(props.profile.contacts));
 
     return (

@@ -17,8 +17,10 @@ const DialogFormBlock = (props) => {
   );
 };
 
+//Redux Form connection (wrapper for the form)
 const ReduxDialogForm = reduxForm({ form: "dialogForm" })(DialogFormBlock);
 
+//dialog container to pass the thunk function, obtained via the props to the onSubmit form method
 const DialogForm = (props) => {
   const onSubmit = (formData) => {
     props.setNewMessageThunk(formData);

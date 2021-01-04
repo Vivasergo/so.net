@@ -4,6 +4,11 @@ import ProfileStatus from "./ProfileStatus";
 
 const AuthorizedUserProfile = (props) => {
 
+    const handleFileChange = (e) => {
+        props.uploadNewAvatar(e.target.files[0]);
+
+    }
+
     return (
         <>
             <h3>Welcome to your personal account, {props.profile.fullName}</h3>
@@ -20,7 +25,7 @@ const AuthorizedUserProfile = (props) => {
                         <button type="button" className="btn-close p-1" data-bs-dismiss="alert"
                                 aria-label="Close"></button>
                     </div>
-                    <div><input type="file"/></div>
+                    <div><input onChange={handleFileChange} type="file"/></div>
                 </div>
                 <hr/>
                 <ProfileStatus

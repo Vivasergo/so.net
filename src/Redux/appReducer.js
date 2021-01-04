@@ -1,5 +1,6 @@
 import { getAuthUserData } from "./authReducer";
 
+//action type
 const INITIALIZE_SUCCESS = "INITIALIZE_SUCCESS";
 
 let initialState = {
@@ -19,6 +20,7 @@ let appReducer = (state = initialState, action) => {
   }
 };
 
+//action creator
 export const initializeSuccess = () => {
   return {
     type: INITIALIZE_SUCCESS,
@@ -28,7 +30,7 @@ export const initializeSuccess = () => {
 //thunk creator & thunk, accepting dispatch
 export const initializeApp = () => async (dispatch) => {
 
-  //?dispatching auth check and returning promis
+  //?dispatching auth check and returning promise
  await dispatch(getAuthUserData());
 
   //?waiting for auth check and dispatching initialization:true despite the auth check results

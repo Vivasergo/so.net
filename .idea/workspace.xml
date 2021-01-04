@@ -4,24 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Add register warning, css footer bugs fix">
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/UnauthorizedUserProfile.jsx" afterDir="false" />
+    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Divided authorized and unauthorized users profile render">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSS/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSS/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/AuthBlock/AuthBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/AuthBlock/AuthBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/CentralContent/CentralContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/CentralContent/CentralContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/LoginContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/LoginContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenuContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenuContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Messages/Dialogs/DialogForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Messages/Dialogs/DialogForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Messages/MessagesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Messages/MessagesContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileStatus.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Registration/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Registration/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/Preloader/Preloader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Preloader/Preloader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Users/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Users/User.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Users/UsersContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/ShowWindowDimensions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/ShowWindowDimensions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/useWindowSize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/useWindowSize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/utils/formValidation/formValidation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/utils/formValidation/formValidation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/Selectors/usersPage-selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Selectors/usersPage-selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/appReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/appReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/dialogsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/dialogsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/profileReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +153,7 @@
       <workItem from="1609257044812" duration="34549000" />
       <workItem from="1609429486436" duration="1798000" />
       <workItem from="1609593707237" duration="16000" />
-      <workItem from="1609593739431" duration="37764000" />
+      <workItem from="1609593739431" duration="51740000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>
@@ -178,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609605954542</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Divided authorized and unauthorized users profile render">
+      <created>1609708937868</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609708937868</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +214,8 @@
     <MESSAGE value="Code refactoring" />
     <MESSAGE value="Burger menu correction, useWindowSize custom hook applying" />
     <MESSAGE value="Add register warning, css footer bugs fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add register warning, css footer bugs fix" />
+    <MESSAGE value="Divided authorized and unauthorized users profile render" />
+    <option name="LAST_COMMIT_MESSAGE" value="Divided authorized and unauthorized users profile render" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
