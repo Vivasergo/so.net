@@ -24,7 +24,7 @@ let profileReducer = (state = initialState, action) => {
       case UPLOAD_AVATAR_SUCCESS:
       return {
         ...state,
-        profile: {...state.profile}, photos: {...action.photos},
+        profile: {...state.profile, photos: {...action.photos}},
       };
 
     default:

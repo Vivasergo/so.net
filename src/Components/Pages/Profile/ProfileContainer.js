@@ -31,7 +31,6 @@ class ProfileContainer extends Component {
 
     componentDidUpdate(prevProps) {
 
-        console.log("componentDidUpdate");
         if(prevProps.match.params.userId != this.props.match.params.userId)
         {
             this.getUserData()
@@ -51,10 +50,12 @@ class ProfileContainer extends Component {
 //inside the wrapped component through the props
 //some kind of Context functionality
 const mapStateToProps = (state) => ({
+    // photos:state.userProfile.profile.photos,
     profile: state.userProfile.profile,
     status: state.userProfile.status,
     authorizedUserId: state.auth.id,
     isLogged: state.auth.isLogged,
+    
 });
 
 //withRouter HOC to use props.match.params

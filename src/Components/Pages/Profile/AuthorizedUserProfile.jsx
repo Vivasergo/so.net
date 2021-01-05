@@ -9,6 +9,10 @@ const AuthorizedUserProfile = (props) => {
 
     }
 
+
+    // console.log(props.profile.photos.large)
+
+
     return (
         <>
             <h3>Welcome to your personal account, {props.profile.fullName}</h3>

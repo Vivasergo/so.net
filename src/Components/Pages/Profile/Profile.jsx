@@ -12,8 +12,16 @@ const Profile = (props) => {
         return <Preloader/>;
     }
 
+// console.log(props.profile.photos.large)
+
     //preparing data received from the server for an appropriate condition to use
+    
     let contacts = Array.from(Object.entries(props.profile.contacts));
+    console.log(props.profile.contacts)
+
+// if(!contacts.length){
+//     contacts = [{"Facebook":"facebook.com"}]
+//     }
 
     return (
         <section className="items-container">
@@ -26,12 +34,13 @@ const Profile = (props) => {
                         <UnauthorizedUserProfile {...props}/>}
 
                     <div className="col-md-5 col-12 profile-container__contacts">
-                        <ul>
+                        <ul className="list-group">
                             {contacts.map((item, index) => {
                                 return (
-                                    item[1] && (
-                                        <li key={index}>
-                                            <NavLink to={item[1]}>{item[0]}</NavLink>
+                                    // item[1] && 
+                                    (
+                                        <li key={index} className="list-group-item list-group-item-action ">
+                                            <NavLink to={item[1] || "/"}>{item[0]}</NavLink>
                                         </li>
                                     )
                                 );
