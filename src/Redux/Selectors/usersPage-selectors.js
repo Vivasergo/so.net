@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
 
-//using reselet for optimization of performance and memoization of state objects
+//using reselect for optimization of performance and memoization of state objects
 const getUsersItemsSel = (state)=>{
     return state.usersPage.items; 
 }

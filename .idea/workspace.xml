@@ -5,29 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Divided authorized and unauthorized users profile render">
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/SocialNetLinks/SocialNetLinks.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/common/FollowUnfollowBtn/FollowUnfollowBtn.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/common/FollowUnfollowBtn/FollowUnfollowContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenuContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/NavMenu/NavMenuContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Messages/Dialogs/DialogForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Messages/Dialogs/DialogForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Messages/MessagesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Messages/MessagesContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileStatus.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Users/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Users/User.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Users/UsersContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/ShowWindowDimensions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/ShowWindowDimensions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/useWindowSize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/utils/ShowWindowDimensions/useWindowSize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/utils/formValidation/formValidation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/utils/formValidation/formValidation.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/Selectors/usersPage-selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Selectors/usersPage-selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/appReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/appReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/authReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/dialogsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/dialogsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/profileReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/redux-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Pages/Profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/common/Follow-ubfollow buttons" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -74,12 +61,14 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Google Drive\Programming\Projects\so.net\src\Components\common\Follow-ubfollow buttons" />
+      <recent name="E:\Google Drive\Programming\Projects\so.net\src\Components\Pages\Profile\SocialNetLinks" />
       <recent name="F:\Programming\Test projects\Social-network\src\Components\Pages\Profile" />
       <recent name="F:\Programming\Test projects\Social-network\src\Components\Pages\Registration" />
     </key>
@@ -154,6 +143,9 @@
       <workItem from="1609429486436" duration="1798000" />
       <workItem from="1609593707237" duration="16000" />
       <workItem from="1609593739431" duration="51740000" />
+      <workItem from="1609930785819" duration="1239000" />
+      <workItem from="1609932236203" duration="15620000" />
+      <workItem from="1609960896772" duration="8736000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>

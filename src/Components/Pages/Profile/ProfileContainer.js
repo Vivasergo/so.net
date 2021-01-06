@@ -35,10 +35,6 @@ class ProfileContainer extends Component {
         {
             this.getUserData()
         }
-        // if(prevProps.profile != this.props.profile) {
-        //     this.getUserData()
-        //     console.log("componentDidUpdate profile");
-        // }
     }
 
     render() {

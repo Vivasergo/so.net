@@ -1,35 +1,34 @@
 import React from "react";
 import profImg from "../../../Images/user.png";
 import ProfileStatus from "./ProfileStatus";
+import FollowUnfollowContainer from "../../common/FollowUnfollowBtn/FollowUnfollowContainer";
 
 const AuthorizedUserProfile = (props) => {
 
     const handleFileChange = (e) => {
         props.uploadNewAvatar(e.target.files[0]);
-
     }
-
-
-    // console.log(props.profile.photos.large)
-
 
     return (
         <>
             <h3>Welcome to your personal account, {props.profile.fullName}</h3>
             <div className={"col-md-7 col-12"}>
                 <div className="profile-container__big-img">
-                    <img className={"mb-3 ms-3"}
-                         src={
-                             props.profile.photos.large ? props.profile.photos.large : profImg
-                         }
-                         alt=""
-                    />
+                    <div className={"text-center text-sm-start"}>
+                        <img className={"rounded mb-3 ms-md-3"}
+                             src={
+                                 props.profile.photos.large ? props.profile.photos.large : profImg
+                             }
+                             alt=""
+                        />
+                    </div>
+
                     <div className="alert alert-warning alert-dismissible fade show border border-warning" role="alert">
                         To change the avatar please chose another file below
                         <button type="button" className="btn-close p-1" data-bs-dismiss="alert"
                                 aria-label="Close"></button>
                     </div>
-                    <div><input onChange={handleFileChange} type="file"/></div>
+                    <div className={"overflow-auto"}><input onChange={handleFileChange} type="file"/></div>
                 </div>
                 <hr/>
                 <ProfileStatus
