@@ -4,9 +4,10 @@ const InitialPage = () => {
 
     return (
         <div>
-            <h3 className={"fw-bold"}>Greetings my potential employers and partners!</h3>
-            <p className={"my-2 fs-4"}>I'm glad to introduce my practical React/Redux sample project of social network -
-                "So.net"</p>
+            <h3 className={"fw-bold text-center"}>Greetings my potential employers and partners!</h3>
+            <p className={"my-4 fs-4"}>I'm glad to introduce my practical React/Redux sample project of social network -
+                "So.net". Here I'm trying to implement newest Front-end technologies and the best practices. The same time improving 
+                my knowledge and skill's level. Hope you'll find it interesting and informative.</p>
 
             <div className={"mt-3"}>
                 <h5 className={"text-center"}>Tech stack and basic methods and practices:</h5>
@@ -54,14 +55,23 @@ const InitialPage = () => {
                                 Promises, REST API)
                             </li>
                             <li>Font awesome</li>
+                            <li>React-longpressable</li>
                         </ul>
                     </li>
                 </ol>
             </div>
+            <div>Keep working on unit/integration tests, expanding app functionality according to the newest trends.</div>
+            <div><a href="https://github.com/Vivasergo/so.net">Here</a> you can find the source code.</div>
+            <div className="my-2">
+                With a hope for the fruitfull and mutually beneficial cooperation!
+            </div>
             <div>
-                Front end developer,<br/>
+                Front-end developer,<br/>
                 Serhii Vasilikhin<br/>
-                <a href="mailto:vivasergo@gmail.com">Send me a mail</a>
+                <a href="mailto:vivasergo@gmail.com">Send me a mail</a><br/>
+                <a target="blank" href="https://www.linkedin.com/in/serhii-vasilikhin/">My LinkedIn</a>
+                <p><time>January, 2021</time>
+                </p>
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import LongPressable from "react-longpressable";
 
 //functionality for status edition
 //dobleClick on status (span) -> activateEditMode - input field with current status ->
@@ -54,13 +55,15 @@ export default class ProfileStatus extends Component {
                             value={this.state.statusToChange || ""}
                         />
                     ) : (
-                        <span onDoubleClick={this.activateEditMode}>
+                        <LongPressable onLongPress={this.activateEditMode}>
+                            {/* <span onDoubleClick={this.activateEditMode}> */}
+                       <span onDoubleClick={this.activateEditMode}>
               {this.props.status || "Double mouse click to enter new status"}
-            </span>
+            </span></LongPressable>
                     )}
                 </div>
                 <div className="alert alert-warning alert-dismissible fade show mt-3 border border-warning" role="alert">
-                    To change status please double click on it and type another one
+                    To change the status please double click or long press on it and type another one then press Enter or just move focus out
                     <button type="button" className="btn-close p-1" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
