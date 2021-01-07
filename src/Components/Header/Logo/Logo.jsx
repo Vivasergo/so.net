@@ -5,7 +5,7 @@ const Logo = () => {
 
   return (
     <div className="logo mr-2">
-      <a href="/#">
+      <a href="/so.net">
         <svg
           width="1.5em"
           height="1.5em"

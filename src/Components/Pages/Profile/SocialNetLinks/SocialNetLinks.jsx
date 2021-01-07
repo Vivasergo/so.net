@@ -23,9 +23,9 @@ const SocialNetLinks = props => {
                 return <li key={index}
                             className={second ? "btn btn-outline-warning btn-sm mb-2" : "btn btn-outline-warning btn-sm mb-2 disabled"}>
 
-                            <NavLink className="w-100 h-100 d-block text-danger" to={second || "#"}>
+                            <a className="w-100 h-100 d-block text-danger" href={second || "#"}>
                                 <span className={"me-1"}>{socialLinkIcons.[first]}</span>
-                                <span className={"d-inline d-lg-inline d-sm-none"}>{first}</span></NavLink>
+                                <span className={"d-inline d-lg-inline d-sm-none"}>{first}</span></a>
                         </li>;
             })}
         </ul>

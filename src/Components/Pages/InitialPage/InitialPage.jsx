@@ -61,7 +61,7 @@ const InitialPage = () => {
                 </ol>
             </div>
             <div>Keep working on unit/integration tests, expanding app functionality according to the newest trends.</div>
-            <div><a href="https://github.com/Vivasergo/so.net">Here</a> you can find the source code.</div>
+            <div><a target="_blank" href="https://github.com/Vivasergo/so.net">Here</a> you can find the source code.</div>
             <div className="my-2">
                 With a hope for the fruitfull and mutually beneficial cooperation!
             </div>
@@ -69,7 +69,7 @@ const InitialPage = () => {
                 Front-end developer,<br/>
                 Serhii Vasilikhin<br/>
                 <a href="mailto:vivasergo@gmail.com">Send me a mail</a><br/>
-                <a target="blank" href="https://www.linkedin.com/in/serhii-vasilikhin/">My LinkedIn</a>
+                <a target="_blank" href="https://www.linkedin.com/in/serhii-vasilikhin/">My LinkedIn</a>
                 <p><time>January, 2021</time>
                 </p>
             </div>

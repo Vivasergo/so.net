@@ -16,7 +16,7 @@ class FollowUnfollowContainer extends Component {
 //inside the wrapped component through the props
 //some kind of Context functionality
 const mapStateToProps = (state) => {
-  console.log(getUsersItems(state));
+
   return {
     isAuth: isAuth(state), //using selectors/reselect
     followingProgress: state.usersPage.followingProgress,
