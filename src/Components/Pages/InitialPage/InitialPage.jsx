@@ -6,7 +6,8 @@ const InitialPage = () => {
         <div>
             <h3 className={"fw-bold text-center"}>Greetings my potential employers and partners!</h3>
             <p className={"my-4 fs-4"}>I'm glad to introduce my practical React/Redux sample project of social network -
-                "So.net". Here I'm trying to implement newest Front-end technologies and the best practices. The same time improving 
+                "So.net". Here I'm trying to implement newest Front-end technologies and the best practices. The same
+                time improving
                 my knowledge and skill's level. Hope you'll find it interesting and informative.</p>
 
             <div className={"mt-3"}>
@@ -35,11 +36,12 @@ const InitialPage = () => {
                             <li>ApplyMiddleware</li>
                         </ul>
                     </li>
-                    <li>JavaScript ECMAScript 6</li>
+                    <li>JavaScript ECMAScript 6, 2016, 2017 (()=>{}, **, ``, (...args), ...)</li>
                     <li>Git (GitHub)</li>
                     <li>SASS</li>
                     <li>NPM</li>
-                    <li>Additional libraries and approaches:
+                    <li>Bash command line</li>
+                    <li>Additional libraries, tools and approaches:
                         <ul>
                             <li>Reselect library</li>
                             <li>Material UI library</li>
@@ -51,17 +53,26 @@ const InitialPage = () => {
                             <li>Redux-form</li>
                             <li>Redux-thunk (async, await)</li>
                             <li>CSS modules</li>
-                            <li>Separation of UI(React), BLL(Business Logic Layer) and DAL(Data Access Layer - server queries,
-                                Promises, REST API)
+                            <li>RWD</li>
+                            <li>Separation of UI(React), BLL(Business Logic Layer) and DAL(Data Access Layer - server
+                                queries,
+                                Promises, REST API, <a target="_blank" rel={"noopener noreferrer"}
+                                                       href="https://social-network.samuraijs.com/docs#">Server API</a>)
                             </li>
                             <li>Font awesome</li>
                             <li>React-longpressable</li>
+                            <li>React Developer Tools - Chrome Extension</li>
+                            <li>Redux DevTools - Chrome Extension</li>
+                            <li>Debugging</li>
                         </ul>
                     </li>
                 </ol>
             </div>
-            <div>Keep working on unit/integration tests, expanding app functionality according to the newest trends.</div>
-            <div><a target="_blank" href="https://github.com/Vivasergo/so.net">Here</a> you can find the source code.</div>
+            <div>Keep working on unit/integration tests, expanding app functionality according to the newest trends.
+            </div>
+            <div><a target="_blank" rel={"noopener noreferrer"} href="https://github.com/Vivasergo/so.net">Here</a> you
+                can find the source code.
+            </div>
             <div className="my-2">
                 With a hope for the fruitfull and mutually beneficial cooperation!
             </div>
@@ -69,8 +80,10 @@ const InitialPage = () => {
                 Front-end developer,<br/>
                 Serhii Vasilikhin<br/>
                 <a href="mailto:vivasergo@gmail.com">Send me a mail</a><br/>
-                <a target="_blank" href="https://www.linkedin.com/in/serhii-vasilikhin/">My LinkedIn</a>
-                <p><time>January, 2021</time>
+                <a target="_blank" rel={"noopener noreferrer"} href="https://www.linkedin.com/in/serhii-vasilikhin/">My
+                    LinkedIn</a>
+                <p>
+                    <time>January, 2021</time>
                 </p>
             </div>
         </div>

@@ -13,11 +13,11 @@ const RegisterWarn = (props) => {
                 <tbody>
                 <tr>
                     <td>Email:</td>
-                    <td className={"pl-2 text-break"}><strong>react.developer@t.pl</strong></td>
+                    <td className={"pl-2 text-break"}><strong>free@samuraijs.com</strong></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
-                    <td className={"pl-2"}><strong>test123456##</strong></td>
+                    <td className={"pl-2"}><strong>free</strong></td>
                 </tr>
                 </tbody>
 

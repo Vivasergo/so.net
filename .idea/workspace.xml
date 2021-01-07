@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Divided authorized and unauthorized users profile render">
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/SocialNetLinks/SocialNetLinks.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/common/FollowUnfollowBtn/FollowUnfollowBtn.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/common/FollowUnfollowBtn/FollowUnfollowContainer.js" afterDir="false" />
+    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Added tech stack description">
+      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Copyrights.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Copyrights.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/RightContent/RightContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/RightContent/RightContent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Users/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Users/User.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/Selectors/usersPage-selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Selectors/usersPage-selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Registration/RegisterWarn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Registration/RegisterWarn.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/common/Follow-ubfollow buttons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -67,6 +64,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Google Drive\Programming\Projects\so.net\public" />
       <recent name="E:\Google Drive\Programming\Projects\so.net\src\Components\common\Follow-ubfollow buttons" />
       <recent name="E:\Google Drive\Programming\Projects\so.net\src\Components\Pages\Profile\SocialNetLinks" />
       <recent name="F:\Programming\Test projects\Social-network\src\Components\Pages\Profile" />
@@ -103,6 +101,16 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -115,6 +123,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
         <item itemvalue="Jest.sum function" />
         <item itemvalue="Jest.renders learn react link" />
@@ -145,7 +154,7 @@
       <workItem from="1609593739431" duration="51740000" />
       <workItem from="1609930785819" duration="1239000" />
       <workItem from="1609932236203" duration="15620000" />
-      <workItem from="1609960896772" duration="8736000" />
+      <workItem from="1609960896772" duration="19231000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>
@@ -182,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609708937868</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added tech stack description">
+      <created>1609973397081</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609973397082</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +223,8 @@
     <MESSAGE value="Burger menu correction, useWindowSize custom hook applying" />
     <MESSAGE value="Add register warning, css footer bugs fix" />
     <MESSAGE value="Divided authorized and unauthorized users profile render" />
-    <option name="LAST_COMMIT_MESSAGE" value="Divided authorized and unauthorized users profile render" />
+    <MESSAGE value="Added tech stack description" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tech stack description" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
