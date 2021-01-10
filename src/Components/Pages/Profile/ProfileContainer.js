@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import Profile from "./Profile";
 import {
     getProfile,
-    getStatus,
+    getStatus, updateProfile,
     updateStatus, uploadNewAvatar,
 } from "../../../Redux/profileReducer";
 import {withRouter} from "react-router-dom";
@@ -63,5 +63,6 @@ export default connect(mapStateToProps, {
     getProfile,
     getStatus,
     updateStatus,
-    uploadNewAvatar
+    uploadNewAvatar,
+    updateProfile
 })(withRouterProfileContainer);

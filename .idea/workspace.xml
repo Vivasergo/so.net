@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Added tech stack description">
-      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Fix favicon deployment issues">
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileEditForm/ProfileEditForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/tests.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Copyrights.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Copyrights.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/RightContent/RightContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/RightContent/RightContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Registration/RegisterWarn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Registration/RegisterWarn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/UnauthorizedUserProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/UnauthorizedUserProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/profileReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +61,7 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -74,7 +77,7 @@
       <recent name="F:\Programming\Test projects\Social-network\src\Components\common\utils\ShowWindowDimensions" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.sum function">
+  <component name="RunManager" selected="Node.js.tests.jsx">
     <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -101,6 +104,9 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="tests.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/Components/Pages/tests.jsx" working-dir="$PROJECT_DIR$/src/Components/Pages">
+      <method v="2" />
+    </configuration>
     <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -123,8 +129,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
+        <item itemvalue="Node.js.tests.jsx" />
+        <item itemvalue="npm.deploy" />
         <item itemvalue="Jest.sum function" />
         <item itemvalue="Jest.renders learn react link" />
       </list>
@@ -154,7 +161,8 @@
       <workItem from="1609593739431" duration="51740000" />
       <workItem from="1609930785819" duration="1239000" />
       <workItem from="1609932236203" duration="15620000" />
-      <workItem from="1609960896772" duration="19231000" />
+      <workItem from="1609960896772" duration="26699000" />
+      <workItem from="1610211550688" duration="27613000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>
@@ -198,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609973397082</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix favicon deployment issues">
+      <created>1610058383475</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1610058383475</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +239,8 @@
     <MESSAGE value="Add register warning, css footer bugs fix" />
     <MESSAGE value="Divided authorized and unauthorized users profile render" />
     <MESSAGE value="Added tech stack description" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tech stack description" />
+    <MESSAGE value="Fix favicon deployment issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix favicon deployment issues" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

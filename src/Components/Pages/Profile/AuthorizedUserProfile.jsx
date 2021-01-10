@@ -1,7 +1,8 @@
 import React from "react";
 import profImg from "../../../Images/user.png";
 import ProfileStatus from "./ProfileStatus";
-import FollowUnfollowContainer from "../../common/FollowUnfollowBtn/FollowUnfollowContainer";
+import ProfileEditForm from "./ProfileEditForm/ProfileEditForm";
+import _ from "lodash";
 
 const AuthorizedUserProfile = (props) => {
 
@@ -12,7 +13,7 @@ const AuthorizedUserProfile = (props) => {
     return (
         <>
             <h3>Welcome to your personal account, {props.profile.fullName}</h3>
-            <div className={"col-md-7 col-12"}>
+            <div className={"col-12"}>
                 <div className="profile-container__big-img">
                     <div className={"text-center text-sm-start"}>
                         <img className={"rounded mb-3 ms-md-3"}
@@ -37,15 +38,13 @@ const AuthorizedUserProfile = (props) => {
                     status={props.status}
                     updateStatus={props.updateStatus}
                 />
+                <hr/>
+
+                {/*Sending initialValues for form fields which were taken from state and will be inserted as placeholders*/}
+                {/*according to the fieldname*/}
+                <ProfileEditForm initialValues={_.omit(props.profile, "photos")} updateProfile={props.updateProfile} profile={props.profile} exitEditMode={props.exitEditMode} />
                 <hr className="d-md-none"/>
-                {props.profile.lookingForAJob && (
-                    <div className="profile-container__looking-job">
-                        <span className="badge bg-warning text-dark">Looking for a job</span>{" "}
-                        <div className="profile-container__job-description">
-                            {props.profile.lookingForAJobDescription}
-                        </div>
-                    </div>
-                )}
+
             </div>
         </>
     );
