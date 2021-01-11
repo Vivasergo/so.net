@@ -3,6 +3,7 @@
 }
 .errorBorder{
     border: 2px solid red;
+    display: inline-flex;
 }
 .errorMessageBlock{
     color: red;

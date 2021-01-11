@@ -80,7 +80,7 @@ export const updateStatus = (status) => {
 }
 export const updateProfile = (formData) => {
     return async (dispatch) => {
-        debugger
+
         const response = await profileAPI.updateProfile(formData)
         if (response.data.resultCode === 0) {
             dispatch(setUserProfile(formData));

@@ -1,13 +1,13 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import { Input, require } from "../../../common/utils/formValidation/formValidation";
+import {Input, required} from "../../../common/utils/formValidation/formValidation";
 
 const DialogFormBlock = (props) => {
   return (
     <div>
       <form onSubmit={props.handleSubmit}>
         <div>
-          <Field validate={[require]} component={Input} name="message" placeholder="Enter new message" />
+          <Field validate={[required]} component={Input} name="message" placeholder="Enter new message" />
         </div>
         <div className={"mt-2"}>
           <button>Send</button>

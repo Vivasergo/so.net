@@ -1,7 +1,7 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
 import style from '../../../common/utils/formValidation/formValidation.module.css'
-import {Input, require} from "../../../common/utils/formValidation/formValidation";
+import {Input, renderField, required, Textarea} from "../../../common/utils/formValidation/formValidation";
 
 const ProfileEditFormCont = (props) => {
 
@@ -15,14 +15,8 @@ const ProfileEditFormCont = (props) => {
                 <Field
                     type="text"
                     component={Input}
-                    validate={[require]}
                     name={"fullName"}
-                />
-                <Field
-                    type="text"
-                    component={Input}
-                    validate={[require]}
-                    name={"a"}
+                    validate={[required]}
                 />
             </div>
             <div className="mt-2">
@@ -37,29 +31,42 @@ const ProfileEditFormCont = (props) => {
                 <label>Description of the job you are looking for:</label>
                 <Field
                     type="textarea"
-                    component={Input}
+                    component={Textarea}
                     name={"lookingForAJobDescription"}
+                    className={"w-100"}
+                    validate={[required]}
                 />
             </div>
-            <hr/>
-
-            <div className={"mt-2 container"}>
-                <h3>Contacts:</h3>
-                <div className="row">
-                    {contacts.map(([name, link]) => {
-                        return <div className={"mt-1"} key={name}>
-                            <label>{name}:</label>
-                            <div>
-                                <Field className={"col-12 col-md-6"}
-                                       type={"text"}
-                                       component={"input"}
-                                       name={"contacts."+name}
-                                />
-                            </div>
-                        </div>
-                    })}
-                </div>
+            <div className="mt-2">
+                <label>About me:</label>
+                <Field
+                    className={"w-100"}
+                    type="textarea"
+                    component={Textarea}
+                    name={"aboutMe"}
+                />
             </div>
+
+
+            {/*<hr/>*/}
+
+            {/*<div className={"mt-2 container"}>*/}
+            {/*    <h3>Contacts:</h3>*/}
+            {/*    <div className="row">*/}
+            {/*        {contacts.map(([name, link]) => {*/}
+            {/*            return <div className={"mt-1"} key={name}>*/}
+            {/*                <label>{name}:</label>*/}
+            {/*                <div>*/}
+            {/*                    <Field className={"col-12 col-md-6"}*/}
+            {/*                           type={"text"}*/}
+            {/*                           component={"input"}*/}
+            {/*                           name={"contacts."+name}*/}
+            {/*                    />*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        })}*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 
             {props.error && <div className={style.errorMessageBlock}>
                 {props.error}
@@ -83,9 +90,7 @@ const ProfileEditForm = (props) => {
     }
 
     return (
-
         <ProfileEditReduxForm {...props} onSubmit={onSubmit}/>
-
     );
 };
 

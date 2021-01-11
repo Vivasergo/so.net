@@ -10,12 +10,12 @@ const UnauthorizedUserProfile = (props) => {
             <div className={"col-md-7 col-12"}>
                 <div className="profile-container__big-img">
                     <div className={"text-center text-sm-start"}>
-                    <img className={"rounded mb-3 ms-md-3"}
-                        src={
-                            props.profile.photos.large ? props.profile.photos.large : profImg
-                        }
-                        alt=""
-                    />
+                        <img className={"rounded mb-3 ms-md-3"}
+                             src={
+                                 props.profile.photos.large ? props.profile.photos.large : profImg
+                             }
+                             alt=""
+                        />
                     </div>
                 </div>
 
@@ -23,7 +23,8 @@ const UnauthorizedUserProfile = (props) => {
 
                 {props.isOwner && <div className={"d-flex"}>
                     <button onClick={props.goToEditMode} className={"btn btn-sm btn-warning w-50 mx-auto"}>Edit your
-                        profile</button>
+                        profile
+                    </button>
                 </div>}
 
 
@@ -45,7 +46,12 @@ const UnauthorizedUserProfile = (props) => {
                     </div>
 
                 )}
-
+                {props.profile.aboutMe && (
+                    <div>
+                        <h5>About me:</h5>
+                        <p>{props.profile.aboutMe}</p>
+                    </div>
+                )}
             </div>
         </>
     );

@@ -47,6 +47,7 @@ const InitialPage = () => {
                             <li>Material UI library</li>
                             <li>Testing-library</li>
                             <li>Axios</li>
+                            <li>Lodash</li>
                             <li>React-router-dom (WithRouter, Route, Switch)</li>
                             <li>Bootstrap 5</li>
                             <li>React-redux</li>

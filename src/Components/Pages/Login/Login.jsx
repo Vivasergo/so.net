@@ -1,6 +1,6 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
-import {Input, require} from "../../common/utils/formValidation/formValidation";
+import {Input, required} from "../../common/utils/formValidation/formValidation";
 import {Redirect} from 'react-router-dom';
 import style from '../../common/utils/formValidation/formValidation.module.css'
 
@@ -13,7 +13,7 @@ const LoginForm = (props) => {
                     placeholder={"email"}
                     type="text"
                     component={Input}
-                    validate={[require]}
+                    validate={[required]}
                     name={"email"}
                 />
             </div>
@@ -22,7 +22,7 @@ const LoginForm = (props) => {
                     placeholder={"Password"}
                     type="password"
                     component={Input}
-                    validate={[require]}
+                    validate={[required]}
                     name={"password"}
                 />
             </div>
@@ -58,8 +58,6 @@ const Login = (props) => {
         <section className="items-container">
             <h3>Login</h3>
             <LoginReduxForm onSubmit={onSubmit}/>
-
-
         </section>
     );
 };
