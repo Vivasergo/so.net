@@ -1,7 +1,7 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
 import style from '../../../common/utils/formValidation/formValidation.module.css'
-import {Input, renderField, required, Textarea} from "../../../common/utils/formValidation/formValidation";
+import {Input, required, Textarea} from "../../../common/utils/formValidation/formValidation";
 
 const ProfileEditFormCont = (props) => {
 
@@ -17,6 +17,7 @@ const ProfileEditFormCont = (props) => {
                     component={Input}
                     name={"fullName"}
                     validate={[required]}
+                    className="w-100"
                 />
             </div>
             <div className="mt-2">
@@ -44,6 +45,7 @@ const ProfileEditFormCont = (props) => {
                     type="textarea"
                     component={Textarea}
                     name={"aboutMe"}
+                    validate={[required]}
                 />
             </div>
 
@@ -85,6 +87,7 @@ const ProfileEditReduxForm = reduxForm({
 const ProfileEditForm = (props) => {
 
     const onSubmit = (formData) => {
+// console.log(formData)
         props.updateProfile(formData)
         // props.exitEditMode();
     }

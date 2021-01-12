@@ -36,7 +36,7 @@ const InitialPage = () => {
                             <li>ApplyMiddleware</li>
                         </ul>
                     </li>
-                    <li>JavaScript ECMAScript 6, 2016, 2017 (()=>{}, **, ``, (...args), ...)</li>
+                    <li>JavaScript ECMAScript 6, 2016, 2017</li>
                     <li>Git (GitHub)</li>
                     <li>SASS</li>
                     <li>NPM</li>

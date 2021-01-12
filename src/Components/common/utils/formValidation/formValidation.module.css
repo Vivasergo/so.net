@@ -4,6 +4,7 @@
 .errorBorder{
     border: 2px solid red;
     display: inline-flex;
+    width: 100%;
 }
 .errorMessageBlock{
     color: red;

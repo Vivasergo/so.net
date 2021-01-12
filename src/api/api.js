@@ -44,8 +44,8 @@ export const profileAPI = {
         });
     },
     updateProfile(profile) {
-        return instance.put(`profile/`, {profile}).then((response) => {
-            return response.data;
+        return instance.put(`profile`, profile).then((response) => {
+            return response;
         });
     },
     uploadNewAvatar(file) {

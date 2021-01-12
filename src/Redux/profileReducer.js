@@ -83,7 +83,7 @@ export const updateProfile = (formData) => {
 
         const response = await profileAPI.updateProfile(formData)
         if (response.data.resultCode === 0) {
-            dispatch(setUserProfile(formData));
+            dispatch(getProfile(formData.userId));
         } else {
 //error processing: returning either message from server response if it is or
             //"common error" and any case interrupting form submitting via stopSubmit Redux Form method dispatching
