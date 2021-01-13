@@ -82,13 +82,13 @@ body {
 .auth-block {
   max-height: inherit;
   color: white;
-  margin: 0px 10px;
+  margin: 0 10px;
 }
 .auth-block__arrow {
   margin-left: 8px;
   display: inline-block;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-top: 10px solid white;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
@@ -401,15 +401,10 @@ width: 230px;
         margin-bottom: 10px;
       }
     }
-    &__abotMe{
+    &__abotMe, &__edit-form{
       margin: 15px;
     }
-    &__contacts {
-      // position: absolute;
-      // right: 150px;
-      // top: 15px;
-      // display: inline-block;
-    }
+
   }
 }
 

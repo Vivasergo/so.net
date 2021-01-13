@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import UnauthorizedUserProfile from "./UnauthorizedUserProfile";
 import AuthorizedUserProfile from "./AuthorizedUserProfile";
 import SocialNetLinks from "./SocialNetLinks/SocialNetLinks";
+import {resetUpdateProfile} from "../../../Redux/profileReducer";
 
 const Profile = (props) => {
 
@@ -16,10 +17,25 @@ const Profile = (props) => {
         seteditMode(false)
     }
 
+    //If profile was updated then turning off the edit mode and rendering updated profile
+    //then resetting redux state isProfileUpdated property
+    useEffect(() => {
+        if (props.isProfileUpdated) {
+            seteditMode(false);
+            props.resetUpdateProfile();
+        }
+    }, [props.isProfileUpdated])
+
+    useEffect(()=>{
+        if(!props.isLogged){
+            seteditMode(false);
+        }
+    },[props.isLogged])
+
     const currentUserProfileId = props.match.params.userId;
 
     //rendering preloader component while waiting the server answer and promise resolving
-    if (!props.profile) {
+    if (!props.profile || props.isProfileDataLoading) {
         return <Preloader/>;
     }
 
@@ -31,8 +47,12 @@ const Profile = (props) => {
 
                     {/*if edit mode is true rendering authorized user profile edit page*/}
 
-                    {editMode ? <AuthorizedUserProfile {...props} exitEditMode={exitEditMode} currentUserProfileId={currentUserProfileId}/> :
-                        <><UnauthorizedUserProfile {...props} goToEditMode={goToEditMode}
+                    {editMode ? <AuthorizedUserProfile {...props}
+                                                       exitEditMode={exitEditMode}
+                                                       currentUserProfileId={currentUserProfileId}/>
+                        :
+                        <><UnauthorizedUserProfile {...props}
+                                                   goToEditMode={goToEditMode}
                                                    isOwner={props.authorizedUserId == currentUserProfileId}/>
                             <SocialNetLinks contacts={props.profile.contacts}/></>}
                 </div>

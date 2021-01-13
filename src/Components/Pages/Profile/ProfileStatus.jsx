@@ -55,7 +55,7 @@ export default class ProfileStatus extends Component {
                             value={this.state.statusToChange || ""}
                         />
                     ) : (
-                        <LongPressable onLongPress={this.activateEditMode}>
+                        <LongPressable onLongPress={this.activateEditMode} onShortPress={()=>{}}>
                             {/* <span onDoubleClick={this.activateEditMode}> */}
                        <span onDoubleClick={this.activateEditMode}>
               {this.props.status || "Double mouse click to enter new status"}

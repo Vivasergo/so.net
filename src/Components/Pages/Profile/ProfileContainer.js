@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import Profile from "./Profile";
 import {
     getProfile,
-    getStatus, updateProfile,
+    getStatus, resetUpdateProfile, updateProfile,
     updateStatus, uploadNewAvatar,
 } from "../../../Redux/profileReducer";
 import {withRouter} from "react-router-dom";
@@ -51,6 +51,8 @@ const mapStateToProps = (state) => ({
     status: state.userProfile.status,
     authorizedUserId: state.auth.id,
     isLogged: state.auth.isLogged,
+    isProfileUpdated:state.userProfile.isProfileUpdated,
+    isProfileDataLoading:state.userProfile.isProfileDataLoading
     
 });
 
@@ -64,5 +66,6 @@ export default connect(mapStateToProps, {
     getStatus,
     updateStatus,
     uploadNewAvatar,
-    updateProfile
+    updateProfile,
+    resetUpdateProfile
 })(withRouterProfileContainer);

@@ -3,6 +3,7 @@ import profImg from "../../../Images/user.png";
 import ProfileStatus from "./ProfileStatus";
 import ProfileEditForm from "./ProfileEditForm/ProfileEditForm";
 import _ from "lodash";
+import Preloader from "../../common/Preloader/Preloader";
 
 const AuthorizedUserProfile = (props) => {
 
@@ -42,12 +43,14 @@ const AuthorizedUserProfile = (props) => {
 
                 {/*Sending initialValues for form fields which were taken from state and will be inserted as placeholders*/}
                 {/*according to the fieldname*/}
-                <ProfileEditForm initialValues={_.omit(props.profile, "photos")} updateProfile={props.updateProfile} profile={props.profile} exitEditMode={props.exitEditMode} />
-                <hr className="d-md-none"/>
-
+                <ProfileEditForm initialValues={_.omit(props.profile, "photos")}
+                                 isProfileUpdated={props.isProfileUpdated}
+                                 updateProfile={props.updateProfile}
+                                 profile={props.profile}
+                                 exitEditMode={props.exitEditMode}/>
             </div>
         </>
     );
-};
+}
 
 export default AuthorizedUserProfile;

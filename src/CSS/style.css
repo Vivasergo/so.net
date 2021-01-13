@@ -88,14 +88,14 @@ body {
 .auth-block {
   max-height: inherit;
   color: white;
-  margin: 0px 10px;
+  margin: 0 10px;
 }
 
 .auth-block__arrow {
   margin-left: 8px;
   display: inline-block;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-top: 10px solid white;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
@@ -382,9 +382,10 @@ body {
 .main-cont-col .profile-container__looking-job span {
   margin-bottom: 10px;
 }
-.main-cont-col .profile-container__abotMe {
+.main-cont-col .profile-container__abotMe, .main-cont-col .profile-container__edit-form {
   margin: 15px;
 }
+
 .right-cont-col .info-module {
   width: 100%;
 }
@@ -457,3 +458,5 @@ body {
   color: white;
   font-weight: 600;
 }
+
+/*# sourceMappingURL=style.css.map */

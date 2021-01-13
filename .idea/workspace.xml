@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Updating profile edit module. Stage 1">
+    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Updating profile edit module. Stage 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/InitialPage/InitialPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Messages/Dialogs/DialogForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Messages/Dialogs/DialogForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CSS/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CSS/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/AuthorizedUserProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileEditForm/ProfileEditForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileEditForm/ProfileEditForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileStatus.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/UnauthorizedUserProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/UnauthorizedUserProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/utils/formValidation/formValidation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/utils/formValidation/formValidation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/utils/formValidation/formValidation.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/utils/formValidation/formValidation.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/profileReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +47,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -61,7 +64,7 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -109,9 +112,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Node.js.scratch_1.js" />
         <item itemvalue="Node.js.scratch.js" />
-        <item itemvalue="npm.start" />
         <item itemvalue="Node.js.tests.jsx" />
         <item itemvalue="npm.deploy" />
       </list>
@@ -144,7 +147,9 @@
       <workItem from="1609960896772" duration="26699000" />
       <workItem from="1610211550688" duration="27613000" />
       <workItem from="1610309384626" duration="555000" />
-      <workItem from="1610382829326" duration="15470000" />
+      <workItem from="1610382829326" duration="15945000" />
+      <workItem from="1610560878647" duration="9485000" />
+      <workItem from="1610571581557" duration="2977000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>
@@ -202,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610309669052</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updating profile edit module. Stage 2">
+      <created>1610402426017</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610402426017</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +242,8 @@
     <MESSAGE value="Added tech stack description" />
     <MESSAGE value="Fix favicon deployment issues" />
     <MESSAGE value="Updating profile edit module. Stage 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating profile edit module. Stage 1" />
+    <MESSAGE value="Updating profile edit module. Stage 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating profile edit module. Stage 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

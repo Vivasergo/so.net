@@ -27,7 +27,6 @@ const UnauthorizedUserProfile = (props) => {
                     </button>
                 </div>}
 
-
                 <div>
                     <div className="profile-container__status">
                         <span>{props.status || "No status yet"}</span>
