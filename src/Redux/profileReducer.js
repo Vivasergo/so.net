@@ -88,8 +88,8 @@ export const updateProfile = (formData) => {
 //error processing: returning either message from server response if it is or
             //"common error" and any case interrupting form submitting via stopSubmit Redux Form method dispatching
             let message =
-                response.messages.length > 0
-                    ? response.messages[0]
+                response.data.messages.length > 0
+                    ? response.data.messages[0]
                     : "Common error";
             dispatch(stopSubmit("profile-edit-form", {_error: message}));
         }

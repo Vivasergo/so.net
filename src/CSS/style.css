@@ -382,6 +382,9 @@ body {
 .main-cont-col .profile-container__looking-job span {
   margin-bottom: 10px;
 }
+.main-cont-col .profile-container__abotMe {
+  margin: 15px;
+}
 .right-cont-col .info-module {
   width: 100%;
 }
@@ -454,5 +457,3 @@ body {
   color: white;
   font-weight: 600;
 }
-
-/*# sourceMappingURL=style.css.map */

@@ -31,25 +31,28 @@ const UnauthorizedUserProfile = (props) => {
                 <div>
                     <div className="profile-container__status">
                         <span>{props.status || "No status yet"}</span>
+                        <hr/>
                     </div>
                 </div>
 
-                <hr/>
-
                 {props.profile.lookingForAJob && (
-                    <div className="profile-container__looking-job">
-                        <span className="badge bg-warning text-dark">Looking for a job</span>{" "}
+                    <div>
+                         <div className="profile-container__looking-job">
+                        <span className="badge bg-info text-dark">Looking for a job</span>{" "}
                         <div className="profile-container__job-description">
                             {props.profile.lookingForAJobDescription}
                         </div>
                         <hr/>
                     </div>
-
+                    </div>
                 )}
+
                 {props.profile.aboutMe && (
                     <div>
-                        <h5>About me:</h5>
-                        <p>{props.profile.aboutMe}</p>
+                        <div className="profile-container__abotMe">
+                            <h5>About me:</h5>
+                        <div>{props.profile.aboutMe}</div>
+                        </div>
                     </div>
                 )}
             </div>

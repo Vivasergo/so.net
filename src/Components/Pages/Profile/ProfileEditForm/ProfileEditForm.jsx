@@ -50,25 +50,25 @@ const ProfileEditFormCont = (props) => {
             </div>
 
 
-            {/*<hr/>*/}
+            <hr/>
 
-            {/*<div className={"mt-2 container"}>*/}
-            {/*    <h3>Contacts:</h3>*/}
-            {/*    <div className="row">*/}
-            {/*        {contacts.map(([name, link]) => {*/}
-            {/*            return <div className={"mt-1"} key={name}>*/}
-            {/*                <label>{name}:</label>*/}
-            {/*                <div>*/}
-            {/*                    <Field className={"col-12 col-md-6"}*/}
-            {/*                           type={"text"}*/}
-            {/*                           component={"input"}*/}
-            {/*                           name={"contacts."+name}*/}
-            {/*                    />*/}
-            {/*                </div>*/}
-            {/*            </div>*/}
-            {/*        })}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div className={"mt-2 container"}>
+               <h3>Contacts:</h3>
+               <div className="row">
+                     {contacts.map(([name]) => { 
+                        return <div className={"mt-1"} key={name}>
+                            <label>{name}:</label>
+                            <div>
+                                <Field className={"col-12"}
+                                       type={"text"}
+                                       component={Input}
+                                       name={"contacts."+name}
+                                />
+                            </div>
+                        </div>
+                    })}
+                </div>
+            </div>
 
             {props.error && <div className={style.errorMessageBlock}>
                 {props.error}
