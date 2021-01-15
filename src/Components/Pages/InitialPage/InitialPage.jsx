@@ -1,4 +1,5 @@
 import React from "react";
+import socialNetImg from "../../../Images/social-networks.png";
 
 const InitialPage = () => {
 
@@ -65,6 +66,7 @@ const InitialPage = () => {
                             <li>React Developer Tools - Chrome Extension</li>
                             <li>Redux DevTools - Chrome Extension</li>
                             <li>Debugging</li>
+                            <li>Open Graph Meta Tags</li>
                         </ul>
                     </li>
                 </ol>
@@ -86,6 +88,9 @@ const InitialPage = () => {
                 <p>
                     <time>January, 2021</time>
                 </p>
+            </div>
+            <div className="w-100">
+                <img className="w-100" src={socialNetImg} alt="Social network"/>
             </div>
         </div>
     )

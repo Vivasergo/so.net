@@ -46,7 +46,7 @@ export default class ProfileStatus extends Component {
                         Current status:
                     </h5>
                     {this.state.editMode ? (
-                        <input
+                        <input className="w-100"
                             onKeyPress={(({key}) => key == "Enter" && this.disactivateEditMode())}
                             onBlur={this.disactivateEditMode}
                             onChange={this.handleInputStatusChange}
