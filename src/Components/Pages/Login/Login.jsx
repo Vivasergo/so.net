@@ -26,6 +26,22 @@ const LoginForm = (props) => {
                     name={"password"}
                 />
             </div>
+
+            {props.captchaURL &&
+            <>
+                <img src={props.captchaURL} alt="Captcha"/>
+                <div className="mt-2">
+                    <Field
+                        placeholder={"Enter symbol"}
+                        type="text"
+                        component={Input}
+                        validate={[required]}
+                        name={"captcha"}
+                    />
+                </div>
+            </>
+            }
+
             <div className="mt-2">
                 Keep me logged in{" "}
                 <Field type={"checkbox"} component="input" name={"rememberMe"}/>
@@ -38,7 +54,7 @@ const LoginForm = (props) => {
             </div>
         </form>
     );
-};
+}
 
 const LoginReduxForm = reduxForm({
     form: "loginForm",
@@ -51,13 +67,13 @@ const Login = (props) => {
     }
 
     if (props.isLogged) {
-        return <Redirect to={"/profile/"+props.authorizedUserId} />;
+        return <Redirect to={"/profile/" + props.authorizedUserId}/>;
     }
 
     return (
         <section className="items-container">
             <h3>Login</h3>
-            <LoginReduxForm onSubmit={onSubmit}/>
+            <LoginReduxForm captchaURL={props.captchaURL} onSubmit={onSubmit}/>
         </section>
     );
 };

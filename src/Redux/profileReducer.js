@@ -94,8 +94,12 @@ export const changeLoadingProcess = (payload) => {
 export const getProfile = (userId) => {
 
     return async (dispatch) => {
-        const profileData = await profileAPI.getProfile(userId);
-        dispatch(setUserProfile(profileData));
+        try {
+            const profileData = await profileAPI.getProfile(userId);
+            dispatch(setUserProfile(profileData));
+        } catch (error) {
+            console.log("Thrown error: "+error);
+        }
     }
 }
 

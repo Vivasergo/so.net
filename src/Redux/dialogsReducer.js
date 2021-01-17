@@ -1,6 +1,6 @@
 import {reset} from 'redux-form';
 
-const SET_NEW_MESSAGE = "SET_NEW_MESSAGE";
+const SET_NEW_MESSAGE = "dialogsReducer/SET_NEW_MESSAGE";
 
 let initialState = {
     dialogs: [

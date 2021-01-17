@@ -3,7 +3,7 @@ import Preloader from "../../common/Preloader/Preloader";
 import UnauthorizedUserProfile from "./UnauthorizedUserProfile";
 import AuthorizedUserProfile from "./AuthorizedUserProfile";
 import SocialNetLinks from "./SocialNetLinks/SocialNetLinks";
-import {resetUpdateProfile} from "../../../Redux/profileReducer";
+import ErrorBlock from "../../common/Errors/ErrorBlock";
 
 const Profile = (props) => {
 

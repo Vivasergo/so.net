@@ -1,11 +1,11 @@
 import { followAPI, usersAPI } from "../api/api";
 
-const FOLLOW_TRIGGER = "FOLLOW-TRIGGER";
-const SET_USERS = "SET-USERS";
-const SET_TOTAL_PAGES = "SET_TOTAL_PAGES";
-const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-const TOGGLE_IS_LOADING = "TOGGLE_IS_LOADING";
-const TOGGLE_FOLLOWING_PROGRESS = "TOGGLE_FOLLOWING_PROGRESS";
+const FOLLOW_TRIGGER = "usersReducer/FOLLOW-TRIGGER";
+const SET_USERS = "usersReducer/SET-USERS";
+const SET_TOTAL_PAGES = "usersReducer/SET_TOTAL_PAGES";
+const SET_CURRENT_PAGE = "usersReducer/SET_CURRENT_PAGE";
+const TOGGLE_IS_LOADING = "usersReducer/TOGGLE_IS_LOADING";
+const TOGGLE_FOLLOWING_PROGRESS = "usersReducer/TOGGLE_FOLLOWING_PROGRESS";
 
 const initialState = {
   items: [],

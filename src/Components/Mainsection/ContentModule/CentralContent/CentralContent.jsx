@@ -42,6 +42,9 @@ const CentralContent = () => {
                     <Route path="/under-construction">
                         <UnderConstruction/>
                     </Route>
+                    <Route path="*">
+                        <div><h4>Error 404. Sorry, page not found</h4></div>
+                    </Route>
                 </Switch>
             </div>
         </>
