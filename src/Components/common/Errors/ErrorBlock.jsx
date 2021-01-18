@@ -17,11 +17,11 @@ function ErrorBlock(props) {
     // })
 
     // return ReactDOM.createPortal(errorCont, wrapBlock)
-
+// console.log(props.error);
     return <>
         <h3>Sorry</h3>
         <h4>Error has occurred</h4>
-        <div>{props.error}</div>
+        <div>props.error</div>
     </>
 }
 

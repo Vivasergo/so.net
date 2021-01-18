@@ -1,5 +1,6 @@
 import {profileAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
+import {errorOccurred} from "./appReducer";
 
 const SET_USER_PROFILE = "profileReducer/SET_USER_PROFILE";
 const SET_USER_STATUS = "profileReducer/SET_USER_STATUS";
@@ -94,19 +95,23 @@ export const changeLoadingProcess = (payload) => {
 export const getProfile = (userId) => {
 
     return async (dispatch) => {
-        try {
+
             const profileData = await profileAPI.getProfile(userId);
             dispatch(setUserProfile(profileData));
-        } catch (error) {
-            console.log("Thrown error: "+error);
-        }
+
     }
 }
 
 export const getStatus = (userId) => {
     return async (dispatch) => {
-        const status = await profileAPI.getStatus(userId)
-        dispatch(setUserStatus(status));
+        // try{
+            const status = await profileAPI.getStatus(userId)
+            dispatch(setUserStatus(status));
+        // }
+        // catch (e) {
+        //     console.error(e);
+        // }
+
     };
 }
 export const updateStatus = (status) => {

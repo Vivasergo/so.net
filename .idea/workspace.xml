@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="Updating profile edit module. Stage 5">
-      <change afterPath="$PROJECT_DIR$/src/Components/common/Errors/ErrorBlock.jsx" afterDir="false" />
+    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="App error handling functionality implementation. Stage 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/CentralContent/CentralContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mainsection/ContentModule/CentralContent/CentralContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/LoginContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/LoginContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/appReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/appReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/authReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/dialogsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/dialogsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/Errors/ErrorBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Errors/ErrorBlock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/profileReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/usersReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +144,8 @@
       <workItem from="1610382829326" duration="15945000" />
       <workItem from="1610560878647" duration="9485000" />
       <workItem from="1610571581557" duration="3915000" />
-      <workItem from="1610799753897" duration="18205000" />
+      <workItem from="1610799753897" duration="21627000" />
+      <workItem from="1611003562954" duration="2876000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>
@@ -224,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610574704596</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="App error handling functionality implementation. Stage 1">
+      <created>1610904977000</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610904977000</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +254,8 @@
     <MESSAGE value="Updating profile edit module. Stage 1" />
     <MESSAGE value="Updating profile edit module. Stage 2" />
     <MESSAGE value="Updating profile edit module. Stage 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating profile edit module. Stage 5" />
+    <MESSAGE value="App error handling functionality implementation. Stage 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="App error handling functionality implementation. Stage 1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
