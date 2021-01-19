@@ -2,7 +2,7 @@ import {getAuthUserData} from "./authReducer";
 
 //action type
 const INITIALIZE_SUCCESS = "appReducer/INITIALIZE_SUCCESS";
-const ERROR_OCCURRED = "appReducer/ERROR_OCCURRED";
+const ERROR_HANDLER = "appReducer/ERROR_HANDLER";
 
 let initialState = {
     initialized: false,
@@ -16,7 +16,7 @@ let appReducer = (state = initialState, action) => {
                 ...state,
                 initialized: true,
             };
-        case ERROR_OCCURRED:
+        case ERROR_HANDLER:
             return {
                 ...state,
                 appError: action.payload,
@@ -34,9 +34,9 @@ export const initializeSuccess = () => {
     };
 };
 
-export const errorOccurred = (payload) => {
+export const errorHandler = (payload) => {
     return {
-        type: ERROR_OCCURRED,
+        type: ERROR_HANDLER,
         payload
     };
 };
@@ -52,7 +52,13 @@ export const initializeApp = () => async (dispatch) => {
 };
 
 export const errorGenerate = () => (dispatch) => {
-    dispatch(errorOccurred("Manually generated error!"))
+    dispatch(errorHandler({
+        response: {status: "Artificial"},
+        message: "An error has been generated manually"
+    }))
+}
+export const errorReset = () => (dispatch) => {
+    dispatch(errorHandler(null))
 }
 
 export default appReducer;

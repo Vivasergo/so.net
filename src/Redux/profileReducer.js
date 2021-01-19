@@ -1,6 +1,6 @@
 import {profileAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
-import {errorOccurred} from "./appReducer";
+import {errorHandler} from "./appReducer";
 
 const SET_USER_PROFILE = "profileReducer/SET_USER_PROFILE";
 const SET_USER_STATUS = "profileReducer/SET_USER_STATUS";
@@ -116,10 +116,17 @@ export const getStatus = (userId) => {
 }
 export const updateStatus = (status) => {
     return async (dispatch) => {
-        const response = await profileAPI.updateStatus(status)
-        if (response.data.resultCode === 0) {
-            dispatch(setUserStatus(status));
+        try{
+            const response = await profileAPI.updateStatus(status)
+            if (response.data.resultCode === 0) {
+                dispatch(setUserStatus(status));
+            }
         }
+        catch(error){
+
+           dispatch(errorHandler(error))
+        }
+
     };
 }
 export const updateProfile = (formData) => {

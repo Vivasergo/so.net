@@ -5,7 +5,7 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Mainsection from "./Components/Mainsection/Mainsection";
 import {connect} from "react-redux";
-import {errorGenerate, initializeApp} from "./Redux/appReducer";
+import {errorGenerate, errorReset, initializeApp} from "./Redux/appReducer";
 import Preloader from "./Components/common/Preloader/Preloader";
 import ErrorBlock from "./Components/common/Errors/ErrorBlock";
 
@@ -23,7 +23,7 @@ class App extends Component {
 
         return (
             <div className="appWrap">
-                {this.props.appError && <ErrorBlock error={this.props.appError} />}
+                {this.props.appError && <ErrorBlock error={this.props.appError} errorReset={this.props.errorReset} />}
                 <Header/>
                 <button className={"position-absolute start-50"} onClick={()=>this.props.errorGenerate()}>Generate an error</button>
                 <Mainsection/>
@@ -46,5 +46,5 @@ const mapStateToProps = (state) => {
 //composing the wrappers
 export default compose(connect(mapStateToProps,
     //refactoring entry of mapDispatchToProps = (dispatch) => {return {initializeApp: () => dispatch(initializeAppThunkCreator)}}
-    {initializeApp, errorGenerate}))(App);
+    {initializeApp, errorGenerate, errorReset}))(App);
 

@@ -40,9 +40,11 @@ export const profileAPI = {
     },
     updateStatus(status) {
 
-            return instance.put(`profile/status`, {status}).then((response) => {
-                return response;
-            }).catch(err=>console.log(err.response));
+            return instance.put(`profile/status`, {status})
+
+            //     .then((response) => {
+            //     return response;
+            // }).catch(err=>console.log(err.response));
 
     },
     updateProfile(profile) {

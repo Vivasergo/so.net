@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="App error handling functionality implementation. Stage 1">
+    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="App error handling functionality implementation. Stage 2">
+      <change afterPath="$PROJECT_DIR$/src/Components/common/Errors/ErrorBlock.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/common/Errors/ErrorBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Errors/ErrorBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/appReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/appReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/profileReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
     </list>
@@ -145,7 +149,7 @@
       <workItem from="1610560878647" duration="9485000" />
       <workItem from="1610571581557" duration="3915000" />
       <workItem from="1610799753897" duration="21627000" />
-      <workItem from="1611003562954" duration="2876000" />
+      <workItem from="1611003562954" duration="15644000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>
@@ -224,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610904977000</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="App error handling functionality implementation. Stage 2">
+      <created>1611006485996</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611006485996</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +266,8 @@
     <MESSAGE value="Updating profile edit module. Stage 2" />
     <MESSAGE value="Updating profile edit module. Stage 5" />
     <MESSAGE value="App error handling functionality implementation. Stage 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="App error handling functionality implementation. Stage 1" />
+    <MESSAGE value="App error handling functionality implementation. Stage 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="App error handling functionality implementation. Stage 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
