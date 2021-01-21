@@ -118,7 +118,7 @@ export const getUsers = (countItems, page = 1) => {
   return async (dispatch) => {
     dispatch(toggleIsLoading(true));
 
-    const data = await usersAPI.getUsers(countItems, page);
+    const {data} = await usersAPI.getUsers(countItems, page);
     dispatch(toggleIsLoading(false));
     dispatch(setUsers(data.items));
     dispatch(setCurrentPage(page));
@@ -131,7 +131,7 @@ export const unfollow = (userId) => {
   return async (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
 
-    const data = await followAPI.unfollow(userId);
+    const {data} = await followAPI.unfollow(userId);
     if (data.resultCode === 0) {
       dispatch(followTrigger(userId));
       dispatch(toggleFollowingProgress(false, userId));
@@ -143,7 +143,8 @@ export const unfollow = (userId) => {
 export const follow = (userId) => {
   return async (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
-    const data = await followAPI.follow(userId);
+    
+    const {data} = await followAPI.follow(userId);
       if (data.resultCode === 0) {
         dispatch(followTrigger(userId));
         dispatch(toggleFollowingProgress(false, userId));

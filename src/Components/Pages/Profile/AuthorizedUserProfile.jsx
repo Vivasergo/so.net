@@ -3,7 +3,6 @@ import profImg from "../../../Images/user.png";
 import ProfileStatus from "./ProfileStatus";
 import ProfileEditForm from "./ProfileEditForm/ProfileEditForm";
 import _ from "lodash";
-import Preloader from "../../common/Preloader/Preloader";
 
 const AuthorizedUserProfile = (props) => {
 

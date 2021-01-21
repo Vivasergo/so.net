@@ -4,27 +4,24 @@ const instance = Axios.create({
     withCredentials: true,
     baseURL: `https://social-network.samuraijs.com/api/1.0/`,
     headers: {
-        "API-KEY": "c374876c-fca2-4e4c-bf40-751c8a269ed6_",
+        "API-KEY": "c374876c-fca2-4e4c-bf40-751c8a269ed6",
     },
 });
 
 export const usersAPI = {
     getUsers(countItems = 50, page = 1) {
-        return instance
-            .get(`users?count=${countItems}&page=${page}`)
-            .then((response) => response.data);
+        return instance.get(`users?count=${countItems}&page=${page}`)
     },
 };
 
 export const followAPI = {
-    //the same, but using async/await syntax
-    async unfollow(userId) {
-        const response = await instance.delete(`follow/${userId}`);
-        return response.data;
-    },
 
+    unfollow(userId) {
+        return instance.delete(`follow/${userId}`);
+    },
+    
     follow(userId) {
-        return instance.post(`follow/${userId}`).then((response) => response.data);
+        return instance.post(`follow/${userId}`);
     },
 };
 
