@@ -1,64 +1,71 @@
-import {getAuthUserData} from "./authReducer";
+import { getAuthUserData } from "./authReducer";
 
 //action type
 const INITIALIZE_SUCCESS = "appReducer/INITIALIZE_SUCCESS";
 const ERROR_HANDLER = "appReducer/ERROR_HANDLER";
 
 let initialState = {
-    initialized: false,
-    appError: null
+	initialized: false,
+	appError: null,
 };
 
 let appReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case INITIALIZE_SUCCESS:
-            return {
-                ...state,
-                initialized: true,
-            };
-        case ERROR_HANDLER:
-            return {
-                ...state,
-                appError: action.payload,
-            };
+	switch (action.type) {
+		case INITIALIZE_SUCCESS:
+			return {
+				...state,
+				initialized: true,
+			};
+		case ERROR_HANDLER:
+			return {
+				...state,
+				appError: action.payload,
+			};
 
-        default:
-            return state;
-    }
+		default:
+			return state;
+	}
 };
 
 //action creator
 export const initializeSuccess = () => {
-    return {
-        type: INITIALIZE_SUCCESS,
-    };
+	return {
+		type: INITIALIZE_SUCCESS,
+	};
 };
 
-export const errorHandler = (payload) => {
-    return {
-        type: ERROR_HANDLER,
-        payload
-    };
+export const requestErrorHandler = (payload) => {
+	return {
+		type: ERROR_HANDLER,
+		payload,
+	};
+};
+export const serverResponseErrorHandler = (message) => {
+	return {
+		type: ERROR_HANDLER,
+		payload: { response: { status: "Server response" }, message },
+	};
 };
 
 //thunk creator & thunk, accepting dispatch
 export const initializeApp = () => async (dispatch) => {
+	//dispatching auth check and returning promise
+	await dispatch(getAuthUserData());
 
-    //?dispatching auth check and returning promise
-    await dispatch(getAuthUserData());
-
-    //?waiting for auth check and dispatching initialization:true despite the auth check results
-    dispatch(initializeSuccess());
+	//waiting for auth check and dispatching initialization:true despite the auth check results
+	dispatch(initializeSuccess());
 };
 
 export const errorGenerate = () => (dispatch) => {
-    dispatch(errorHandler({
-        response: {status: "Artificial"},
-        message: "An error has been generated manually"
-    }))
-}
+	dispatch(
+		requestErrorHandler({
+			response: { status: "Artificial" },
+			message: "An error has been generated manually",
+		})
+	);
+};
 export const errorReset = () => (dispatch) => {
-    dispatch(errorHandler(null))
-}
+	dispatch(requestErrorHandler(null));
+};
 
 export default appReducer;

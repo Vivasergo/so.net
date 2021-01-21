@@ -3,15 +3,30 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="App error handling functionality implementation. Stage 2">
-      <change afterPath="$PROJECT_DIR$/src/Components/common/Errors/ErrorBlock.module.css" afterDir="false" />
+    <list default="true" id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="App error handling functionality implementation. Stage 3">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/Errors/ErrorBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Errors/ErrorBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/appReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/appReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Profile/ProfileContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/authReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/profileReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
     </list>
@@ -39,6 +54,8 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -50,7 +67,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/common/Errors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -62,7 +79,7 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Linters.JSHint" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -118,7 +135,10 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c329c1f9-3944-4a8b-a328-6d2cd123f1ce" name="Default Changelist" comment="" />
@@ -149,7 +169,19 @@
       <workItem from="1610560878647" duration="9485000" />
       <workItem from="1610571581557" duration="3915000" />
       <workItem from="1610799753897" duration="21627000" />
-      <workItem from="1611003562954" duration="15644000" />
+      <workItem from="1611003562954" duration="16424000" />
+      <workItem from="1611163837082" duration="121000" />
+      <workItem from="1611163989418" duration="7000" />
+      <workItem from="1611164040544" duration="798000" />
+      <workItem from="1611165071202" duration="776000" />
+      <workItem from="1611166330665" duration="93000" />
+      <workItem from="1611166470498" duration="96000" />
+      <workItem from="1611166593630" duration="158000" />
+      <workItem from="1611166777670" duration="253000" />
+      <workItem from="1611170633669" duration="2896000" />
+      <workItem from="1611249972302" duration="78000" />
+      <workItem from="1611250093540" duration="291000" />
+      <workItem from="1611251727069" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="Pagination correction">
       <created>1608998510840</created>
@@ -235,11 +267,18 @@
       <option name="project" value="LOCAL" />
       <updated>1611006485996</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="App error handling functionality implementation. Stage 3">
+      <created>1611087032916</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1611087032916</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -267,7 +306,54 @@
     <MESSAGE value="Updating profile edit module. Stage 5" />
     <MESSAGE value="App error handling functionality implementation. Stage 1" />
     <MESSAGE value="App error handling functionality implementation. Stage 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="App error handling functionality implementation. Stage 2" />
+    <MESSAGE value="App error handling functionality implementation. Stage 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="App error handling functionality implementation. Stage 3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="408" y="102" key="#Inspections" timestamp="1611250240903">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state x="408" y="102" key="#Inspections/0.0.1562.848@0.0.1562.848" timestamp="1611250240903" />
+    <state x="358" y="47" key="#JSHint" timestamp="1611250203811">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state x="358" y="47" key="#JSHint/0.0.1562.848@0.0.1562.848" timestamp="1611250203811" />
+    <state x="666" y="286" width="779" height="419" key="#Notifications" timestamp="1611247086524">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state x="666" y="286" width="779" height="419" key="#Notifications/0.0.1562.848@0.0.1562.848" timestamp="1611247086524" />
+    <state x="237" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611170815706">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state x="237" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1562.848@0.0.1562.848" timestamp="1611170815706" />
+    <state x="462" y="159" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611247100169">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state x="462" y="159" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1562.848@0.0.1562.848" timestamp="1611247100169" />
+    <state width="1542" height="219" key="GridCell.Tab.0.bottom" timestamp="1611247141612">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state width="1542" height="219" key="GridCell.Tab.0.bottom/0.0.1562.848@0.0.1562.848" timestamp="1611247141612" />
+    <state width="1542" height="219" key="GridCell.Tab.0.center" timestamp="1611247141612">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state width="1542" height="219" key="GridCell.Tab.0.center/0.0.1562.848@0.0.1562.848" timestamp="1611247141612" />
+    <state width="1542" height="219" key="GridCell.Tab.0.left" timestamp="1611247141612">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state width="1542" height="219" key="GridCell.Tab.0.left/0.0.1562.848@0.0.1562.848" timestamp="1611247141612" />
+    <state width="1542" height="219" key="GridCell.Tab.0.right" timestamp="1611247141612">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state width="1542" height="219" key="GridCell.Tab.0.right/0.0.1562.848@0.0.1562.848" timestamp="1611247141612" />
+    <state x="276" y="68" key="SettingsEditor" timestamp="1611246673549">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state x="276" y="68" key="SettingsEditor/0.0.1562.848@0.0.1562.848" timestamp="1611246673549" />
+    <state x="444" y="169" width="672" height="678" key="search.everywhere.popup" timestamp="1611170725570">
+      <screen x="0" y="0" width="1562" height="848" />
+    </state>
+    <state x="444" y="169" width="672" height="678" key="search.everywhere.popup/0.0.1562.848@0.0.1562.848" timestamp="1611170725570" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
