@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {connect} from "react-redux";
+import { errorGenerate } from '../../../Redux/appReducer';
 import NavMenu from "./NavMenu";
 
 const NavMenuContainer = (props) => {
@@ -14,10 +15,10 @@ const NavMenuContainer = (props) => {
 //some kind of Context functionality
 const mapStateToProps = (state) => {
     return {
-        isLogged: state.auth.isLogged,
-        authId: state.auth.id
-    }
+			isLogged: state.auth.isLogged,
+			authId: state.auth.id,
+		};
 }
 
 //connect to the Redux Store
-export default connect(mapStateToProps)(NavMenuContainer);
+export default connect(mapStateToProps,{errorGenerate})(NavMenuContainer);

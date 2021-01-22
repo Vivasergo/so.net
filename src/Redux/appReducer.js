@@ -52,7 +52,7 @@ export const initializeApp = () => async (dispatch) => {
 	//dispatching auth check and returning promise
 	await dispatch(getAuthUserData());
 
-	//waiting for auth check and dispatching initialization:true despite the auth check results
+	//waiting  for auth check and dispatching initialization:true despite the auth check results
 	dispatch(initializeSuccess());
 };
 
@@ -60,7 +60,7 @@ export const errorGenerate = () => (dispatch) => {
 	dispatch(
 		requestErrorHandler({
 			response: { status: "Artificial" },
-			message: "An error has been generated manually",
+			message: "This error has been generated manually to simulate error while server request and shows app behavior",
 		})
 	);
 };

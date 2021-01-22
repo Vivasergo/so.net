@@ -25,7 +25,6 @@ class App extends Component {
             <div className="appWrap">
                 {this.props.appError && <ErrorBlock error={this.props.appError} errorReset={this.props.errorReset} />}
                 <Header/>
-                <button className={"position-absolute start-50"} onClick={()=>this.props.errorGenerate()}>Generate an error</button>
                 <Mainsection/>
                 <Footer/>
             </div>

@@ -75,7 +75,11 @@ function ErrorBlock(props) {
 										<h4 id="transition-modal-title">
 											{props.error.response.status} error has occurred
 										</h4>
-										<button type="button" className="btn-close"></button>
+										<button
+											onClick={handleClose}
+											type="button"
+											className="btn-close"
+										></button>
 									</div>
 									<div className="modal-body">
 										<p id="transition-modal-description">
