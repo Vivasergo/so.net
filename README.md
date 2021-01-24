@@ -1,49 +1,49 @@
 This is my own practical React/Redux project which is targeted to improve my web development skills and experience. It will be continiously upgraded and enhanced according to the newest aproaches and technologies.
 
-##Tech stack and basic methods and practices:
+## Tech stack and basic methods and practices:
 
-1. JavaScript React library:
-    Create React App
-    Class components (containers) with lifecycle methods
-    Functional components with hooks
-    App initialization functionality
-    Custom HOCs
-    Custom hooks
-    Lazy loading (suspense)
-    FLUX architecture
-    Preloader functionality
-    Conditional render
-2. Redux - state management library:
-    Connect method
-    Dispatch, reducers, action creators, action types
-    Compose
-    Deep copy
-    ApplyMiddleware
-3. JavaScript ECMAScript 6, 2016, 2017
-4. Git (GitHub)
-5. SASS
-6. NPM
-7. Bash command line
-8. Additional libraries, tools and approaches:
-    Reselect library
-    Material UI library
-    Testing-library
-    Axios
-    Lodash
-    React-router-dom (WithRouter, Route, Switch)
-    Bootstrap 5
-    React-redux
-    Redux-form
-    Redux-thunk (async, await)
-    CSS modules
-    RWD
-    Separation of UI(React), BLL(Business Logic Layer) and DAL(Data Access Layer - server queries, Promises, REST API, Server API)
-    Font awesome
-    React-longpressable
-    React Developer Tools - Chrome Extension
-    Redux DevTools - Chrome Extension
-    Debugging
-    Open Graph Meta Tags
+1.  JavaScript React library:
+    - Create React App
+    - Class components (containers) with lifecycle methods
+    - Functional components with hooks
+    - App initialization functionality
+    - Custom HOCs
+    - Custom hooks
+    - Lazy loading (suspense)
+    - FLUX architecture
+    - Preloader functionality
+    - Conditional render
+2.  Redux - state management library:
+    - Connect method
+    - Dispatch, reducers, action creators, action types
+    - Compose
+    - Deep copy
+    - ApplyMiddleware
+3.  JavaScript ECMAScript 6, 2016, 2017
+4.  Git (GitHub)
+5.  SASS
+6.  NPM
+7.  Bash command line
+8.  Additional libraries, tools and approaches:
+    - Reselect library
+    - Material UI library
+    - Testing-library
+    - Axios
+    - Lodash
+    - React-router-dom (WithRouter, Route, Switch)
+    - Bootstrap 5
+    - React-redux
+    - Redux-form
+    - Redux-thunk (async, await)
+    - CSS modules
+    - RWD
+    - Separation of UI(React), BLL(Business Logic Layer) and DAL(Data Access Layer - server queries, Promises, REST API, Server API)
+    - Font awesome
+    - React-longpressable
+    - React Developer Tools - Chrome Extension
+    - Redux DevTools - Chrome Extension
+    - Debugging
+    - Open Graph Meta Tags
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
