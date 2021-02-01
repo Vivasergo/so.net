@@ -1,5 +1,4 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
 
 const SocialNetLinks = props => {
 
@@ -19,14 +18,27 @@ const SocialNetLinks = props => {
 
     return <div className="col-md-5 col-12 profile-container__contacts">
         <ul className="list-group ms-3 me-3">
-            {contacts.map(([first, second], index) => {
-                return <li key={index}
-                            className={second ? "btn btn-outline-warning btn-sm mb-2" : "btn btn-outline-warning btn-sm mb-2 disabled"}>
-
-                            <a className="w-100 h-100 d-block text-danger" href={second || "#"}>
-                                <span className={"me-1"}>{socialLinkIcons.[first]}</span>
-                                <span className={"d-inline d-lg-inline d-sm-none"}>{first}</span></a>
-                        </li>;
+            {contacts.map(([firstEl, secondEl], index) => {
+                return (
+									<li
+										key={index}
+										className={
+											secondEl
+												? "btn btn-outline-warning btn-sm mb-2"
+												: "btn btn-outline-warning btn-sm mb-2 disabled"
+										}
+									>
+										<a
+											className="w-100 h-100 d-block text-danger"
+											href={secondEl || "#"}
+										>
+											<span className={"me-1"}>{socialLinkIcons[firstEl]}</span>
+											<span className={"d-inline d-lg-inline d-sm-none"}>
+												{firstEl}
+											</span>
+										</a>
+									</li>
+								);
             })}
         </ul>
     </div>;
