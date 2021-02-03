@@ -4,12 +4,19 @@ import { getAuthUserData } from "./authReducer";
 const INITIALIZE_SUCCESS = "appReducer/INITIALIZE_SUCCESS";
 const ERROR_HANDLER = "appReducer/ERROR_HANDLER";
 
-let initialState = {
-	initialized: false,
-	appError: null,
+type appErrorType = {
+	response: { status: string };
+	message: string;
 };
 
-let appReducer = (state = initialState, action) => {
+let initialState = {
+	initialized: false,
+	appError: null as appErrorType | null,
+};
+
+type initialStateType = typeof initialState;
+
+let appReducer = (state = initialState, action: any): initialStateType => {
 	switch (action.type) {
 		case INITIALIZE_SUCCESS:
 			return {
@@ -27,28 +34,40 @@ let appReducer = (state = initialState, action) => {
 	}
 };
 
+type initializeSuccessActionType = {
+	type: typeof INITIALIZE_SUCCESS;
+};
+
 //action creator
-export const initializeSuccess = () => {
+export const initializeSuccess = (): initializeSuccessActionType => {
 	return {
 		type: INITIALIZE_SUCCESS,
 	};
 };
 
-export const requestErrorHandler = (payload) => {
+type errorHandlerActionType = {
+	type: typeof ERROR_HANDLER;
+	payload: appErrorType | null
+};
+
+export const requestErrorHandler = (payload: appErrorType | null):errorHandlerActionType => {
 	return {
 		type: ERROR_HANDLER,
 		payload,
 	};
 };
-export const serverResponseErrorHandler = (message) => {
+
+export const serverResponseErrorHandler = (message: string): errorHandlerActionType => {
 	return {
 		type: ERROR_HANDLER,
 		payload: { response: { status: "Server response" }, message },
 	};
 };
 
+
+
 //thunk creator & thunk, accepting dispatch
-export const initializeApp = () => async (dispatch) => {
+export const initializeApp = () => async (dispatch: any) => {
 	//dispatching auth check and returning promise
 	await dispatch(getAuthUserData());
 
@@ -56,15 +75,16 @@ export const initializeApp = () => async (dispatch) => {
 	dispatch(initializeSuccess());
 };
 
-export const errorGenerate = () => (dispatch) => {
+export const errorGenerate = () => (dispatch: any) => {
 	dispatch(
 		requestErrorHandler({
 			response: { status: "Artificial" },
-			message: "This error has been generated manually to simulate error while server request and shows app behavior",
+			message:
+				"This error has been generated manually to simulate error while server request and shows app behavior",
 		})
 	);
 };
-export const errorReset = () => (dispatch) => {
+export const errorReset = () => (dispatch: any) => {
 	dispatch(requestErrorHandler(null));
 };
 
