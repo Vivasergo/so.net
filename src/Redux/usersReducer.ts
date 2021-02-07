@@ -1,3 +1,4 @@
+import { UserType } from './../Types/types';
 import { followAPI, usersAPI } from "../api/api";
 import { requestErrorHandler, serverResponseErrorHandler } from "./appReducer";
 
@@ -8,16 +9,19 @@ const SET_CURRENT_PAGE = "usersReducer/SET_CURRENT_PAGE";
 const TOGGLE_IS_LOADING = "usersReducer/TOGGLE_IS_LOADING";
 const TOGGLE_FOLLOWING_PROGRESS = "usersReducer/TOGGLE_FOLLOWING_PROGRESS";
 
+
 const initialState = {
-	items: [],
+	items: [] as Array<UserType>,
 	currentPage: 1,
 	countItems: 10,
 	totalPages: "",
-	isLoading: null,
-	followingProgress: [],
+	isLoading: null as boolean | null,
+	followingProgress: [] as Array<number>,
 };
 
-const usersReducer = (state = initialState, action) => {
+type InitialStateType = typeof initialState
+
+const usersReducer = (state = initialState, action:any): InitialStateType => {
 	switch (action.type) {
 		case FOLLOW_TRIGGER:
 			return {
@@ -71,42 +75,68 @@ const usersReducer = (state = initialState, action) => {
 	}
 };
 
-export const followTrigger = (userId) => {
+type FollowTriggerType ={
+	type: typeof FOLLOW_TRIGGER
+	userId: number
+}
+export const followTrigger = (userId: number):FollowTriggerType => {
 	return {
 		type: FOLLOW_TRIGGER,
 		userId,
 	};
 };
 
-export const setUsers = (items) => {
+type SetUsersType ={
+	type: typeof SET_USERS
+	items: Array<UserType>
+}
+export const setUsers = (items:Array<UserType>):SetUsersType => {
 	return {
 		type: SET_USERS,
 		items,
 	};
 };
 
-export const setCurrentPage = (currentPage) => {
+type SetCurrentPageType ={
+	type: typeof SET_CURRENT_PAGE
+	currentPage: number
+}
+export const setCurrentPage = (currentPage: number):SetCurrentPageType => {
 	return {
 		type: SET_CURRENT_PAGE,
 		currentPage,
 	};
 };
 
-export const setTotalPages = (totalPages) => {
+type SetTotalPagesType ={
+	type: typeof SET_TOTAL_PAGES
+	totalPages: number
+}
+export const setTotalPages = (totalPages: number):SetTotalPagesType => {
 	return {
 		type: SET_TOTAL_PAGES,
 		totalPages,
 	};
 };
 
-export const toggleIsLoading = (isLoading) => {
+type ToggleIsLoadingType ={
+	type: typeof TOGGLE_IS_LOADING
+	isLoading: boolean
+}
+export const toggleIsLoading = (isLoading:boolean):ToggleIsLoadingType => {
 	return {
 		type: TOGGLE_IS_LOADING,
 		isLoading,
 	};
 };
 
-export const toggleFollowingProgress = (isLoading, userId) => {
+
+type ToggleFollowingProgressType ={
+	type: typeof TOGGLE_FOLLOWING_PROGRESS
+	isLoading: boolean
+	userId:number
+}
+export const toggleFollowingProgress = (isLoading:boolean, userId:number):ToggleFollowingProgressType => {
 	return {
 		type: TOGGLE_FOLLOWING_PROGRESS,
 		isLoading,
@@ -115,8 +145,8 @@ export const toggleFollowingProgress = (isLoading, userId) => {
 };
 
 //thunk creator & thunk, accepting dispatch
-export const getUsers = (countItems, page = 1) => {
-	return async (dispatch) => {
+export const getUsers = (countItems:number, page = 1) => {
+	return async (dispatch:any) => {
 		dispatch(toggleIsLoading(true));
 		try {
 			const { data } = await usersAPI.getUsers(countItems, page);
@@ -132,8 +162,8 @@ export const getUsers = (countItems, page = 1) => {
 };
 
 //thunk creator & thunk, accepting dispatch
-export const unfollow = (userId) => {
-	return async (dispatch) => {
+export const unfollow = (userId:number) => {
+	return async (dispatch:any) => {
 		try {
 			dispatch(toggleFollowingProgress(true, userId));
 
@@ -152,8 +182,8 @@ export const unfollow = (userId) => {
 };
 
 //thunk creator & thunk, accepting dispatch
-export const follow = (userId) => {
-	return async (dispatch) => {
+export const follow = (userId:number) => {
+	return async (dispatch:any) => {
 		try {
 			dispatch(toggleFollowingProgress(true, userId));
 

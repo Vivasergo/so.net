@@ -1,3 +1,4 @@
+import { ProfileType, PhotosType } from './../Types/types';
 import { profileAPI } from "../api/api";
 import { stopSubmit } from "redux-form";
 import { requestErrorHandler, serverResponseErrorHandler } from "./appReducer";
@@ -10,13 +11,15 @@ const PROFILE_UPDATE_RESET = "profileReducer/PROFILE_UPDATE_RESET";
 const CHANGE_DATA_LOADING = "profileReducer/CHANGE_DATA_LOADING";
 
 let initialState = {
-	profile: null,
+	profile: null as ProfileType | null,
 	status: "",
 	isProfileUpdated: false,
 	isProfileDataLoading: false,
 };
 
-let profileReducer = (state = initialState, action) => {
+type InitialStateType = typeof initialState
+
+let profileReducer = (state = initialState, action:any):InitialStateType => {
 	switch (action.type) {
 		case SET_USER_PROFILE:
 			return {
@@ -31,7 +34,7 @@ let profileReducer = (state = initialState, action) => {
 		case UPLOAD_AVATAR_SUCCESS:
 			return {
 				...state,
-				profile: { ...state.profile, photos: { ...action.photos } },
+				profile: { ...state.profile, photos: { ...action.photos } as PhotosType } as ProfileType,
 			};
 		case PROFILE_UPDATE_SUCCESS:
 			return {
@@ -53,36 +56,62 @@ let profileReducer = (state = initialState, action) => {
 			return state;
 	}
 };
-
-export const setUserProfile = (profile) => {
+type SetUserProfileType = {
+	type: typeof SET_USER_PROFILE
+	profile: ProfileType
+}
+export const setUserProfile = (profile:ProfileType):SetUserProfileType => {
 	return {
 		type: SET_USER_PROFILE,
 		profile,
 	};
 };
-export const setUserStatus = (status) => {
+
+type SetUserStatusType = {
+	type: typeof SET_USER_STATUS
+	status: string
+}
+export const setUserStatus = (status:string):SetUserStatusType => {
 	return {
 		type: SET_USER_STATUS,
 		status,
 	};
 };
-export const updateAvatar = (photos) => {
+
+type UpdateAvatarType = {
+	type: typeof UPLOAD_AVATAR_SUCCESS
+	photos:PhotosType
+}
+export const updateAvatar = (photos:PhotosType):UpdateAvatarType => {
 	return {
 		type: UPLOAD_AVATAR_SUCCESS,
 		photos,
 	};
 };
-export const setUpdateProfileSuccess = () => {
+
+type SetUpdateProfileSuccessType = {
+	type: typeof PROFILE_UPDATE_SUCCESS
+}
+export const setUpdateProfileSuccess = ():SetUpdateProfileSuccessType => {
 	return {
 		type: PROFILE_UPDATE_SUCCESS,
 	};
 };
-export const resetUpdateProfile = () => {
+
+type ResetUpdateProfileType = {
+	type: typeof PROFILE_UPDATE_RESET
+}
+export const resetUpdateProfile = ():ResetUpdateProfileType => {
 	return {
 		type: PROFILE_UPDATE_RESET,
 	};
 };
-export const changeLoadingProcess = (payload) => {
+
+type ChangeLoadingProcessType = {
+	type: typeof CHANGE_DATA_LOADING
+	payload:boolean
+}
+export const changeLoadingProcess = (payload:boolean):ChangeLoadingProcessType => {
 	return {
 		type: CHANGE_DATA_LOADING,
 		payload,
@@ -90,8 +119,8 @@ export const changeLoadingProcess = (payload) => {
 };
 
 //thunk
-export const getProfile = (userId) => {
-	return async (dispatch) => {
+export const getProfile = (userId:number) => {
+	return async (dispatch:any) => {
 		try {
 			const { data } = await profileAPI.getProfile(userId);
 			dispatch(setUserProfile(data));
@@ -101,8 +130,8 @@ export const getProfile = (userId) => {
 	};
 };
 
-export const getStatus = (userId) => {
-	return async (dispatch) => {
+export const getStatus = (userId:number) => {
+	return async (dispatch:any) => {
 		try {
 			const { data } = await profileAPI.getStatus(userId);
 			dispatch(setUserStatus(data));
@@ -111,8 +140,8 @@ export const getStatus = (userId) => {
 		}
 	};
 };
-export const updateStatus = (status) => {
-	return async (dispatch) => {
+export const updateStatus = (status:string) => {
+	return async (dispatch:any) => {
 		try {
 			const response = await profileAPI.updateStatus(status);
 			if (response.data.resultCode === 0) {
@@ -125,8 +154,8 @@ export const updateStatus = (status) => {
 		}
 	};
 };
-export const updateProfile = (formData) => {
-	return async (dispatch) => {
+export const updateProfile = (formData:ProfileType) => {
+	return async (dispatch:any) => {
 		dispatch(changeLoadingProcess(true));
 		try {
 			const response = await profileAPI.updateProfile(formData);
@@ -150,8 +179,8 @@ export const updateProfile = (formData) => {
 		}
 	};
 };
-export const uploadNewAvatar = (file) => {
-	return async (dispatch) => {
+export const uploadNewAvatar = (file:any) => {
+	return async (dispatch:any) => {
 		dispatch(changeLoadingProcess(true));
 		try {
 			const { data } = await profileAPI.uploadNewAvatar(file);

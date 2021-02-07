@@ -30,17 +30,17 @@ let initialState: InitialStateType = {
 	],
 };
 
-let dialogsReducer = (state = initialState, action: any) => {
+let dialogsReducer = (state = initialState, action: any):InitialStateType => {
 	switch (action.type) {
 		case SET_NEW_MESSAGE:
-			return { ...state, dialogs: [...state.dialogs, action.payLoad] };
+			return { ...state, dialogs: [...state.dialogs, action.payload] };
 
 		default:
 			return state;
 	}
 };
 
-const setNewMessage = (newMessage:any) => {
+const setNewMessage = (newMessage:{message:string}):SetNewMessageType => {
 	return {
 		type: SET_NEW_MESSAGE,
 		//Using random ID due to lack of dialog's API on back-end

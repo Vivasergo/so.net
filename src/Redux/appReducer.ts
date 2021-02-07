@@ -4,19 +4,19 @@ import { getAuthUserData } from "./authReducer";
 const INITIALIZE_SUCCESS = "appReducer/INITIALIZE_SUCCESS";
 const ERROR_HANDLER = "appReducer/ERROR_HANDLER";
 
-type appErrorType = {
+type AppErrorType = {
 	response: { status: string };
 	message: string;
 };
 
 let initialState = {
 	initialized: false,
-	appError: null as appErrorType | null,
+	appError: null as AppErrorType | null,
 };
 
-type initialStateType = typeof initialState;
+type InitialStateType = typeof initialState;
 
-let appReducer = (state = initialState, action: any): initialStateType => {
+let appReducer = (state = initialState, action: any): InitialStateType => {
 	switch (action.type) {
 		case INITIALIZE_SUCCESS:
 			return {
@@ -34,30 +34,30 @@ let appReducer = (state = initialState, action: any): initialStateType => {
 	}
 };
 
-type initializeSuccessActionType = {
+type InitializeSuccessActionType = {
 	type: typeof INITIALIZE_SUCCESS;
 };
 
 //action creator
-export const initializeSuccess = (): initializeSuccessActionType => {
+export const initializeSuccess = (): InitializeSuccessActionType => {
 	return {
 		type: INITIALIZE_SUCCESS,
 	};
 };
 
-type errorHandlerActionType = {
+type ErrorHandlerActionType = {
 	type: typeof ERROR_HANDLER;
-	payload: appErrorType | null
+	payload: AppErrorType | null
 };
 
-export const requestErrorHandler = (payload: appErrorType | null):errorHandlerActionType => {
+export const requestErrorHandler = (payload: AppErrorType | null):ErrorHandlerActionType => {
 	return {
 		type: ERROR_HANDLER,
 		payload,
 	};
 };
 
-export const serverResponseErrorHandler = (message: string): errorHandlerActionType => {
+export const serverResponseErrorHandler = (message: string): ErrorHandlerActionType => {
 	return {
 		type: ERROR_HANDLER,
 		payload: { response: { status: "Server response" }, message },
