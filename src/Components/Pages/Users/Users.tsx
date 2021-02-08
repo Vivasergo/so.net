@@ -1,11 +1,22 @@
-import React, {useState} from "react";
+import React, { ChangeEvent, FC, useState } from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import s from "./users.module.css";
 import { Pagination } from "@material-ui/lab";
 import User from "./User";
 import useWindowSize from "../../common/utils/ShowWindowDimensions/useWindowSize";
+import { UserType } from "../../../Types/types";
 
-const Users = (props) => {
+type PropsType = {
+  totalPages: number
+  countItems:number
+  isLoading:boolean
+  users: Array<UserType>
+  authUserId:number
+
+  getUsers:(countItems:number,page:number)=>void
+}
+
+const Users: FC<PropsType> = (props) => {
   const [page, setPage] = useState(1);
 
   //custom Hook to control window width change
@@ -13,7 +24,7 @@ const Users = (props) => {
 
   let totalSheets = Math.ceil(props.totalPages / props.countItems);
 
-  let handlePageLinkClick = (_, page) => {
+  let handlePageLinkClick = (_:ChangeEvent<unknown>, page:number) => {
     props.getUsers(props.countItems, page);
     setPage(page)
   };
@@ -40,18 +51,14 @@ const Users = (props) => {
         {props.users.map((user) => {
 
           //Don't show authorized user's profile block among the other users profiles
-          return props.authUserId==user.id ? "" :
-           (
-               <User
-                    key={user.id}
-                    user={user}
-                    followingProgress={props.followingProgress}
-                    unfollow={props.unfollow}
-                    follow={props.follow}
-                    isAuth={props.isAuth}
-                />
+          return props.authUserId == user.id ? "" :
+            (
+              <User
+                key={user.id}
+                user={user}
+              />
 
-          );
+            );
         })}
 
         <div className={s.paginationBlock}>

@@ -1,9 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import profImg from "../../../Images/user.png";
 import { NavLink } from "react-router-dom";
 import FollowUnfollowContainer from "../../common/FollowUnfollowBtn/FollowUnfollowContainer";
+import { UserType } from "../../../Types/types";
 
-const User = (props) => {
+type PropsType = {
+user: UserType
+
+}
+
+const User:FC<PropsType> = (props) => {
+
 	return (
 		<>
 			<div className="items-container__item user-item">

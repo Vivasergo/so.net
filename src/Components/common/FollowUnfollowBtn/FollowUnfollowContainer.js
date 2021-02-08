@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { getUsersItems, isAuth } from "../../../Redux/Selectors/usersPage-selectors";
+import { AppStateType } from "../../../Redux/redux-store";
+import {
+  getUsersItems,
+  isAuth,
+} from "../../../Redux/Selectors/usersPage-selectors";
 import { follow, unfollow } from "../../../Redux/usersReducer";
 import FollowUnfollowBtn from "./FollowUnfollowBtn";
 
-class FollowUnfollowContainer extends Component {
 
+class FollowUnfollowContainer extends Component {
   render() {
     return <FollowUnfollowBtn {...this.props} />;
   }
@@ -16,7 +20,6 @@ class FollowUnfollowContainer extends Component {
 //inside the wrapped component through the props
 //some kind of Context functionality
 const mapStateToProps = (state) => {
-
   return {
     isAuth: isAuth(state), //using selectors/reselect
     followingProgress: state.usersPage.followingProgress,
@@ -26,8 +29,8 @@ const mapStateToProps = (state) => {
 //composing the wrappers
 export default compose(
   connect(mapStateToProps, {
-      //refactoring entry of mapDispatchToProps = (dispatch) => {return {follow: () => dispatch(followThunkCreator)}}
+    //refactoring entry of mapDispatchToProps = (dispatch) => {return {follow: () => dispatch(followThunkCreator)}}
     follow,
     unfollow,
-  }),
+  })
 )(FollowUnfollowContainer);
