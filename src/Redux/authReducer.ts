@@ -1,6 +1,9 @@
+import { AppStateType } from './redux-store';
 import { stopSubmit } from "redux-form";
+import { ThunkAction } from "redux-thunk";
 import { authAPI, captchaAPI } from "../api/api";
-import { requestErrorHandler } from "./appReducer";
+import { requestErrorHandler, ErrorHandlerActionType } from "./appReducer";
+import { Dispatch } from 'redux';
 
 const SET_AUTH_USER_DATA = "authReducer/SET_AUTH_USER_DATA";
 const SET_CAPTCHA_SUCCESS = "authReducer/SET_CAPTCHA_SUCCESS";
@@ -13,9 +16,15 @@ let initialState = {
   captchaURL: null as string | null,
 };
 
-type InitialStateType = typeof initialState;
+export type AuthInitialStateType = typeof initialState;
 
-let authReducer = (state = initialState, action: any): InitialStateType => {
+type ActionType =
+  | SetAuthUserDataType
+  | SetCaptchaSuccessType
+  | ErrorHandlerActionType
+  
+
+let authReducer = (state = initialState, action: ActionType): AuthInitialStateType => {
   switch (action.type) {
     case SET_AUTH_USER_DATA:
     case SET_CAPTCHA_SUCCESS:
@@ -65,8 +74,10 @@ export const setCaptchaSuccess = (
   };
 };
 
+type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionType>;
+
 //thunk creator & thunk, accepting dispatch
-export const getAuthUserData = () => async (dispatch: any) => {
+export const getAuthUserData = (): ThunkType => async (dispatch) => {
   try {
     const {
       data: { resultCode, data },
@@ -81,7 +92,7 @@ export const getAuthUserData = () => async (dispatch: any) => {
   }
 };
 
-export const getCaptcha = () => async (dispatch: any) => {
+export const getCaptcha = (): ThunkType => async (dispatch) => {
   try {
     const { data } = await captchaAPI.getCaptcha();
     dispatch(setCaptchaSuccess(data.url));
@@ -95,7 +106,7 @@ export const loginUser = (userData: {
   password: string;
   rememberMe?: boolean;
   captcha?: boolean;
-}) => async (dispatch: any) => {
+}) => async (dispatch:any) => {
   try {
     const { data } = await authAPI.login(userData);
 
@@ -117,7 +128,7 @@ export const loginUser = (userData: {
   }
 };
 
-export const logoutUser = () => async (dispatch: any) => {
+export const logoutUser = (): ThunkType => async (dispatch) => {
   try {
     const { data } = await authAPI.logout();
 

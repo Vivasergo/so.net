@@ -1,8 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { NavMenuContainerPropsType } from "./NavMenuContainer";
 
-const NavMenu = (props) => {
+
+const NavMenu:FC<NavMenuContainerPropsType> = (props) => {
 	const [isClickedBurger, setIsClickedBurger] = useState(false);
 
 	const handleClickBurgerMenu = () => {
@@ -43,9 +45,9 @@ const NavMenu = (props) => {
 	];
 
 	if (props.isLogged) {
-		navMenu = navMenu.filter((item) => item.title != "Profile");
+		navMenu = navMenu.filter((item) => item.title !== "Profile");
 	} else {
-		navMenu = navMenu.filter((item) => item.title != "My profile");
+		navMenu = navMenu.filter((item) => item.title !== "My profile");
 	}
 
 	return (

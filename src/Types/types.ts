@@ -30,3 +30,9 @@ export type UserType = {
   status: string | null;
   followed: boolean;
 };
+
+export type AppErrorType = {
+  response: { status: string };
+  message: string;
+};
+

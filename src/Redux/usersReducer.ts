@@ -130,7 +130,6 @@ export const toggleIsLoading = (isLoading:boolean):ToggleIsLoadingType => {
 	};
 };
 
-
 type ToggleFollowingProgressType ={
 	type: typeof TOGGLE_FOLLOWING_PROGRESS
 	isLoading: boolean

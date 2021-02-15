@@ -1,8 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
+import { AuthBlockContainerPropsType } from "./AuthBlockContainer";
 
-const AuthBlock = (props) => {
+
+const AuthBlock:FC<AuthBlockContainerPropsType> = (props) => {
     const [isAuthBlockClicked, setIsAuthBlockClicked] = useState(false);
 
     const handleClickArrowBlock = () => {

@@ -1,22 +1,33 @@
-import React, { useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import React, { FC, useEffect } from "react";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import cn from "classnames";
 import style from "./ErrorBlock.module.css";
+import { AppErrorType } from "../../../Types/types";
 
-function ErrorBlock(props) {
+// type Route
+
+type OwnPropsType = {
+	error: AppErrorType
+	errorReset: () => void
+}
+
+// type PropsType=
+
+const ErrorBlock: FC<OwnPropsType & RouteComponentProps> = (props)=>  {
 	const [open, setOpen] = React.useState(false);
 
 	const handleOpen = () => {
 		setOpen(true);
 	};
 
-	const handleClose = (e) => {
+
+	const handleClose = (event: any) => {
 		setOpen(false);
 		props.errorReset();
-		e.target.name === "goBack" && props.history.goBack();
+		event.target.name === "goBack" && props.history.goBack();
 	};
 
 	useEffect(() => {
