@@ -88,8 +88,8 @@ export const errorGenerate = () => (dispatch: DispatchType) => {
   );
 };
 
-export const errorReset = () => (dispatch: any) => {
-	dispatch(requestErrorHandler(null));
+export const errorReset = () => (dispatch: DispatchType) => {
+  dispatch(requestErrorHandler(null));
 };
 
 export default appReducer;

@@ -3,7 +3,17 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { setNewMessageThunk } from "../../../Redux/dialogsReducer";
 import Messages from "./Messages";
-import withAuthRedirect from "./../../../hoc/withAuthRedirect";
+import withAuthRedirect from "../../../hoc/withAuthRedirect";
+import { AppStateType } from "../../../Redux/redux-store";
+import { DialogInitialStateType} from '../../../Redux/dialogsReducer'
+
+
+type MapStateToPropsType ={
+  dialogs: DialogInitialStateType
+}
+type MapDispatchToPropsType ={
+  
+}
 
 class MessagesContainer extends Component {
   render() {
@@ -14,7 +24,7 @@ class MessagesContainer extends Component {
 //mapping state data stored in Redux Store to send it via Redux connect HOC and use it
 //inside the wrapped component through the props
 //some kind of Context functionality
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state:AppStateType) => ({
   dialogs: state.userDialogs.dialogs,
 });
 

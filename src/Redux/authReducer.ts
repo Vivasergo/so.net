@@ -3,7 +3,6 @@ import { stopSubmit } from "redux-form";
 import { ThunkAction } from "redux-thunk";
 import { authAPI, captchaAPI } from "../api/api";
 import { requestErrorHandler, ErrorHandlerActionType } from "./appReducer";
-import { Dispatch } from 'redux';
 
 const SET_AUTH_USER_DATA = "authReducer/SET_AUTH_USER_DATA";
 const SET_CAPTCHA_SUCCESS = "authReducer/SET_CAPTCHA_SUCCESS";

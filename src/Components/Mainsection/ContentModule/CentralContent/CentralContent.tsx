@@ -8,6 +8,7 @@ import Register from "../../../Pages/Registration/Register";
 import InitialPage from "../../../Pages/InitialPage/InitialPage";
 
 //Lazy loading
+//@ts-ignore
 const MessagesContainer = React.lazy(() => import("../../../Pages/Messages/MessagesContainer"));
 
 const CentralContent = () => {

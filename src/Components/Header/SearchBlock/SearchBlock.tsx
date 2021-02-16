@@ -1,18 +1,20 @@
-import React, {useRef, useState} from "react";
-import {withRouter} from "react-router-dom"
+import React, {ChangeEvent, FC, FormEvent, useRef, useState} from "react";
+import {RouteComponentProps, withRouter} from "react-router-dom"
 
-const SearchBlock = (props) => {
+
+
+const SearchBlock:FC<RouteComponentProps> = (props) => {
 
     const [searchInput, setSearchInput] = useState("");
 
-    const inputField = useRef(null);
+    const inputField = useRef<HTMLInputElement>(null!);
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchInput(e.target.value);
 
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         setSearchInput("");
