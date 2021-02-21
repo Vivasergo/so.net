@@ -1,5 +1,4 @@
 import { AppStateType } from './redux-store';
-import { Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { AppErrorType } from './../Types/types';
 import { getAuthUserData } from "./authReducer";
@@ -16,7 +15,7 @@ let initialState = {
 
 type InitialStateType = typeof initialState;
 
-type ActionType = InitializeSuccessActionType | ErrorHandlerActionType;
+
 
 let appReducer = (state = initialState, action: ActionType): InitialStateType => {
   switch (action.type) {
@@ -36,6 +35,9 @@ let appReducer = (state = initialState, action: ActionType): InitialStateType =>
   }
 };
 
+
+type ActionType = InitializeSuccessActionType | ErrorHandlerActionType;
+
 type InitializeSuccessActionType = {
 	type: typeof INITIALIZE_SUCCESS;
 };
@@ -52,6 +54,8 @@ export type ErrorHandlerActionType = {
 	payload: AppErrorType | null
 };
 
+
+//action creator
 export const requestErrorHandler = (payload: AppErrorType | null):ErrorHandlerActionType => {
 	return {
 		type: ERROR_HANDLER,
@@ -66,8 +70,8 @@ export const serverResponseErrorHandler = (message: string): ErrorHandlerActionT
 	};
 };
 
-type DispatchType = Dispatch<ActionType>;
-type ThunkType = ThunkAction<Promise<void>, AppStateType,unknown, ActionType>
+
+type ThunkType = ThunkAction<void, AppStateType,unknown, ActionType>
 
 //thunk creator & thunk, accepting dispatch
 export const initializeApp = (): ThunkType => async (dispatch) => {
@@ -78,7 +82,7 @@ export const initializeApp = (): ThunkType => async (dispatch) => {
   dispatch(initializeSuccess());
 };
 
-export const errorGenerate = () => (dispatch: DispatchType) => {
+export const errorGenerate = (): ThunkType => (dispatch) => {
   dispatch(
     requestErrorHandler({
       response: { status: "Artificial" },
@@ -88,7 +92,7 @@ export const errorGenerate = () => (dispatch: DispatchType) => {
   );
 };
 
-export const errorReset = () => (dispatch: DispatchType) => {
+export const errorReset = (): ThunkType => (dispatch) => {
   dispatch(requestErrorHandler(null));
 };
 

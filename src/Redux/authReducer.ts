@@ -1,3 +1,4 @@
+import { AuthData } from './../Types/types';
 import { AppStateType } from './redux-store';
 import { stopSubmit } from "redux-form";
 import { ThunkAction } from "redux-thunk";
@@ -78,9 +79,7 @@ type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionType>;
 //thunk creator & thunk, accepting dispatch
 export const getAuthUserData = (): ThunkType => async (dispatch) => {
   try {
-    const {
-      data: { resultCode, data },
-    } = await authAPI.me();
+    const { resultCode, data } = await authAPI.me();
 
     if (resultCode === 0) {
       let { id, email, login } = data;
@@ -100,12 +99,7 @@ export const getCaptcha = (): ThunkType => async (dispatch) => {
   }
 };
 
-export const loginUser = (userData: {
-  email: string;
-  password: string;
-  rememberMe?: boolean;
-  captcha?: boolean;
-}) => async (dispatch:any) => {
+export const loginUser = (userData: AuthData) => async (dispatch:any) => {
   try {
     const { data } = await authAPI.login(userData);
 

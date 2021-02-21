@@ -35,4 +35,9 @@ export type AppErrorType = {
   response: { status: string };
   message: string;
 };
-
+export type AuthData = {
+  email: string;
+  password: string;
+  rememberMe?: boolean;
+  captcha?: boolean;
+}
