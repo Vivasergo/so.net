@@ -32,7 +32,7 @@ class ProfileContainer extends Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		if (prevProps.match.params.userId != this.props.match.params.userId) {
+		if (prevProps.match.params.userId !== this.props.match.params.userId) {
 			this.getUserData();
 		}
 	}

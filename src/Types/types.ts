@@ -1,43 +1,49 @@
 export type ContactsType = {
-  github: string | null;
-  vk: string | null;
-  facebook: string | null;
-  instagram: string | null;
-  twitter: string | null;
-  website: string | null;
-  youtube: string | null;
-  mainLink: string | null;
+    github: Nullable<string>;
+    vk: Nullable<string>;
+    facebook: Nullable<string>;
+    instagram: Nullable<string>;
+    twitter: Nullable<string>;
+    website: Nullable<string>;
+    youtube: Nullable<string>;
+    mainLink: Nullable<string>;
 };
 export type PhotosType = {
-  small: string | null;
-  large: string | null;
+    small: Nullable<string>;
+    large: Nullable<string>;
 };
 export type ProfileType = {
-  userId: number;
-  aboutMe: string;
-  lookingForAJob: boolean;
-  lookingForAJobDescription: string;
-  fullName: string;
-  contacts: ContactsType;
-  photos?: PhotosType;
+    userId: number;
+    aboutMe: string;
+    lookingForAJob: boolean;
+    lookingForAJobDescription: string;
+    fullName: string;
+    contacts: ContactsType;
+    photos?: PhotosType;
 };
 
 export type UserType = {
-  name: string;
-  id: number;
-  uniqueUrlName: string | null;
-  photos: PhotosType;
-  status: string | null;
-  followed: boolean;
+    name: string;
+    id: number;
+    uniqueUrlName: Nullable<string>;
+    photos: PhotosType;
+    status: Nullable<string>;
+    followed: boolean;
 };
 
 export type AppErrorType = {
-  response: { status: string };
-  message: string;
+    response: { status: string };
+    message: string;
 };
 export type AuthData = {
-  email: string;
-  password: string;
-  rememberMe?: boolean;
-  captcha?: boolean;
-}
+    email: string;
+    password: string;
+    rememberMe?: boolean;
+    captcha?: boolean;
+};
+
+export type Nullable<T> = null | T; //Generic
+
+export type InferringActionType<T> = T extends { [key: string]: infer U }
+    ? U
+    : never;
