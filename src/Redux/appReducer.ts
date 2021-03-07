@@ -1,6 +1,4 @@
-import { AppStateType } from "./redux-store";
-import { ThunkAction } from "redux-thunk";
-import { AppErrorType, InferringActionType } from "./../Types/types";
+import { AppErrorType, InferringActionType, ThunkType } from "./../Types/types";
 import { getAuthUserData } from "./authReducer";
 
 //const action types
@@ -14,7 +12,7 @@ export type ErrorHandlerActionType = {
     type: typeof ERROR_HANDLER;
     payload: AppErrorType | null;
 };
-type ThunkType = ThunkAction<void, AppStateType, unknown, ActionType>;
+type CurrentThunkType = ThunkType<ActionType, void | Promise<void>>
 
 //
 let initialState = {
@@ -69,26 +67,26 @@ export const { requestErrorHandler, serverResponseErrorHandler } = actions
 
 
 //thunk creator & thunk, accepting dispatch
-export const initializeApp = (): ThunkType => async (dispatch) => {
+export const initializeApp = (): CurrentThunkType => async (dispatch) => {
     //dispatching auth check and returning promise
-    await dispatch(getAuthUserData());
+    await dispatch(getAuthUserData())
 
     //waiting  for auth check and dispatching initialization:true despite the auth check results
-    dispatch(actions.initializeSuccess());
-};
+    dispatch(actions.initializeSuccess())
+}
 
-export const errorGenerate = (): ThunkType => (dispatch) => {
+export const errorGenerate = (): CurrentThunkType => (dispatch) => {
     dispatch(
         actions.requestErrorHandler({
-            response: { status: "Artificial" },
+            response: { status: 'Artificial' },
             message:
-                "This error has been generated manually to simulate error while server request and shows app behavior",
+                'This error has been generated manually to simulate error while server request and shows app behavior',
         })
-    );
-};
+    )
+}
 
-export const errorReset = (): ThunkType => (dispatch) => {
-    dispatch(actions.requestErrorHandler(null));
-};
+export const errorReset = (): CurrentThunkType => (dispatch) => {
+    dispatch(actions.requestErrorHandler(null))
+}
 
 export default appReducer;

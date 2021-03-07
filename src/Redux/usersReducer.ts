@@ -1,18 +1,19 @@
-import { InferringActionType, UserType } from "./../Types/types"
-import { followAPI, usersAPI } from "../api/api"
-import { requestErrorHandler, serverResponseErrorHandler } from "./appReducer"
+import { InferringActionType, ThunkType, UserType } from './../Types/types'
+import { followAPI, usersAPI } from '../api/api'
+import { ErrorHandlerActionType, requestErrorHandler, serverResponseErrorHandler } from './appReducer'
 
 //const action types
-const FOLLOW_TRIGGER = "usersReducer/FOLLOW-TRIGGER"
-const SET_USERS = "usersReducer/SET-USERS"
-const SET_TOTAL_PAGES = "usersReducer/SET_TOTAL_PAGES"
-const SET_CURRENT_PAGE = "usersReducer/SET_CURRENT_PAGE"
-const TOGGLE_IS_LOADING = "usersReducer/TOGGLE_IS_LOADING"
-const TOGGLE_FOLLOWING_PROGRESS = "usersReducer/TOGGLE_FOLLOWING_PROGRESS"
+const FOLLOW_TRIGGER = 'usersReducer/FOLLOW-TRIGGER'
+const SET_USERS = 'usersReducer/SET-USERS'
+const SET_TOTAL_PAGES = 'usersReducer/SET_TOTAL_PAGES'
+const SET_CURRENT_PAGE = 'usersReducer/SET_CURRENT_PAGE'
+const TOGGLE_IS_LOADING = 'usersReducer/TOGGLE_IS_LOADING'
+const TOGGLE_FOLLOWING_PROGRESS = 'usersReducer/TOGGLE_FOLLOWING_PROGRESS'
 
 //types
 type InitialStateType = typeof initialState
-type ActionType = ReturnType<InferringActionType<typeof actions>>
+type ActionType = ReturnType<InferringActionType<typeof actions>> | ErrorHandlerActionType
+type CurrentThunkType = ThunkType<ActionType >
 
 const initialState = {
     items: [] as Array<UserType>,
@@ -42,31 +43,26 @@ const usersReducer = (
                     }
                 }),
             }
-
         case SET_USERS:
             return {
                 ...state,
                 items: [...action.items],
             }
-
         case SET_CURRENT_PAGE:
             return {
                 ...state,
                 currentPage: action.currentPage,
             }
-
         case SET_TOTAL_PAGES:
             return {
                 ...state,
                 totalPages: action.totalPages,
             }
-
         case TOGGLE_IS_LOADING:
             return {
                 ...state,
                 isLoading: action.isLoading,
             }
-
         case TOGGLE_FOLLOWING_PROGRESS:
             return {
                 ...state,
@@ -76,7 +72,6 @@ const usersReducer = (
                           (id) => id !== action.userId
                       ),
             }
-
         default:
             return state
     }
@@ -126,8 +121,8 @@ const actions = {
 export const { setCurrentPage } = actions
 
 //thunk creator & thunk, accepting dispatch
-export const getUsers = (countItems: number, page = 1) => {
-    return async (dispatch: any) => {
+export const getUsers = (countItems: number, page = 1): CurrentThunkType => {
+    return async (dispatch) => {
         dispatch(actions.toggleIsLoading(true))
         try {
             const { data } = await usersAPI.getUsers(countItems, page)
@@ -143,8 +138,8 @@ export const getUsers = (countItems: number, page = 1) => {
 }
 
 //thunk creator & thunk, accepting dispatch
-export const unfollow = (userId: number) => {
-    return async (dispatch: any) => {
+export const unfollow = (userId: number): CurrentThunkType => {
+    return async (dispatch) => {
         try {
             dispatch(actions.toggleFollowingProgress(true, userId))
 
@@ -163,8 +158,8 @@ export const unfollow = (userId: number) => {
 }
 
 //thunk creator & thunk, accepting dispatch
-export const follow = (userId: number) => {
-    return async (dispatch: any) => {
+export const follow = (userId: number): CurrentThunkType => {
+    return async (dispatch) => {
         try {
             dispatch(actions.toggleFollowingProgress(true, userId))
 

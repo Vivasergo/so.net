@@ -1,24 +1,24 @@
-import { ProfileType, PhotosType, InferringActionType } from "./../Types/types"
-import { profileAPI } from "../api/api"
-import { stopSubmit } from "redux-form"
-import { requestErrorHandler, serverResponseErrorHandler } from "./appReducer"
+import { ProfileType, PhotosType, InferringActionType, ThunkType } from './../Types/types'
+import { profileAPI } from '../api/api'
+import { stopSubmit } from 'redux-form'
+import { ErrorHandlerActionType, requestErrorHandler, serverResponseErrorHandler } from './appReducer'
 
 //const action types
-const SET_USER_PROFILE = "profileReducer/SET_USER_PROFILE"
-const SET_USER_STATUS = "profileReducer/SET_USER_STATUS"
-const UPLOAD_AVATAR_SUCCESS = "profileReducer/UPLOAD_AVATAR_SUCCESS"
-const PROFILE_UPDATE_SUCCESS = "profileReducer/PROFILE_UPDATE_SUCCESS"
-const PROFILE_UPDATE_RESET = "profileReducer/PROFILE_UPDATE_RESET"
-const CHANGE_DATA_LOADING = "profileReducer/CHANGE_DATA_LOADING"
+const SET_USER_PROFILE = 'profileReducer/SET_USER_PROFILE'
+const SET_USER_STATUS = 'profileReducer/SET_USER_STATUS'
+const UPLOAD_AVATAR_SUCCESS = 'profileReducer/UPLOAD_AVATAR_SUCCESS'
+const PROFILE_UPDATE_SUCCESS = 'profileReducer/PROFILE_UPDATE_SUCCESS'
+const PROFILE_UPDATE_RESET = 'profileReducer/PROFILE_UPDATE_RESET'
+const CHANGE_DATA_LOADING = 'profileReducer/CHANGE_DATA_LOADING'
 
 //types
 type InitialStateType = typeof initialState
-type ActionType = ReturnType<InferringActionType<typeof actions>>
-
+type ActionType = ReturnType<InferringActionType<typeof actions>> | ErrorHandlerActionType
+type CurrentThunkType = ThunkType<ActionType>
 //
 let initialState = {
     profile: null as ProfileType | null,
-    status: "",
+    status: '',
     isProfileUpdated: false,
     isProfileDataLoading: false,
 }
@@ -108,8 +108,8 @@ const actions = {
 export const { resetUpdateProfile } = actions
 
 //thunk
-export const getProfile = (userId: number) => {
-    return async (dispatch: any) => {
+export const getProfile = (userId: number): CurrentThunkType => {
+    return async (dispatch) => {
         try {
             const { data } = await profileAPI.getProfile(userId)
             dispatch(actions.setUserProfile(data))
@@ -119,8 +119,8 @@ export const getProfile = (userId: number) => {
     }
 }
 
-export const getStatus = (userId: number) => {
-    return async (dispatch: any) => {
+export const getStatus = (userId: number): CurrentThunkType => {
+    return async (dispatch) => {
         try {
             const { data } = await profileAPI.getStatus(userId)
             dispatch(actions.setUserStatus(data))
@@ -129,8 +129,8 @@ export const getStatus = (userId: number) => {
         }
     }
 }
-export const updateStatus = (status: string) => {
-    return async (dispatch: any) => {
+export const updateStatus = (status: string): CurrentThunkType => {
+    return async (dispatch) => {
         try {
             const response = await profileAPI.updateStatus(status)
             if (response.data.resultCode === 0) {
@@ -143,8 +143,8 @@ export const updateStatus = (status: string) => {
         }
     }
 }
-export const updateProfile = (formData: ProfileType) => {
-    return async (dispatch: any) => {
+export const updateProfile = (formData: ProfileType): CurrentThunkType => {
+    return async (dispatch) => {
         dispatch(actions.changeLoadingProcess(true))
         try {
             const response = await profileAPI.updateProfile(formData)
@@ -157,10 +157,8 @@ export const updateProfile = (formData: ProfileType) => {
                 //"common error" and any case interrupting form submitting via stopSubmit Redux Form method dispatching
                 dispatch(actions.changeLoadingProcess(false))
                 let message =
-                    response.data.messages.length > 0
-                        ? response.data.messages[0]
-                        : "Common error"
-                dispatch(stopSubmit("profile-edit-form", { _error: message }))
+                    response.data.messages.length > 0 ? response.data.messages[0] : 'Common error'
+                dispatch(stopSubmit('profile-edit-form', { _error: message }))
             }
         } catch (error) {
             dispatch(actions.changeLoadingProcess(false))
@@ -168,8 +166,8 @@ export const updateProfile = (formData: ProfileType) => {
         }
     }
 }
-export const uploadNewAvatar = (file: any) => {
-    return async (dispatch: any) => {
+export const uploadNewAvatar = (file: File): CurrentThunkType => {
+    return async (dispatch) => {
         dispatch(actions.changeLoadingProcess(true))
         try {
             const { data } = await profileAPI.uploadNewAvatar(file)

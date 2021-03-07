@@ -1,10 +1,8 @@
-import { InferringActionType } from "./../Types/types"
-import { FormAction, reset } from "redux-form"
-import { ThunkAction } from "redux-thunk"
-import { AppStateType } from "./redux-store"
+import { InferringActionType, ThunkType } from './../Types/types'
+import { FormAction, reset } from 'redux-form'
 
 //const action types
-const SET_NEW_MESSAGE = "dialogsReducer/SET_NEW_MESSAGE"
+const SET_NEW_MESSAGE = 'dialogsReducer/SET_NEW_MESSAGE'
 
 //types
 type DialogType = {
@@ -15,7 +13,7 @@ export type DialogInitialStateType = {
     dialogs: Array<DialogType>
 }
 type ActionType = ReturnType<InferringActionType<typeof actions>> | FormAction
-type ThunkType = ThunkAction<void, AppStateType, unknown, ActionType>
+type CurrentThunkType = ThunkType<ActionType, void>
 
 //
 let initialState: DialogInitialStateType = {
@@ -23,11 +21,11 @@ let initialState: DialogInitialStateType = {
         {
             //Using random ID due to lack of dialogs API on back-end
             id: Math.floor(Math.random() * 10000000),
-            message: "Hello friends",
+            message: 'Hello friends',
         },
         {
             id: Math.floor(Math.random() * 10000000),
-            message: "Nice to meet you, bro",
+            message: 'Nice to meet you, bro',
         },
     ],
 }
@@ -54,19 +52,17 @@ const actions = {
             payload: {
                 id: Math.floor(Math.random() * 10000000),
                 ...newMessage,
-            } 
+            },
         } as const
     },
 }
 
 // thunk
-export const setNewMessageThunk = (newMessage: {
-    message: string
-}): ThunkType => (dispatch) => {
+export const setNewMessageThunk = (newMessage: { message: string }): CurrentThunkType => (dispatch) => {
     dispatch(actions.setNewMessage(newMessage))
 
     //resetting form fields after dispatching new message (Redux Form method)
-    dispatch(reset("dialogForm"))
+    dispatch(reset('dialogForm'))
 }
 
 export default dialogsReducer
