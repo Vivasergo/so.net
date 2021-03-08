@@ -6,28 +6,28 @@ import SocialNetLinks from "./SocialNetLinks/SocialNetLinks";
 
 const Profile = (props) => {
 
-    const [editMode, seteditMode] = useState(false);
+    const [editMode, setEditMode] = useState(false);
 
     const goToEditMode = () => {
-        seteditMode(true)
+        setEditMode(true)
     }
 
     const exitEditMode = () => {
-        seteditMode(false)
+        setEditMode(false)
     }
 
     //If profile was updated then turning off the edit mode and rendering updated profile
     //then resetting redux state isProfileUpdated property
     useEffect(() => {
         if (props.isProfileUpdated) {
-            seteditMode(false);
+            setEditMode(false);
             props.resetUpdateProfile();
         }
     }, [props.isProfileUpdated])
 
     useEffect(()=>{
         if(!props.isLogged){
-            seteditMode(false);
+            setEditMode(false);
         }
     },[props.isLogged])
 
@@ -52,7 +52,7 @@ const Profile = (props) => {
                         :
                         <><UnauthorizedUserProfile {...props}
                                                    goToEditMode={goToEditMode}
-                                                   isOwner={props.authorizedUserId == currentUserProfileId}/>
+                                                   isOwner={props.authorizedUserId === currentUserProfileId}/>
                             <SocialNetLinks contacts={props.profile.contacts}/></>}
                 </div>
             </div>

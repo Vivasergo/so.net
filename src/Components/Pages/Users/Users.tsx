@@ -51,7 +51,7 @@ const Users: FC<PropsType> = (props) => {
         {props.users.map((user) => {
 
           //Don't show authorized user's profile block among the other users profiles
-          return props.authUserId == user.id ? "" :
+          return props.authUserId === user.id ? "" :
             (
               <User
                 key={user.id}
