@@ -9,9 +9,7 @@ const SET_CAPTCHA_SUCCESS = 'authReducer/SET_CAPTCHA_SUCCESS'
 
 //types
 export type AuthInitialStateType = typeof initialState
-type ActionType =
-    | ReturnType<InferringActionType<typeof actions>>
-    | ErrorHandlerActionType
+type ActionType = ReturnType<InferringActionType<typeof actions>> | ErrorHandlerActionType
 
 type CurrentThunkType = ThunkType<ActionType>
 
@@ -24,10 +22,7 @@ let initialState = {
     captchaURL: null as string | null,
 }
 
-let authReducer = (
-    state = initialState,
-    action: ActionType
-): AuthInitialStateType => {
+let authReducer = (state = initialState, action: ActionType): AuthInitialStateType => {
     switch (action.type) {
         case SET_AUTH_USER_DATA:
         case SET_CAPTCHA_SUCCESS:
@@ -98,8 +93,7 @@ export const loginUser = (userData: AuthData) => async (dispatch: any) => {
             }
             //error processing: returning either message from server response if it is or
             //"common error" and any case interrupting form submitting via stopSubmit Redux Form method dispatching
-            let message =
-                data.messages.length > 0 ? data.messages[0] : 'Common error'
+            let message = data.messages.length > 0 ? data.messages[0] : 'Common error'
             dispatch(stopSubmit('loginForm', { _error: message }))
         }
     } catch (error) {

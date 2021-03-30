@@ -1,22 +1,22 @@
-import React from "react";
-import {render, screen} from '@testing-library/react';
-import App from './App';
-import {BrowserRouter} from "react-router-dom";
-import {Provider} from "react-redux";
-import store from "./Redux/redux-store";
-import '@testing-library/jest-dom';
-import '@testing-library/jest-dom/extend-expect';
-
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import App from './App'
+import { BrowserRouter, HashRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './Redux/redux-store'
+import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/extend-expect'
 
 it('App render test', () => {
-    render(<BrowserRouter>
-        <Provider store={store}>
-            <App/>
-        </Provider>
-    </BrowserRouter>,);
+    render(
+        <HashRouter>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </HashRouter>
+    )
 
-    expect(screen.getByText(/Net/)).toBeInTheDocument();
+    expect(screen.getByText(/Net/)).toBeInTheDocument()
 
-    screen.debug();
-});
-
+    // screen.debug();
+})

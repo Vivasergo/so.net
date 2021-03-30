@@ -1,6 +1,6 @@
-import { Action } from "redux"
-import { ThunkAction } from "redux-thunk"
-import { AppStateType } from "../Redux/redux-store"
+import { Action } from 'redux'
+import { ThunkAction } from 'redux-thunk'
+import { AppStateType } from '../Redux/redux-store'
 
 export type ContactsType = {
     github: Nullable<string>
@@ -45,11 +45,14 @@ export type AuthData = {
     rememberMe?: boolean
     captcha?: boolean
 }
+export type DialogType = {
+    id: number
+    message: string
+}
+
 
 export type Nullable<T> = null | T //Generic
 
-export type InferringActionType<T> = T extends { [key: string]: infer U }
-    ? U
-    : never
+export type InferringActionType<T> = T extends { [key: string]: infer U } ? U : never
 
-export type ThunkType<AT extends Action, R=Promise<void>> = ThunkAction<R, AppStateType, unknown, AT>
+export type ThunkType<AT extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, AT>

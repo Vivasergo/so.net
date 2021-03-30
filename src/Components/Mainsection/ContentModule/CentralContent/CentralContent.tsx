@@ -28,7 +28,7 @@ const CentralContent = () => {
                     </Route>
                     <Route path="/messages">
                         {" "}
-                        <Suspense fallback={<div>Загрузка...</div>}>
+                        <Suspense fallback={<div>Loading...</div>}>
                             <MessagesContainer/>{" "}
                         </Suspense>
                     </Route>

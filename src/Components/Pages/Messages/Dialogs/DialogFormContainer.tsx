@@ -4,11 +4,12 @@ import DialogForm from './DialogForm'
 import { setNewMessageThunk } from '../../../../Redux/dialogsReducer';
 import { AppStateType } from '../../../../Redux/redux-store';
 
-type MapStateToPropsType = {}
-type MapDispatchToPropsType = {}
-type OwnProps = {}
 
-type PropsType = MapStateToPropsType & MapDispatchToPropsType & OwnProps
+type MapDispatchToPropsType = {
+    setNewMessageThunk: (message: { message: string })=>void
+}
+
+type PropsType = MapDispatchToPropsType 
 
 class DialogFormContainer extends Component<PropsType> {
 
@@ -21,8 +22,5 @@ class DialogFormContainer extends Component<PropsType> {
 
 const mapStateToProps = (state: AppStateType) => ({});
 
-
-export default connect<MapStateToPropsType, MapDispatchToPropsType, OwnProps, AppStateType>
-(mapStateToProps, { setNewMessageThunk })(
-    DialogFormContainer
-);
+export default connect<{}, MapDispatchToPropsType, {}, AppStateType>
+    (mapStateToProps, { setNewMessageThunk })(DialogFormContainer);

@@ -1,14 +1,10 @@
-import { InferringActionType, ThunkType } from './../Types/types'
+import { DialogType, InferringActionType, ThunkType } from './../Types/types'
 import { FormAction, reset } from 'redux-form'
 
 //const action types
 const SET_NEW_MESSAGE = 'dialogsReducer/SET_NEW_MESSAGE'
 
 //types
-type DialogType = {
-    id: number
-    message: string
-}
 export type DialogInitialStateType = {
     dialogs: Array<DialogType>
 }

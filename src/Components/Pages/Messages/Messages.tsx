@@ -1,7 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
+import { DialogType } from "../../../Types/types";
 import DialogFormContainer from './Dialogs/DialogFormContainer';
 
-const Messages = (props) => {
+type PropsType = {
+    dialogs: Array<DialogType>
+}
+ 
+const Messages:FC<PropsType> = (props) => {
     return (
         <>
 
