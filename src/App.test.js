@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import App from './App'
-import { BrowserRouter, HashRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './Redux/redux-store'
 import '@testing-library/jest-dom'
@@ -16,7 +16,7 @@ it('App render test', () => {
         </HashRouter>
     )
 
-    expect(screen.getByText(/Net/)).toBeInTheDocument()
+    expect(screen.getByAltText(/loading/i)).toBeInTheDocument()
 
     // screen.debug();
 })

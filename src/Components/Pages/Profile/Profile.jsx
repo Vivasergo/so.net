@@ -37,7 +37,6 @@ const Profile = (props) => {
     if (!props.profile || props.isProfileDataLoading) {
         return <Preloader/>;
     }
-
     return (
         <section className="items-container">
             <h3>Profile</h3>
@@ -52,7 +51,7 @@ const Profile = (props) => {
                         :
                         <><UnauthorizedUserProfile {...props}
                                                    goToEditMode={goToEditMode}
-                                                   isOwner={props.authorizedUserId === currentUserProfileId}/>
+                                                   isOwner={props.authorizedUserId === +currentUserProfileId}/>
                             <SocialNetLinks contacts={props.profile.contacts}/></>}
                 </div>
             </div>

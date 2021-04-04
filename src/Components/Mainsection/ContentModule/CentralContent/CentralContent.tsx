@@ -1,11 +1,11 @@
-import React, {Suspense} from "react";
-import {Route, Switch} from "react-router-dom";
+import React, { Suspense } from "react";
+import { Route, Switch } from "react-router-dom";
+import UnderConstruction from "../../../common/Errors/UnderConstruction";
+import InitialPage from "../../../Pages/InitialPage/InitialPage";
 import LoginContainer from "../../../Pages/Login/LoginContainer";
 import ProfileContainer from "../../../Pages/Profile/ProfileContainer";
-import UsersContainer from "../../../Pages/Users/UsersContainer";
-import UnderConstruction from "../../../common/Errors/UnderConstruction";
 import Register from "../../../Pages/Registration/Register";
-import InitialPage from "../../../Pages/InitialPage/InitialPage";
+import Users from "../../../Pages/Users/Users";
 
 //Lazy loading
 //@ts-ignore
@@ -17,7 +17,7 @@ const CentralContent = () => {
             <div className="col-12 col-md-8 pr-md-0 main-cont-col">
                 <Switch>
                     <Route path="/users">
-                        <UsersContainer/>
+                        <Users/>
                     </Route>
                     <Route exact path="/">
                         <InitialPage/>

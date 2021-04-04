@@ -2,7 +2,7 @@ import React from 'react'
 import store from './Redux/redux-store'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { BrowserRouter, HashRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 import './CSS/style.css'
 

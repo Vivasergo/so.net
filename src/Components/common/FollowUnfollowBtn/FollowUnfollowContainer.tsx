@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { AppStateType } from "../../../Redux/redux-store";
 import {
-  isAuth,
+  getIsAuth,
 } from "../../../Redux/Selectors/usersPage-selectors";
 import { follow, unfollow } from "../../../Redux/usersReducer";
 import { UserType } from "../../../Types/types";
@@ -34,7 +34,7 @@ class FollowUnfollowContainer extends Component<PropsType> {
 //some kind of Context functionality
 const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
   return {
-    isAuth: isAuth(state), //using selectors/reselect
+    isAuth: getIsAuth(state), //using selectors/reselect
     followingProgress: state.usersPage.followingProgress,
   };
 };
