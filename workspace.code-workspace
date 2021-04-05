@@ -4,5 +4,8 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"npm.enableRunFromFolder": true,
+		// "npm.enableScriptExplorer": true
+	}
 }

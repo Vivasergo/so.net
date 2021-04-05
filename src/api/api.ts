@@ -10,8 +10,20 @@ const instance = Axios.create({
 })
 
 export const usersAPI = {
-    getUsers(countItems = 50, page = 1) {
-        return instance.get<UsersAPIType>(`users?count=${countItems}&page=${page}`)
+    getUsers(countItems = 10, page = 1, term = '', friend = '') {
+        let friendConverted
+        if (friend === 'null' || friend === '') {
+            friendConverted = ''
+        } else if (friend === 'true') {
+            friendConverted = true
+        } else if (friend === 'false') {
+            friendConverted = false
+        }
+        return instance.get<UsersAPIType>(
+            `users?count=${countItems}&page=${page}${term !== '' ? `&term=${term}` : ''}${
+                friendConverted !== '' ? `&friend=${friendConverted}` : ''
+            }`
+        )
     },
 }
 

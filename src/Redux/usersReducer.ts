@@ -121,11 +121,16 @@ const actions = {
 export const { setCurrentPage } = actions
 
 //thunk creator & thunk, accepting dispatch
-export const getUsers = (countItems: number, page = 1): CurrentThunkType => {
+export const getUsers = (
+    countItems: number,
+    page = 1,
+    term = '',
+    friend= ''
+): CurrentThunkType => {
     return async (dispatch) => {
         dispatch(actions.toggleIsLoading(true))
         try {
-            const { data } = await usersAPI.getUsers(countItems, page)
+            const { data } = await usersAPI.getUsers(countItems, page, term, friend)
             dispatch(actions.toggleIsLoading(false))
             dispatch(actions.setUsers(data.items))
             dispatch(actions.setCurrentPage(page))

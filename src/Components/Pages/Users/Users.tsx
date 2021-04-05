@@ -2,17 +2,18 @@ import { Pagination } from '@material-ui/lab'
 import React, { ChangeEvent, FC, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {
-  getAuthUserId,
-  getCountItems,
-  getIsLoading,
-  getTotalPages,
-  getUsersItems
+    getAuthUserId,
+    getCountItems,
+    getIsLoading,
+    getTotalPages,
+    getUsersItems,
 } from '../../../Redux/Selectors/usersPage-selectors'
 import { getUsers } from '../../../Redux/usersReducer'
 import Preloader from '../../common/Preloader/Preloader'
 import useWindowSize from '../../common/utils/ShowWindowDimensions/useWindowSize'
 import User from './User'
 import s from './users.module.css'
+import { UsersSearch } from './UsersSearch'
 
 const Users: FC = (props) => {
     const dispatch = useDispatch()
@@ -29,7 +30,6 @@ const Users: FC = (props) => {
 
     useEffect(() => {
         dispatch(getUsers(countItems))
-
     }, [])
 
     const totalSheets = Math.ceil(totalPages / countItems)
@@ -45,7 +45,9 @@ const Users: FC = (props) => {
 
             <section className='items-container'>
                 <h3>Users</h3>
-
+                <div>
+                    <UsersSearch getUsers={getUsers} countItems={countItems} />
+                </div>
                 <div className={s.paginationBlock}>
                     <Pagination
                         onChange={handlePageLinkClick}
