@@ -2,36 +2,43 @@ import React, { FC } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import s from './users.module.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCountItems } from '../../../Redux/Selectors/usersPage-selectors'
 
 const usersSearchValidationSchema = Yup.object().shape({
     term: Yup.string().min(2, 'Too Short!').max(30, 'Too Long!'),
 })
 
-type Props = {
-    countItems: number
-    getUsers: (countItems: number, page?:number, term?:string, friend?:string) => void
-}
-
-interface MyFormValues {
+// type Props = {
+//     countItems: number
+//     getUsers: (countItems: number, page?:number, term?:string, friend?:string) => void
+// }
+type MyFormValues = {
     term: string
-    friend: string
+    friend: 'null' | 'true' | 'false'
 }
 
-export const UsersSearch: FC<Props> = ({ getUsers, countItems }) => {
+
+export const UsersSearch: FC = () => {
     const dispatch = useDispatch()
+    const countItems = useSelector(getCountItems)
+    
     const initialValues: MyFormValues = {
         term: '',
         friend: 'null',
     }
+
+    const handleSubmit = (value: MyFormValues) => {
+        const convertedFriendValue = value.friend === 'null' ? null : value.friend === 'true' ? true : false
+        // dispatch(getUsers(countItems, 1, term, friend))
+    }
+
     return (
         <div className='text-center'>
             <Formik
                 initialValues={initialValues}
                 validationSchema={usersSearchValidationSchema}
-                onSubmit={({ term, friend }) => {
-                    dispatch(getUsers(countItems, 1, term, friend))
-                }}>
+                onSubmit={handleSubmit}>
                 {() => (
                     <Form>
                         <label htmlFor='term' className='form-label me-1'>

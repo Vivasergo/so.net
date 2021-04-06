@@ -46,7 +46,7 @@ const Users: FC = (props) => {
             <section className='items-container'>
                 <h3>Users</h3>
                 <div>
-                    <UsersSearch getUsers={getUsers} countItems={countItems} />
+                    <UsersSearch />
                 </div>
                 <div className={s.paginationBlock}>
                     <Pagination

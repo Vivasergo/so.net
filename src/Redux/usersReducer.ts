@@ -118,7 +118,7 @@ const actions = {
     },
 }
 
-export const { setCurrentPage } = actions
+// export const { setCurrentPage } = actions
 
 //thunk creator & thunk, accepting dispatch
 export const getUsers = (
