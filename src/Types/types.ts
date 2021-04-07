@@ -50,6 +50,10 @@ export type DialogType = {
     message: string
 }
 
+export type usersSearchFilterType = {
+    term: string
+    friend: Nullable<boolean>
+}
 
 export type Nullable<T> = null | T //Generic
 

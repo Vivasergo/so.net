@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {
     getAuthUserId,
     getCountItems,
+    getCurrentPage,
     getIsLoading,
     getTotalPages,
     getUsersItems,
@@ -22,8 +23,9 @@ const Users: FC = (props) => {
     const countItems = useSelector(getCountItems)
     const totalPages = useSelector(getTotalPages)
     const isLoading = useSelector(getIsLoading)
+    const page = useSelector(getCurrentPage)
 
-    const [page, setPage] = useState(1)
+    // const [page, setPage] = useState(1)
 
     //custom Hook to control window width change
     const [windowWidth] = useWindowSize()
@@ -36,7 +38,7 @@ const Users: FC = (props) => {
 
     const handlePageLinkClick = (_: ChangeEvent<unknown>, page: number) => {
         dispatch(getUsers(countItems, page))
-        setPage(page)
+        // setPage(page)
     }
 
     return (

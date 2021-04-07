@@ -1,4 +1,4 @@
-import { InferringActionType, ThunkType, UserType } from './../Types/types'
+import { InferringActionType, ThunkType, usersSearchFilterType, UserType } from './../Types/types'
 import { followAPI, usersAPI } from '../api/api'
 import { ErrorHandlerActionType, requestErrorHandler, serverResponseErrorHandler } from './appReducer'
 
@@ -7,13 +7,14 @@ const FOLLOW_TRIGGER = 'usersReducer/FOLLOW-TRIGGER'
 const SET_USERS = 'usersReducer/SET-USERS'
 const SET_TOTAL_PAGES = 'usersReducer/SET_TOTAL_PAGES'
 const SET_CURRENT_PAGE = 'usersReducer/SET_CURRENT_PAGE'
+const SET_USERS_SEARCH_FILTER = 'usersReducer/SET_USERS_SEARCH_FILTER'
 const TOGGLE_IS_LOADING = 'usersReducer/TOGGLE_IS_LOADING'
 const TOGGLE_FOLLOWING_PROGRESS = 'usersReducer/TOGGLE_FOLLOWING_PROGRESS'
 
 //types
 type InitialStateType = typeof initialState
 type ActionType = ReturnType<InferringActionType<typeof actions>> | ErrorHandlerActionType
-type CurrentThunkType = ThunkType<ActionType >
+type CurrentThunkType = ThunkType<ActionType>
 
 const initialState = {
     items: [] as Array<UserType>,
@@ -22,12 +23,10 @@ const initialState = {
     totalPages: 0,
     isLoading: null as boolean | null,
     followingProgress: [] as Array<number>,
+    filter: { term: '', friend: null as boolean | null },
 }
 
-const usersReducer = (
-    state = initialState,
-    action: ActionType
-): InitialStateType => {
+const usersReducer = (state = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case FOLLOW_TRIGGER:
             return {
@@ -58,6 +57,11 @@ const usersReducer = (
                 ...state,
                 totalPages: action.totalPages,
             }
+        case SET_USERS_SEARCH_FILTER:
+            return {
+                ...state,
+                filter: action.payload,
+            }
         case TOGGLE_IS_LOADING:
             return {
                 ...state,
@@ -68,9 +72,7 @@ const usersReducer = (
                 ...state,
                 followingProgress: action.isLoading
                     ? [...state.followingProgress, action.userId]
-                    : state.followingProgress.filter(
-                          (id) => id !== action.userId
-                      ),
+                    : state.followingProgress.filter((id) => id !== action.userId),
             }
         default:
             return state
@@ -97,6 +99,12 @@ const actions = {
             currentPage,
         } as const
     },
+    setUsersSearchFilter: (payload: usersSearchFilterType) => {
+        return {
+            type: SET_USERS_SEARCH_FILTER,
+            payload,
+        } as const
+    },
     setTotalPages: (totalPages: number) => {
         return {
             type: SET_TOTAL_PAGES,
@@ -121,18 +129,17 @@ const actions = {
 // export const { setCurrentPage } = actions
 
 //thunk creator & thunk, accepting dispatch
-export const getUsers = (
-    countItems: number,
-    page = 1,
-    term = '',
-    friend= ''
-): CurrentThunkType => {
+export const getUsers = (countItems: number, page = 1, filter?: usersSearchFilterType): CurrentThunkType => {
     return async (dispatch) => {
         dispatch(actions.toggleIsLoading(true))
         try {
-            const { data } = await usersAPI.getUsers(countItems, page, term, friend)
+            const { data } = await usersAPI.getUsers(countItems, page, filter)
             dispatch(actions.toggleIsLoading(false))
             dispatch(actions.setUsers(data.items))
+            if (!!filter) {
+                dispatch(actions.setUsersSearchFilter(filter))
+            }
+
             dispatch(actions.setCurrentPage(page))
             dispatch(actions.setTotalPages(data.totalCount))
         } catch (error) {

@@ -1,4 +1,4 @@
-import { ProfileType, AuthData, UserType, Nullable, PhotosType } from './../Types/types'
+import { ProfileType, AuthData, UserType, Nullable, PhotosType, usersSearchFilterType } from './../Types/types'
 import Axios from 'axios'
 
 const instance = Axios.create({
@@ -10,20 +10,16 @@ const instance = Axios.create({
 })
 
 export const usersAPI = {
-    getUsers(countItems = 10, page = 1, term = '', friend = '') {
-        let friendConverted
-        if (friend === 'null' || friend === '') {
-            friendConverted = ''
-        } else if (friend === 'true') {
-            friendConverted = true
-        } else if (friend === 'false') {
-            friendConverted = false
+    getUsers(countItems = 10, page = 1, filter?: usersSearchFilterType) {
+        let filterQuery = ``
+        if (!!filter && filter.term !== '') {
+            filterQuery += `&term=${filter.term}`
         }
-        return instance.get<UsersAPIType>(
-            `users?count=${countItems}&page=${page}${term !== '' ? `&term=${term}` : ''}${
-                friendConverted !== '' ? `&friend=${friendConverted}` : ''
-            }`
-        )
+        if (!!filter && filter.friend != null) {
+            filterQuery += `&friend=${filter.friend}`
+        }
+
+        return instance.get<UsersAPIType>(`users?count=${countItems}&page=${page}${filterQuery}`)
     },
 }
 
@@ -112,3 +108,4 @@ type UsersAPIType = {
     totalCount: number
     error: Nullable<string>
 }
+
