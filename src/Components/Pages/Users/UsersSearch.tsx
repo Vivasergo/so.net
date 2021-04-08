@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import s from './users.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCountItems } from '../../../Redux/Selectors/usersPage-selectors'
-import { getUsers } from '../../../Redux/usersReducer'
+import { getUsers, saveUsersSearchFilter } from '../../../Redux/usersReducer'
 
 const usersSearchValidationSchema = Yup.object().shape({
     term: Yup.string().min(2, 'Too Short!').max(30, 'Too Long!'),
@@ -19,7 +19,7 @@ type MyFormValues = {
     friend: 'null' | 'true' | 'false'
 }
 
-export const UsersSearch: FC = () => {
+export const UsersSearch: FC = React.memo(() => {
     const dispatch = useDispatch()
     const countItems = useSelector(getCountItems)
 
@@ -31,7 +31,7 @@ export const UsersSearch: FC = () => {
     const handleSubmit = (value: MyFormValues) => {
         const convertedFriendValue = value.friend === 'null' ? null : value.friend === 'true' ? true : false
         const convertedValue = { term: value.term, friend: convertedFriendValue }
-        dispatch(getUsers(countItems, 1, convertedValue))
+        dispatch(saveUsersSearchFilter(convertedValue))
     }
 
     return (
@@ -65,4 +65,4 @@ export const UsersSearch: FC = () => {
             </Formik>
         </div>
     )
-}
+})

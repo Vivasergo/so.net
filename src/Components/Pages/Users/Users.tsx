@@ -1,20 +1,24 @@
 import { Pagination } from '@material-ui/lab'
 import React, { ChangeEvent, FC, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 import {
     getAuthUserId,
+    getFilter,
     getCountItems,
     getCurrentPage,
     getIsLoading,
     getTotalPages,
     getUsersItems,
 } from '../../../Redux/Selectors/usersPage-selectors'
-import { getUsers } from '../../../Redux/usersReducer'
+import { getUsers, saveCurrentPage } from '../../../Redux/usersReducer'
 import Preloader from '../../common/Preloader/Preloader'
 import useWindowSize from '../../common/utils/ShowWindowDimensions/useWindowSize'
 import User from './User'
 import s from './users.module.css'
 import { UsersSearch } from './UsersSearch'
+import queryString from 'querystring'
+import { getUsersFilterQueryString } from '../../common/utils/helpFunc'
 
 const Users: FC = (props) => {
     const dispatch = useDispatch()
@@ -24,20 +28,29 @@ const Users: FC = (props) => {
     const totalPages = useSelector(getTotalPages)
     const isLoading = useSelector(getIsLoading)
     const page = useSelector(getCurrentPage)
+    const filter = useSelector(getFilter)
 
     // const [page, setPage] = useState(1)
 
     //custom Hook to control window width change
     const [windowWidth] = useWindowSize()
 
+    const history = useHistory()
+
     useEffect(() => {
-        dispatch(getUsers(countItems))
-    }, [])
+        let searchQuery = `?count=${countItems}&page=${page}`
+        if (filter.term !== '' || filter.friend !== null) {
+            searchQuery += '&' + getUsersFilterQueryString(filter)
+        }
+        history.push(searchQuery)
+
+        dispatch(getUsers(countItems, page, filter))
+    }, [filter, page])
 
     const totalSheets = Math.ceil(totalPages / countItems)
 
     const handlePageLinkClick = (_: ChangeEvent<unknown>, page: number) => {
-        dispatch(getUsers(countItems, page))
+        dispatch(saveCurrentPage(page))
         // setPage(page)
     }
 

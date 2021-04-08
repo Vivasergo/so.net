@@ -7,6 +7,7 @@ const isAuthSel = (state: AppStateType) => state.auth.isLogged
 export const getAuthUserId = (state: AppStateType) => state.auth.id
 export const getCurrentPage = (state: AppStateType) => state.usersPage.currentPage
 export const getCountItems = (state: AppStateType) => state.usersPage.countItems
+export const getFilter = (state: AppStateType) => state.usersPage.filter
 export const getTotalPages = (state: AppStateType) => state.usersPage.totalPages
 export const getIsLoading = (state: AppStateType) => state.usersPage.isLoading
 export const getFollowingProgress = (state: AppStateType) => state.usersPage.followingProgress

@@ -1,3 +1,4 @@
+
 import { InferringActionType, ThunkType, usersSearchFilterType, UserType } from './../Types/types'
 import { followAPI, usersAPI } from '../api/api'
 import { ErrorHandlerActionType, requestErrorHandler, serverResponseErrorHandler } from './appReducer'
@@ -14,7 +15,7 @@ const TOGGLE_FOLLOWING_PROGRESS = 'usersReducer/TOGGLE_FOLLOWING_PROGRESS'
 //types
 type InitialStateType = typeof initialState
 type ActionType = ReturnType<InferringActionType<typeof actions>> | ErrorHandlerActionType
-type CurrentThunkType = ThunkType<ActionType>
+type CurrentThunkType = ThunkType<ActionType, void | Promise<void>>
 
 const initialState = {
     items: [] as Array<UserType>,
@@ -136,11 +137,11 @@ export const getUsers = (countItems: number, page = 1, filter?: usersSearchFilte
             const { data } = await usersAPI.getUsers(countItems, page, filter)
             dispatch(actions.toggleIsLoading(false))
             dispatch(actions.setUsers(data.items))
-            if (!!filter) {
-                dispatch(actions.setUsersSearchFilter(filter))
-            }
+            // if (!!filter) {
+            //     dispatch(actions.setUsersSearchFilter(filter))
+            // }
 
-            dispatch(actions.setCurrentPage(page))
+            // dispatch(actions.setCurrentPage(page))
             dispatch(actions.setTotalPages(data.totalCount))
         } catch (error) {
             dispatch(actions.toggleIsLoading(false))
@@ -187,6 +188,20 @@ export const follow = (userId: number): CurrentThunkType => {
             dispatch(requestErrorHandler(error))
         }
     }
+}
+
+export const saveUsersSearchFilter = (filter: usersSearchFilterType): CurrentThunkType => {
+    return (dispatch => {
+        dispatch(actions.setUsersSearchFilter(filter))
+        console.log('saveUsersSearchFilter')
+        dispatch(actions.setCurrentPage(1))
+    })
+}
+export const saveCurrentPage = (page:number): CurrentThunkType => {
+    return (dispatch => {
+        console.log('saveCurrentPage, page='+page)
+       dispatch(actions.setCurrentPage(page))
+    })
 }
 
 export default usersReducer
