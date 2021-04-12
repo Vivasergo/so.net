@@ -54,6 +54,7 @@ export type usersSearchFilterType = {
     term: string
     friend: Nullable<boolean>
 }
+export type friendQueryType = 'true' | 'false' | 'null'
 
 export type Nullable<T> = null | T //Generic
 

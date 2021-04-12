@@ -1,41 +1,63 @@
 import { Pagination } from '@material-ui/lab'
-import React, { ChangeEvent, FC, useEffect, useState } from 'react'
+import queryString from 'query-string'
+import React, { ChangeEvent, FC, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import {
-    getAuthUserId,
-    getFilter,
-    getCountItems,
-    getCurrentPage,
-    getIsLoading,
-    getTotalPages,
-    getUsersItems,
+    selectAuthUserId,
+    selectCountItems,
+    selectCurrentPage,
+    selectFilter,
+    selectIsLoading,
+    selectTotalPages,
+    selectUsersItems,
 } from '../../../Redux/Selectors/usersPage-selectors'
-import { getUsers, saveCurrentPage } from '../../../Redux/usersReducer'
+import { getUsers } from '../../../Redux/usersReducer'
 import Preloader from '../../common/Preloader/Preloader'
+import { getUsersFilterQueryString } from '../../common/utils/helpFunc'
 import useWindowSize from '../../common/utils/ShowWindowDimensions/useWindowSize'
 import User from './User'
 import s from './users.module.css'
 import { UsersSearch } from './UsersSearch'
-import queryString from 'querystring'
-import { getUsersFilterQueryString } from '../../common/utils/helpFunc'
 
 const Users: FC = (props) => {
     const dispatch = useDispatch()
-    const authUserId = useSelector(getAuthUserId)
-    const users = useSelector(getUsersItems)
-    const countItems = useSelector(getCountItems)
-    const totalPages = useSelector(getTotalPages)
-    const isLoading = useSelector(getIsLoading)
-    const page = useSelector(getCurrentPage)
-    const filter = useSelector(getFilter)
+    const authUserId = useSelector(selectAuthUserId)
+    const users = useSelector(selectUsersItems)
+    const countItems = useSelector(selectCountItems)
+    const totalPages = useSelector(selectTotalPages)
+    const isLoading = useSelector(selectIsLoading)
+    const page = useSelector(selectCurrentPage)
+    const filter = useSelector(selectFilter)
 
-    // const [page, setPage] = useState(1)
-
-    //custom Hook to control window width change
     const [windowWidth] = useWindowSize()
-
     const history = useHistory()
+
+    useEffect(() => {
+        const currentQuery = queryString.parse(history.location.search)
+
+        let currentPage = Number(currentQuery.page)
+        if (!currentPage) {
+            currentPage = 1
+        }
+        if (!currentQuery.term) {
+            currentQuery.term = ''
+        }
+
+        let friendFilter =
+            currentQuery.friend === 'null' || currentQuery.friend === undefined
+                ? null
+                : currentQuery.friend === 'true'
+                ? true
+                : false
+
+        dispatch(
+            getUsers(countItems, currentPage, {
+                term: String(currentQuery.term),
+                friend: friendFilter,
+            })
+        )
+    }, [])
 
     useEffect(() => {
         let searchQuery = `?count=${countItems}&page=${page}`
@@ -43,15 +65,12 @@ const Users: FC = (props) => {
             searchQuery += '&' + getUsersFilterQueryString(filter)
         }
         history.push(searchQuery)
-
-        dispatch(getUsers(countItems, page, filter))
-    }, [filter, page])
+    }, [filter, page, countItems])
 
     const totalSheets = Math.ceil(totalPages / countItems)
 
     const handlePageLinkClick = (_: ChangeEvent<unknown>, page: number) => {
-        dispatch(saveCurrentPage(page))
-        // setPage(page)
+        dispatch(getUsers(countItems, page, filter))
     }
 
     return (

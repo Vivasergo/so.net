@@ -137,11 +137,11 @@ export const getUsers = (countItems: number, page = 1, filter?: usersSearchFilte
             const { data } = await usersAPI.getUsers(countItems, page, filter)
             dispatch(actions.toggleIsLoading(false))
             dispatch(actions.setUsers(data.items))
-            // if (!!filter) {
-            //     dispatch(actions.setUsersSearchFilter(filter))
-            // }
+            if (!!filter) {
+                dispatch(actions.setUsersSearchFilter(filter))
+            }
 
-            // dispatch(actions.setCurrentPage(page))
+            dispatch(actions.setCurrentPage(page))
             dispatch(actions.setTotalPages(data.totalCount))
         } catch (error) {
             dispatch(actions.toggleIsLoading(false))
@@ -193,13 +193,12 @@ export const follow = (userId: number): CurrentThunkType => {
 export const saveUsersSearchFilter = (filter: usersSearchFilterType): CurrentThunkType => {
     return (dispatch => {
         dispatch(actions.setUsersSearchFilter(filter))
-        console.log('saveUsersSearchFilter')
-        dispatch(actions.setCurrentPage(1))
+
+        // dispatch(actions.setCurrentPage(1))
     })
 }
 export const saveCurrentPage = (page:number): CurrentThunkType => {
     return (dispatch => {
-        console.log('saveCurrentPage, page='+page)
        dispatch(actions.setCurrentPage(page))
     })
 }

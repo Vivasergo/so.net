@@ -10,3 +10,5 @@ export const getUsersFilterQueryString = (filterObject?: usersSearchFilterType) 
     }
     return filterQuery
 }
+
+export const convertQueryStringFriendValue = (value:string) => value === 'null' ? null : value === 'true' ? true : false

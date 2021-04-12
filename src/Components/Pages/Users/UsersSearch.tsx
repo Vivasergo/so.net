@@ -1,42 +1,42 @@
+import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React, { FC } from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import * as Yup from 'yup'
-import s from './users.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCountItems } from '../../../Redux/Selectors/usersPage-selectors'
-import { getUsers, saveUsersSearchFilter } from '../../../Redux/usersReducer'
+import * as Yup from 'yup'
+import { selectCountItems, selectFilter } from '../../../Redux/Selectors/usersPage-selectors'
+import { getUsers } from '../../../Redux/usersReducer'
+import { friendQueryType } from '../../../Types/types'
+import { convertQueryStringFriendValue } from '../../common/utils/helpFunc'
+import s from './users.module.css'
 
 const usersSearchValidationSchema = Yup.object().shape({
     term: Yup.string().min(2, 'Too Short!').max(30, 'Too Long!'),
 })
 
-// type Props = {
-//     countItems: number
-//     getUsers: (countItems: number, page?:number, term?:string, friend?:string) => void
-// }
 type MyFormValues = {
     term: string
-    friend: 'null' | 'true' | 'false'
+    friend: friendQueryType
 }
 
 export const UsersSearch: FC = React.memo(() => {
     const dispatch = useDispatch()
-    const countItems = useSelector(getCountItems)
+    let searchFilterFromState = useSelector(selectFilter)
+    const countItems = useSelector(selectCountItems)
 
     const initialValues: MyFormValues = {
-        term: '',
-        friend: 'null',
+        term: searchFilterFromState.term,
+        friend: String(searchFilterFromState.friend) as friendQueryType,
     }
 
     const handleSubmit = (value: MyFormValues) => {
-        const convertedFriendValue = value.friend === 'null' ? null : value.friend === 'true' ? true : false
-        const convertedValue = { term: value.term, friend: convertedFriendValue }
-        dispatch(saveUsersSearchFilter(convertedValue))
+        const convertedFriendValue = convertQueryStringFriendValue(value.friend)
+        const convertedFilterValue = { term: value.term, friend: convertedFriendValue }
+        dispatch(getUsers(countItems, 1, convertedFilterValue))
     }
 
     return (
         <div className='text-center'>
             <Formik
+                enableReinitialize
                 initialValues={initialValues}
                 validationSchema={usersSearchValidationSchema}
                 onSubmit={handleSubmit}>
