@@ -16,7 +16,9 @@ it('App render test', () => {
         </HashRouter>
     )
 
-    expect(screen.getByAltText(/loading/i)).toBeInTheDocument()
+    expect(screen.getByAltText(/loading/i)).toBeInTheDocument( )
 
     // screen.debug();
+
+    // npm test -- --coverage  - show test coverage
 })
