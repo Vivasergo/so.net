@@ -12,7 +12,7 @@ export const selectTotalPages = (state: AppStateType) => state.usersPage.totalPa
 export const selectIsLoading = (state: AppStateType) => state.usersPage.isLoading
 export const selectFollowingProgress = (state: AppStateType) => state.usersPage.followingProgress
 
-//using reselect for optimization of performance and memoization of state objects
+//using reselect for performance optimization and memoization of state objects
 export const selectUsersItems = createSelector(getUsersItemsSel, (users) => {
     return users.filter((u) => true)
 })

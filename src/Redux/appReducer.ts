@@ -1,70 +1,66 @@
-import { AppErrorType, InferringActionType, ThunkType } from "./../Types/types";
-import { getAuthUserData } from "./authReducer";
+import { AppErrorType, InferringActionType, ThunkType } from './../Types/types'
+import { getAuthUserData } from './authReducer'
 
 //const action types
-const INITIALIZE_SUCCESS = "appReducer/INITIALIZE_SUCCESS";
-const ERROR_HANDLER = "appReducer/ERROR_HANDLER";
+const INITIALIZE_SUCCESS = 'appReducer/INITIALIZE_SUCCESS'
+const ERROR_HANDLER = 'appReducer/ERROR_HANDLER'
 
 //types
-type InitialStateType = typeof initialState;
-type ActionType = ReturnType<InferringActionType<typeof actions>>;
+type InitialStateType = typeof initialState
+type ActionType = ReturnType<InferringActionType<typeof actions>>
 export type ErrorHandlerActionType = {
-    type: typeof ERROR_HANDLER;
-    payload: AppErrorType | null;
-};
+    type: typeof ERROR_HANDLER
+    payload: AppErrorType | null
+}
 type CurrentThunkType = ThunkType<ActionType, void | Promise<void>>
 
 //
 let initialState = {
     initialized: false,
     appError: null as AppErrorType | null,
-};
+}
 
 //
-let appReducer = (
-    state = initialState,
-    action: ActionType
-): InitialStateType => {
+let appReducer = (state = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case INITIALIZE_SUCCESS:
             return {
                 ...state,
                 initialized: true,
-            };
+            }
         case ERROR_HANDLER:
             return {
                 ...state,
                 appError: action.payload,
-            };
+            }
 
         default:
-            return state;
+            return state
     }
-};
+}
 
 //object of action creator
 const actions = {
     initializeSuccess: () => {
         return {
             type: INITIALIZE_SUCCESS,
-        } as const;
+        } as const
     },
     requestErrorHandler: (payload: AppErrorType | null) => {
         return {
             type: ERROR_HANDLER,
             payload,
-        } as const;
+        } as const
     },
     serverResponseErrorHandler: (message: string) => {
         return {
             type: ERROR_HANDLER,
-            payload: { response: { status: "Server response" }, message },
-        } as const;
+            payload: { response: { status: 'Server response' }, message },
+        } as const
     },
-};
+}
 
 export const { requestErrorHandler, serverResponseErrorHandler } = actions
-
 
 //thunk creator & thunk, accepting dispatch
 export const initializeApp = (): CurrentThunkType => async (dispatch) => {
@@ -89,4 +85,4 @@ export const errorReset = (): CurrentThunkType => (dispatch) => {
     dispatch(actions.requestErrorHandler(null))
 }
 
-export default appReducer;
+export default appReducer
